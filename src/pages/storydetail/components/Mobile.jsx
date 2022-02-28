@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react';
 import Subitem1 from './subitemmobile/Item1';
+import Subitem10 from './subitemmobile/Item10';
 import Subitem2 from './subitemmobile/Item2';
 import Subitem3 from './subitemmobile/Item3';
 import Subitem4 from './subitemmobile/Item4';
 import Subitem5 from './subitemmobile/Item5';
 import Subitem6 from './subitemmobile/Item6';
 import Subitem7 from './subitemmobile/Item7';
+import Subitem8 from './subitemmobile/Item8';
+import Subitem9 from './subitemmobile/Item9';
 import Subitemtitle from './subitemmobile/Itemtitle';
 let $ =window.$;
 // import { Container } from './styles';
@@ -58,6 +61,18 @@ function Mobile({arraydetaillstory}) {
        {
         typeof(arraydetaillstory.Content7)!== 'undefined'?
         <Subitem7  arraydetaillstory={arraydetaillstory}></Subitem7>:null
+      }
+       {
+        typeof(arraydetaillstory.Content8)!== 'undefined'?
+        <Subitem8  arraydetaillstory={arraydetaillstory}></Subitem8>:null
+      }
+       {
+        typeof(arraydetaillstory.Content9)!== 'undefined'?
+        <Subitem9  arraydetaillstory={arraydetaillstory}></Subitem9>:null
+      }
+       {
+        typeof(arraydetaillstory.Content10)!== 'undefined'?
+        <Subitem10  arraydetaillstory={arraydetaillstory}></Subitem10>:null
       }
       </>
   )

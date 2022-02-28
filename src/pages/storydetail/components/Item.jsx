@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react';
 import Subitem1 from './subitem/Item1';
+import Subitem10 from './subitem/Item10';
 import Subitem2 from './subitem/Item2';
 import Subitem3 from './subitem/Item3';
 import Subitem4 from './subitem/Item4';
 import Subitem5 from './subitem/Item5';
 import Subitem6 from './subitem/Item6';
 import Subitem7 from './subitem/Item7';
+import Subitem8 from './subitem/Item8';
+import Subitem9 from './subitem/Item9';
 import Subitemtitle from './subitem/Itemtitle';
 let $ = window.$;
 // import { Container } from './styles';
@@ -36,6 +39,7 @@ function Item({arraydetaillstory}) {
   }
 
   },[])
+  console.log(arraydetaillstory.Content3);
   return(
       <>
       {
@@ -69,6 +73,18 @@ function Item({arraydetaillstory}) {
        {
         typeof(arraydetaillstory.Content7)!== 'undefined'?
         <Subitem7  arraydetaillstory={arraydetaillstory}></Subitem7>:null
+      }
+      {
+        typeof(arraydetaillstory.Content8)!== 'undefined'?
+        <Subitem8  arraydetaillstory={arraydetaillstory}></Subitem8>:null
+      }
+      {
+        typeof(arraydetaillstory.Content9)!== 'undefined'?
+        <Subitem9  arraydetaillstory={arraydetaillstory}></Subitem9>:null
+      }
+      {
+        typeof(arraydetaillstory.Content10)!== 'undefined'?
+        <Subitem10  arraydetaillstory={arraydetaillstory}></Subitem10>:null
       }
       </>
   )

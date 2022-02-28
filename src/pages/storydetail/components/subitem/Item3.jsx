@@ -9,7 +9,7 @@ function Subitem3({arraydetaillstory}) {
 return(
     <>
       <section className="one" style={{ backgroundImage:`url(${link})`,backgroundRepeat:'no-repeat',backgroundAttachment: 'fixed',backgroundSize: 'cover'}}>
-             <h1>{arraydetaillstory.Conten3}</h1>
+             <h1>{arraydetaillstory.Content3}</h1>
         </section>
     </>
 )

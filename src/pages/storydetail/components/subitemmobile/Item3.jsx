@@ -9,7 +9,7 @@ function Subitem3({arraydetaillstory}) {
 return(
     <>
             <img src={link}></img>
-             <h1 className='caption'>{arraydetaillstory.Conten3}</h1>
+             <h1 className='caption'>{arraydetaillstory.Content3}</h1>
              
     </>
 )
