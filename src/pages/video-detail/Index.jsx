@@ -6,7 +6,7 @@ import { useRouteMatch } from 'react-router-dom';
 // import { Container } from './styles';
 
 function Index() {
-  var ip= "http://localhost:2020";
+  var ip= "http://localhost:2020/api";
   let {slug} = useRouteMatch().params;
   const [state,setState] = useState({
       listnew:null,
@@ -14,8 +14,8 @@ function Index() {
   })
   useEffect(() =>{
       Promise.all([
-          fetch(`http://localhost:2020/homes/${slug}`).then(res =>res.json()),
-          fetch(`http://localhost:2020/homes/`).then(res =>res.json()),
+          fetch(`http://localhost:2020/api/homes/${slug}`).then(res =>res.json()),
+          fetch(`http://localhost:2020/api/homes/`).then(res =>res.json()),
       ])
           .then(([res1,res2]) =>{
               setState({
@@ -33,9 +33,9 @@ function Index() {
       detailimg.forEach(function (x, y) {
     if(x.getAttribute("src").lastIndexOf("uploads") > 0)
     {
-      if(x.getAttribute("src").lastIndexOf("http://localhost:2020")<0)
+      if(x.getAttribute("src").lastIndexOf("http://localhost:2020/api")<0)
       {
-          x.setAttribute("src","http://localhost:2020"+x.getAttribute("src"));
+          x.setAttribute("src","http://localhost:2020/api"+x.getAttribute("src"));
       }
     }
       });

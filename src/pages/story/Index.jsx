@@ -11,7 +11,7 @@ function Index() {
       }
     )
     useEffect(() =>{
-        fetch(`http://localhost:2020/stories/`)
+        fetch(`http://localhost:2020/api/stories/`)
         .then(res=>res.json())
         .then((res) => {
           setState({

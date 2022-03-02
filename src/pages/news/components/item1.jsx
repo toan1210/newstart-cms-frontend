@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // import { Container } from './styles';
 
 function Item1({news,arrayadvertisements}) {
-  var ip= "http://localhost:2020";
+  var ip= "http://localhost:2020/api";
   return(
       <>
       <div className="page__home-content">

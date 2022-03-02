@@ -18,10 +18,10 @@ function Technology() {
 )
 useEffect(() =>{
   Promise.all([
-      fetch(`http://localhost:2020/homes/`).then(res =>res.json()),
-      fetch(`http://localhost:2020/log-forms/`).then(res =>res.json()),
-      fetch(`http://localhost:2020/stories/`).then(res =>res.json()),
-      fetch(`http://localhost:2020/advertisements/`).then(res =>res.json()),
+      fetch(`http://localhost:2020/api/homes/`).then(res =>res.json()),
+      fetch(`http://localhost:2020/api/log-forms/`).then(res =>res.json()),
+      fetch(`http://localhost:2020/api/stories/`).then(res =>res.json()),
+      fetch(`http://localhost:2020/api/advertisements/`).then(res =>res.json()),
     ])
       .then(([res1,res2,res3,res4]) =>{
           setState({

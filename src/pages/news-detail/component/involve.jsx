@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 // import { Container } from './styles';
 
 function Invole({id,Title,Avata,authorasd,Description}) {
-    var ip= "http://localhost:2020";
+    var ip= "http://localhost:2020/api";
     var link =Avata[0].url;
     
   return (

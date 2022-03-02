@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // import { Container } from './styles';
 
 function Item3({living}) {
-  var ip= "http://localhost:2020";
+  var ip= "http://localhost:2020/api";
   return(
       <>
        <div className="new__middo">

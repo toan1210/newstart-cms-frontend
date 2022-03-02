@@ -3,7 +3,7 @@ import React from 'react';
 // import { Container } from './styles';
 
 function Subitem3({arraydetaillstory}) {
-  var ip= "http://localhost:2020";
+  var ip= "http://localhost:2020/api";
   var car = arraydetaillstory.Img3[0].url;
  var link = ip + car;
 return(

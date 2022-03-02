@@ -10,7 +10,7 @@ import Mobile from './components/Mobile';
         <span>Loading.....</span>
   )
 function Index() {
-    var ip= "http://localhost:2020";
+    var ip= "http://localhost:2020/api";
     let {slug} = useRouteMatch().params;
     const [state,setState] = useState({
         listnew:null,
@@ -20,9 +20,9 @@ function Index() {
     useEffect(() =>{
 
         Promise.all([
-            fetch(`http://localhost:2020/stories/${slug}`).then(res =>res.json()),
-            fetch(`http://localhost:2020/stories/`).then(res =>res.json()),
-            fetch(`http://localhost:2020/homes/`).then(res =>res.json()),
+            fetch(`http://localhost:2020/api/stories/${slug}`).then(res =>res.json()),
+            fetch(`http://localhost:2020/api/stories/`).then(res =>res.json()),
+            fetch(`http://localhost:2020/api/homes/`).then(res =>res.json()),
         ])
             .then(([res1,res2,res3]) =>{
                 setState({

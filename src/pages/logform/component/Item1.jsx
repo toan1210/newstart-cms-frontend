@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // import { Container } from './styles';
 
 function Item1({arraylogform}) {
-    var ip= "http://localhost:2020";
+    var ip= "http://localhost:2020/api";
     var link =arraylogform.Avata[0].url;
     var date = arraylogform.Time.slice(0,10);
     var arraydate = date.split("-");
