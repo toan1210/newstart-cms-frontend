@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // import { Container } from './styles';
 
 function Item1({home,arrayadvertisement}) {
-  var ip= "http://localhost:2020/api";
+  var ip= "http://localhost:2020";
   let url ='';
   if(home.Category === 'CongNghes')
   {

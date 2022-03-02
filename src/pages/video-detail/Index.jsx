@@ -6,7 +6,7 @@ import { useRouteMatch } from 'react-router-dom';
 // import { Container } from './styles';
 
 function Index() {
-  var ip= "http://localhost:2020/api";
+  var ip= "http://localhost:2020";
   let {slug} = useRouteMatch().params;
   const [state,setState] = useState({
       listnew:null,
@@ -33,9 +33,9 @@ function Index() {
       detailimg.forEach(function (x, y) {
     if(x.getAttribute("src").lastIndexOf("uploads") > 0)
     {
-      if(x.getAttribute("src").lastIndexOf("http://localhost:2020/api")<0)
+      if(x.getAttribute("src").lastIndexOf("http://localhost:2020")<0)
       {
-          x.setAttribute("src","http://localhost:2020/api"+x.getAttribute("src"));
+          x.setAttribute("src","http://localhost:2020"+x.getAttribute("src"));
       }
     }
       });

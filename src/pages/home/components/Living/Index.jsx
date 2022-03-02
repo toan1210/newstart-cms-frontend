@@ -4,7 +4,7 @@ let $ = window.$;
 // import { Container } from './styles';
 
 function Index({story,arrayadvertisement}) {
-  var ip="http://localhost:2020/api";
+  var ip="http://localhost:2020";
   var arrayeconomy =[];
   function filter(x)
   {

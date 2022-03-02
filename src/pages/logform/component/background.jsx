@@ -3,7 +3,7 @@ import React from 'react';
 // import { Container } from './styles';
 
 function Background({arraylogform}) {
-    var ip= "http://localhost:2020/api";
+    var ip= "http://localhost:2020";
     var car = arraylogform.Avata[0].url;
    var link = ip + car;
   return(

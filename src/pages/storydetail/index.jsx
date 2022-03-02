@@ -10,7 +10,7 @@ import Mobile from './components/Mobile';
         <span>Loading.....</span>
   )
 function Index() {
-    var ip= "http://localhost:2020/api";
+    var ip= "http://localhost:2020";
     let {slug} = useRouteMatch().params;
     const [state,setState] = useState({
         listnew:null,

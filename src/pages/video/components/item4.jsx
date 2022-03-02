@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // import { Container } from './styles';
 
 function Item4({video}) {
-  var ip= "http://localhost:2020/api";
+  var ip= "http://localhost:2020";
   return(
       <>
        <div className="new__left">

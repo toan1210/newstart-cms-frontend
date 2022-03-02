@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // import { Container } from './styles';
 
 function Item5({arraylogform}) {
-  var ip= "http://localhost:2020/api";
+  var ip= "http://localhost:2020";
   var img =arraylogform.Avata[0].url ;
 
   return(

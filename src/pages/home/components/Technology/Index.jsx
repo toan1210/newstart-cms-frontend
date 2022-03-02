@@ -4,7 +4,7 @@ let $ = window.$;
 // import { Container } from './styles';
 
 function Sprot({story,arrayadvertisement}) {
-  var ip="http://localhost:2020/api";
+  var ip="http://localhost:2020";
   useEffect(() =>{
     let slidershow = 4;
     let auto = false;

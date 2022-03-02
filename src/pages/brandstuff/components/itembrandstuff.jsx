@@ -3,7 +3,7 @@ import React from 'react';
 // import { Container } from './styles';
 
 function Itembrandstuff({Content,Time,Title,Avata,Description,id,Authorasd}) {
-  var ip= "http://localhost:2020/api";
+  var ip= "http://localhost:2020";
   //---------------Time--------
   var date = Time.slice(0,10);
   var arraydate = date.split("-");

@@ -7,7 +7,7 @@ import Item5 from './multimediaitem/Item5';
 // import { Container } from './styles';
 
 function Multimedia({home}) {
-  var ip= "http://localhost:2020/api";
+  var ip= "http://localhost:2020";
   let url ='';
   let [state,setState] = useState({
     logform:[],

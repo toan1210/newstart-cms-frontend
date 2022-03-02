@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 // import { Container } from './styles';
 
 function Item1({arraystory}) {
-    var ip= "http://localhost:2020/api";
+    var ip= "http://localhost:2020";
     var link =arraystory.Avata[0].url;
     // var date = arraystory.Time.slice(0,10);
     // var arraydate = date.split("-");

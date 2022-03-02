@@ -11,7 +11,7 @@ function Index() {
   }
 )
   useEffect(() =>{
-    fetch(`http://localhost:2020/api/log-forms/`)
+    fetch(`http://localhost:2020/log-forms/`)
     .then(res=>res.json())
     .then((res) => {
       setState({
