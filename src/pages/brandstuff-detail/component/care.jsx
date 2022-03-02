@@ -3,7 +3,7 @@ import React from 'react';
 // import { Container } from './styles';
 
 function Index({id,Title,Time,Authorasd,Avata,Description,Category}) {
-    var ip= "http://localhost:2020";
+    var ip= "http://localhost:2020/api";
     var link =Avata[0].url;
       //---------------Time--------
         var date = Time.slice(0,10);
