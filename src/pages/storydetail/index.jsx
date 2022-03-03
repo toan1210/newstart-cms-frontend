@@ -5,12 +5,13 @@ import Care from './components/care';
 import View from './components/view';
 import Item from './components/Item';
 import Mobile from './components/Mobile';
+import useAuth from '../../core/useAuth';
 // import { Container } from './styles';
  const Loading = () =>(
         <span>Loading.....</span>
   )
 function Index() {
-    var ip= "http://localhost:2020";
+  let {ipapi,iplink} = useAuth();
     let {slug} = useRouteMatch().params;
     const [state,setState] = useState({
         listnew:null,
@@ -20,9 +21,9 @@ function Index() {
     useEffect(() =>{
 
         Promise.all([
-            fetch(`http://localhost:2020/api/stories/${slug}`).then(res =>res.json()),
-            fetch(`http://localhost:2020/api/stories/`).then(res =>res.json()),
-            fetch(`http://localhost:2020/api/homes/`).then(res =>res.json()),
+            fetch(`${ipapi}/stories/${slug}`).then(res =>res.json()),
+            fetch(`${ipapi}/stories/`).then(res =>res.json()),
+            fetch(`${ipapi}/homes/`).then(res =>res.json()),
         ])
             .then(([res1,res2,res3]) =>{
                 setState({

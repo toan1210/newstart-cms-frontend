@@ -1,11 +1,12 @@
 import React from 'react';
+import useAuth from '../../../core/useAuth';
 
 // import { Container } from './styles';
 
 function Background({arraylogform}) {
-    var ip= "http://localhost:2020";
+  let {ipapi,iplink} = useAuth();
     var car = arraylogform.Avata[0].url;
-   var link = ip + car;
+   var link = iplink + car;
   return(
       <>
          <div className="topic-content" style={{ backgroundImage:`url(${link})`}}>

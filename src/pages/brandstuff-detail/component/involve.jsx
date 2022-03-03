@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import useAuth from '../../../core/useAuth';
 
 // import { Container } from './styles';
 
 function Invole({id,Title,Avata,authorasd,Description}) {
-    var ip= "http://localhost:2020";
+  let {ipapi,iplink} =useAuth();
     var link =Avata[0].url;
     
   return (
@@ -12,7 +13,7 @@ function Invole({id,Title,Avata,authorasd,Description}) {
       <div className="involve-content">
               <div className="involve-content__img">
                 <a href={`/brandstuff/${id}`}>
-                  <img src={ip+link} alt="" srcSet />
+                  <img src={iplink+link} alt="" srcSet />
                 </a>
               </div>
               <div className="involve-content__text">

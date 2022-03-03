@@ -1,9 +1,10 @@
 import React from 'react';
+import useAuth from '../../../core/useAuth';
 
 // import { Container } from './styles';
 
 function View({id,Title,Time,Authorasd,Avata,Description,Category}) {
-    var ip= "http://localhost:2020";
+  let {ipapi,iplink} = useAuth();
     var link =Avata[0].url;
       //---------------Time--------
         var date = Time.slice(0,10);
@@ -43,12 +44,16 @@ function View({id,Title,Time,Authorasd,Avata,Description,Category}) {
   {
     url='Video';
   }
+  else if(Category === 'TinMois')
+  {
+    url='news';
+  }
   return(
       <>
       <div className="section-seemore__content">
         <div className="seemore-content__img">
         <a href={`/${url}/${id}`}>
-              <img src={ip+link} alt="" srcSet />
+              <img src={iplink+link} alt="" srcSet />
             </a>
         </div>
         <div className="content-text">

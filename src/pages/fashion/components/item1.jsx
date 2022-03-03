@@ -1,17 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../core/useAuth';
 
 // import { Container } from './styles';
 
 function Item1({fashion,arrayadvertisements}) {
-  var ip= "http://localhost:2020";
+  let {ipapi,iplink} =useAuth();
   return(
       <>
       <div className="page__home-content" >
           <div className="left" >
             <div className="left__header">
             <Link to={`/fashion/${fashion.id}`}>
-                <img src={ip+fashion.Avata[0].url} alt="" srcSet />
+                <img src={iplink+fashion.Avata[0].url} alt="" srcSet />
               </Link>
               <div className="left-title">
               <Link to={`/fashion/${fashion.id}`}>{fashion.Title}</Link>
@@ -23,7 +24,7 @@ function Item1({fashion,arrayadvertisements}) {
               </div>
               <div className="left-quangcao">
                 <a href={arrayadvertisements[0].FashionAdvertisementRightContent}>
-                <img className="left-quangcao-img" src={ip+arrayadvertisements[0].FashionAdvertisementRight[0].url} alt="" />
+                <img className="left-quangcao-img" src={iplink+arrayadvertisements[0].FashionAdvertisementRight[0].url} alt="" />
                 </a>
               </div>
             </div>

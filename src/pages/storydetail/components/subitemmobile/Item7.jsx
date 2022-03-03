@@ -1,11 +1,12 @@
 import React from 'react';
+import useAuth from '../../../../core/useAuth';
 
 // import { Container } from './styles';
 
 function Subitem7({arraydetaillstory}) {
-  var ip= "http://localhost:2020";
+  let {ipapi,iplink} = useAuth();
   var car = arraydetaillstory.Img7[0].url;
-  var link = ip + car;
+  var link = iplink + car;
 return(
     <>
             <img src={link}></img>

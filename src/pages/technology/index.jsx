@@ -6,9 +6,11 @@ import Item4 from './components/item4';
 import Item5 from './components/item5';
 import Itemtechnology from './components/itemtechnology';
 import ReactMarkdown from 'react-markdown';
+import useAuth from '../../core/useAuth';
 // import { Container } from './styles';
 
 function Technology() {
+  let {ipapi,iplink} = useAuth();
   let [state,setState] = useState({
     technology:null,
     logform:null,
@@ -18,10 +20,10 @@ function Technology() {
 )
 useEffect(() =>{
   Promise.all([
-      fetch(`http://localhost:2020/api/homes/`).then(res =>res.json()),
-      fetch(`http://localhost:2020/api/log-forms/`).then(res =>res.json()),
-      fetch(`http://localhost:2020/api/stories/`).then(res =>res.json()),
-      fetch(`http://localhost:2020/api/advertisements/`).then(res =>res.json()),
+      fetch(`${ipapi}/homes/`).then(res =>res.json()),
+      fetch(`${ipapi}/log-forms/`).then(res =>res.json()),
+      fetch(`${ipapi}/stories/`).then(res =>res.json()),
+      fetch(`${ipapi}/advertisements/`).then(res =>res.json()),
     ])
       .then(([res1,res2,res3,res4]) =>{
           setState({

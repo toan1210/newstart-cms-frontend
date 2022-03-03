@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import useAuth from '../../core/useAuth';
 import Background from './component/background';
 import Item from './component/Item';
 import Item1 from './component/Item1'
 // import { Container } from './styles';
 
 function Index() {
+  let {ipapi,iplink} = useAuth();
     let [state,setState] = useState({
         story:[],
         loanding:true
       }
     )
     useEffect(() =>{
-        fetch(`http://localhost:2020/api/stories/`)
+        fetch(`${ipapi}/stories/`)
         .then(res=>res.json())
         .then((res) => {
           setState({

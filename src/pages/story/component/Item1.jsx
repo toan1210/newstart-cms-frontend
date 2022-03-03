@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../core/useAuth';
 
 // import { Container } from './styles';
 
 function Item1({arraystory}) {
-    var ip= "http://localhost:2020";
+  let {ipapi,iplink} = useAuth();
     var link =arraystory.Avata[0].url;
     // var date = arraystory.Time.slice(0,10);
     // var arraydate = date.split("-");
@@ -19,7 +20,7 @@ function Item1({arraystory}) {
           <div className="section-content">
         <div className="section-content__img">
         <Link to={`/layoutstory/story/${arraystory.id}`}>
-                <img src={ip+link} alt="" srcSet />
+                <img src={iplink+link} alt="" srcSet />
           </Link>
         </div>
         <div className="section-content__text">

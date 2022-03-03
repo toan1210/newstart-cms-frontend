@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../../core/useAuth';
 
 // import { Container } from './styles';
 
 function Item({Avata,Title,id}) {
-    var ip = 'http://localhost:2020';
+  let {ipapi,iplink} =useAuth();
   return(
       <>
       <div className="card padding">
           <div className="slider-content-img">
-            <img className="slider-img-img" src={ip + Avata[0].url} alt="" />
+            <img className="slider-img-img" src={iplink + Avata[0].url} alt="" />
             <div className="slider-content-ovelay">
             <Link to={`/layoutstory/story/${id}`} className="content-slider">
                 <div className="content-ovelay">

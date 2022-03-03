@@ -1,9 +1,10 @@
 import React from 'react';
+import useAuth from '../../../core/useAuth';
 
 // import { Container } from './styles';
 
 function Care({Avata,Authorasd,Time,Title,id}) {
-    var ip= "http://localhost:2020";
+  let {ipapi,iplink} = useAuth();
     var link =Avata[0].url;
          //---------------Time--------
          var date = Time.slice(0,10);
@@ -19,7 +20,7 @@ function Care({Avata,Authorasd,Time,Title,id}) {
    <div className="care-content__item">
           <div className="content-item__img">
           <a href={`/layout/logform/${id}`}>
-                 <img src={ip+link} alt="" srcSet />
+                 <img src={iplink+link} alt="" srcSet />
             </a>
           </div>
           <div className="content-item__content">

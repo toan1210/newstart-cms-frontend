@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
+import useAuth from '../../../../core/useAuth';
 import Item from './Item';
 let $ = window.$;
 // import { Container } from './styles';
 
 function Sprot({story,arrayadvertisement}) {
-  var ip="http://localhost:2020";
+  let {ipapi,iplink} =useAuth();
   useEffect(() =>{
     let slidershow = 4;
     let auto = false;
@@ -67,31 +68,31 @@ function Sprot({story,arrayadvertisement}) {
   {
       typeof(arrayadvertisement[0].HomeAdvertisementTechnology1IMG[0]) !== 'undefined'?
       <a href={arrayadvertisement[0].HomeAdvertisementTechnology1}>
-      <img className="advertisementimg" src={ip+arrayadvertisement[0].HomeAdvertisementTechnology1IMG[0].url} alt="" />
+      <img className="advertisementimg" src={iplink+arrayadvertisement[0].HomeAdvertisementTechnology1IMG[0].url} alt="" />
       </a>:null
     }
     {
       typeof(arrayadvertisement[0].HomeAdvertisementTechnology2IMG[0]) !== 'undefined'?
       <a href={arrayadvertisement[0].HomeAdvertisementTechnology2}>
-      <img className="advertisementimg" src={ip+arrayadvertisement[0].HomeAdvertisementTechnology2IMG[0].url} alt="" />
+      <img className="advertisementimg" src={iplink+arrayadvertisement[0].HomeAdvertisementTechnology2IMG[0].url} alt="" />
       </a>:null
     }
     {
       typeof(arrayadvertisement[0].HomeAdvertisementTechnology3IMG[0]) !== 'undefined'?
       <a href={arrayadvertisement[0].HomeAdvertisementTechnology3}>
-      <img className="advertisementimg" src={ip+arrayadvertisement[0].HomeAdvertisementTechnology3IMG[0].url} alt="" />
+      <img className="advertisementimg" src={iplink+arrayadvertisement[0].HomeAdvertisementTechnology3IMG[0].url} alt="" />
       </a>:null
     }
    {
       typeof(arrayadvertisement[0].HomeAdvertisementTechnology4IMG[0]) !== 'undefined'?
       <a href={arrayadvertisement[0].HomeAdvertisementTechnology4}>
-      <img className="advertisementimg" src={ip+arrayadvertisement[0].HomeAdvertisementTechnology4IMG[0].url} alt="" />
+      <img className="advertisementimg" src={iplink+arrayadvertisement[0].HomeAdvertisementTechnology4IMG[0].url} alt="" />
       </a>:null
     }
     {
       typeof(arrayadvertisement[0].HomeAdvertisementTechnology5IMG[0]) !== 'undefined'?
       <a href={arrayadvertisement[0].HomeAdvertisementTechnology5}>
-      <img className="advertisementimg" src={ip+arrayadvertisement[0].HomeAdvertisementTechnology5IMG[0].url} alt="" />
+      <img className="advertisementimg" src={iplink+arrayadvertisement[0].HomeAdvertisementTechnology5IMG[0].url} alt="" />
       </a>:null
     }
 </div>

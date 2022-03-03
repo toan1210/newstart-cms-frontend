@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import useAuth from '../../core/useAuth';
 import Item1 from './components/item1';
 import Item2 from './components/item2';
 import Item3 from './components/item3';
@@ -7,6 +8,7 @@ import Item5 from './components/item5';
 import Itembrandstuff from './components/itembrandstuff';
 // import { Container } from './styles';
 function Brandstuff() {
+  let {ipapi,iplink} =useAuth();
   let [state,setState] = useState({
     allnew:null,
     logform:null,
@@ -16,10 +18,10 @@ function Brandstuff() {
 )
 useEffect(() =>{
   Promise.all([
-      fetch(`http://localhost:2020/api/homes/`).then(res =>res.json()),
-      fetch(`http://localhost:2020/api/log-forms/`).then(res =>res.json()),
-      fetch(`http://localhost:2020/api/stories/`).then(res =>res.json()),
-      fetch(`http://localhost:2020/api/advertisements/`).then(res =>res.json()),
+      fetch(`${ipapi}/homes/`).then(res =>res.json()),
+      fetch(`${ipapi}/log-forms/`).then(res =>res.json()),
+      fetch(`${ipapi}/stories/`).then(res =>res.json()),
+      fetch(`${ipapi}/advertisements/`).then(res =>res.json()),
   ])
       .then(([res1,res2,res3,res4]) =>{
           setState({

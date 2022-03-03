@@ -1,3 +1,4 @@
+import React from "react";
 import './App.css';
 import './assets/style.css';
 import {
@@ -7,10 +8,15 @@ import {
 } from 'react-router-dom';
 import renderRouters from './core/routersConfig.jsx';
 import routers from './routers.jsx';
+export let Context = React.createContext();
 function App() {
+  let ipapi="http://localhost:2020/api";
+  let iplink="http://localhost:2020";
   return (
  <BrowserRouter>
-    {renderRouters(routers)}
+     <Context.Provider  value={{ipapi,iplink}}>
+         {renderRouters(routers)}
+     </Context.Provider>
  </BrowserRouter>
   );
 }

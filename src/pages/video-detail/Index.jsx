@@ -3,10 +3,11 @@ import Invole from './component/involve';
 import ReactMarkdown from 'react-markdown';
 import Care from './component/care';
 import { useRouteMatch } from 'react-router-dom';
+import useAuth from '../../core/useAuth';
 // import { Container } from './styles';
 
 function Index() {
-  var ip= "http://localhost:2020";
+  let {ipapi,iplink} = useAuth();
   let {slug} = useRouteMatch().params;
   const [state,setState] = useState({
       listnew:null,
@@ -14,8 +15,8 @@ function Index() {
   })
   useEffect(() =>{
       Promise.all([
-          fetch(`http://localhost:2020/api/homes/${slug}`).then(res =>res.json()),
-          fetch(`http://localhost:2020/api/homes/`).then(res =>res.json()),
+          fetch(`${ipapi}/homes/${slug}`).then(res =>res.json()),
+          fetch(`${ipapi}/homes/`).then(res =>res.json()),
       ])
           .then(([res1,res2]) =>{
               setState({
@@ -33,9 +34,9 @@ function Index() {
       detailimg.forEach(function (x, y) {
     if(x.getAttribute("src").lastIndexOf("uploads") > 0)
     {
-      if(x.getAttribute("src").lastIndexOf("http://localhost:2020")<0)
+      if(x.getAttribute("src").lastIndexOf(`${iplink}`)<0)
       {
-          x.setAttribute("src","http://localhost:2020"+x.getAttribute("src"));
+          x.setAttribute("src",`${iplink}`+x.getAttribute("src"));
       }
     }
       });
@@ -85,7 +86,7 @@ function Index() {
         <div className="content-left detail-left">
             <div className="content-left_video">
             <video controls>
-               <source src={ip+detailvideo} />
+               <source src={iplink+detailvideo} />
             </video>
             </div>
           <ReactMarkdown>{state.listnew.Content}</ReactMarkdown>

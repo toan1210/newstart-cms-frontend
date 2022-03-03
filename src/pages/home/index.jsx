@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import Item1 from './components/item1';
 import Item2 from './components/item2';
@@ -12,8 +12,10 @@ import News from './components/News/Index';
 import Living from './components/Living/Index';
 import Tourism from './components/Tourism/Index';
 import Brandstuff from './components/Brandstuff/Index';
+import useAuth from '../../core/useAuth';
 // import { Container } from './styles';
 function Home() {
+  let {ipapi,iplink} =useAuth();
   let [state,setState] = useState({
     home:[],
     story:[],
@@ -23,9 +25,9 @@ function Home() {
 )
 useEffect(() =>{
   Promise.all([
-      fetch(`http://localhost:2020/api/homes/`).then(res =>res.json()),
-      fetch(`http://localhost:2020/api/stories/`).then(res =>res.json()),
-      fetch(`http://localhost:2020/api/advertisements/`).then(res =>res.json()),
+      fetch(`${ipapi}/homes/`).then(res =>res.json()),
+      fetch(`${ipapi}/stories/`).then(res =>res.json()),
+      fetch(`${ipapi}/advertisements/`).then(res =>res.json()),
   ])
       .then(([res1,res2,res3]) =>{
           setState({

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import useAuth from '../../../core/useAuth';
 import Item1 from './multimediaitem/Item1';
 import Item2 from './multimediaitem/Item2';
 import Item3 from './multimediaitem/Item3';
@@ -7,7 +8,7 @@ import Item5 from './multimediaitem/Item5';
 // import { Container } from './styles';
 
 function Multimedia({home}) {
-  var ip= "http://localhost:2020";
+  let {ipapi,iplink} =useAuth();
   let url ='';
   let [state,setState] = useState({
     logform:[],
@@ -15,7 +16,7 @@ function Multimedia({home}) {
   }
 )
 useEffect(() =>{
-fetch(`http://localhost:2020/api/log-forms/`)
+fetch(`${ipapi}/log-forms/`)
 .then(res=>res.json())
 .then((res) => {
   setState({

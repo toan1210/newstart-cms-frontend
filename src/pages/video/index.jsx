@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import useAuth from '../../core/useAuth';
 import Item1 from './components/item1';
 import Item2 from './components/item2';
 import Item3 from './components/item3';
@@ -8,6 +9,7 @@ import Itemvideo from './components/itemvideo';
 // import { Container } from './styles';
 
 function Video() {
+  let {ipapi,iplink} = useAuth();
   let [state,setState] = useState({
     video:null,
     loanding:true,
@@ -17,8 +19,8 @@ function Video() {
 )
 useEffect(() =>{
   Promise.all([
-      fetch(`http://localhost:2020/api/homes/`).then(res =>res.json()),
-      fetch(`http://localhost:2020/api/advertisements/`).then(res =>res.json()),
+      fetch(`${ipapi}/homes/`).then(res =>res.json()),
+      fetch(`${ipapi}/advertisements/`).then(res =>res.json()),
   ])
   .then(([res1,res2]) =>{
     setState({

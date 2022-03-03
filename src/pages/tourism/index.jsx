@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import useAuth from '../../core/useAuth';
 import Item1 from './components/item1';
 import Item2 from './components/item2';
 import Item3 from './components/item3';
@@ -8,6 +9,7 @@ import Itemtourism from './components/itemtourism';
 // import { Container } from './styles';
 
 function Tourism() {
+  let {ipapi,iplink} = useAuth();
   let [state,setState] = useState({
     tourism:[],
     logform:null,
@@ -18,10 +20,10 @@ function Tourism() {
 
 useEffect(() =>{
   Promise.all([
-      fetch(`http://localhost:2020/api/homes/`).then(res =>res.json()),
-      fetch(`http://localhost:2020/api/log-forms/`).then(res =>res.json()),
-      fetch(`http://localhost:2020/api/stories/`).then(res =>res.json()),
-      fetch(`http://localhost:2020/api/advertisements/`).then(res =>res.json()),
+      fetch(`${ipapi}/homes/`).then(res =>res.json()),
+      fetch(`${ipapi}/log-forms/`).then(res =>res.json()),
+      fetch(`${ipapi}/stories/`).then(res =>res.json()),
+      fetch(`${ipapi}/advertisements/`).then(res =>res.json()),
   ])
       .then(([res1,res2,res3,res4]) =>{
           setState({

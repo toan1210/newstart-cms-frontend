@@ -1,9 +1,10 @@
 import React from 'react';
+import useAuth from '../../../core/useAuth';
 
 // import { Container } from './styles';
 
 function Index({id,Title,Time,Authorasd,Avata,Description,Category}) {
-    var ip= "http://localhost:2020";
+  let {ipapi,iplink} = useAuth();
     var link =Avata[0].url;
       //---------------Time--------
         var date = Time.slice(0,10);
@@ -43,12 +44,16 @@ function Index({id,Title,Time,Authorasd,Avata,Description,Category}) {
   {
     url='Video';
   }
+  else if(Category === 'TinMois')
+  {
+    url='news';
+  }
   return(
       <>
        <div className="detail-care__content">
           <div className="care-content__img">
             <a href={`/${url}/${id}`}>
-              <img src={ip+link} alt="" srcSet />
+              <img src={iplink+link} alt="" srcSet />
             </a>
           </div>
           <div className="care-content__text">

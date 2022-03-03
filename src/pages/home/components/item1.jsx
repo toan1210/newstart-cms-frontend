@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../core/useAuth';
 
 // import { Container } from './styles';
 
 function Item1({home,arrayadvertisement}) {
-  var ip= "http://localhost:2020";
+  let {ipapi,iplink} =useAuth();
   let url ='';
   if(home.Category === 'CongNghes')
   {
@@ -34,6 +35,10 @@ function Item1({home,arrayadvertisement}) {
   {
     url='Video';
   }
+  else if(home.Category === 'TinMois')
+  {
+    url='news';
+  }
   console.log(arrayadvertisement[0].HomeAdvertisementRightIMG[0]);
 
 
@@ -43,7 +48,7 @@ function Item1({home,arrayadvertisement}) {
           <div className="left">
             <div className="left__header">
             <Link to={`/${url}/${home.id}`}>
-                <img src={ip+home.Avata[0].url} alt=""  />
+                <img src={iplink+home.Avata[0].url} alt=""  />
               </Link>
               <div className="left-title">
               <Link to={`/${url}/${home.id}`}>{home.Title}</Link>
@@ -54,7 +59,7 @@ function Item1({home,arrayadvertisement}) {
                 </p>
               </div>
               <div className="left-quangcao">
-                <img className="left-quangcao-img" src={ip+arrayadvertisement[0].HomeAdvertisementRightIMG[0].url} alt="" />
+                <img className="left-quangcao-img" src={iplink+arrayadvertisement[0].HomeAdvertisementRightIMG[0].url} alt="" />
               </div>
             </div>
             <div className="left-content">
