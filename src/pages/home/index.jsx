@@ -58,6 +58,7 @@ function filter(x)
   });
 }
 filter(state.home);
+console.log(state.home)
   return (
       <>
   <main>

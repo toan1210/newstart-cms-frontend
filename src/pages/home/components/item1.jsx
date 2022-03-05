@@ -39,8 +39,7 @@ function Item1({home,arrayadvertisement}) {
   {
     url='news';
   }
-  console.log(arrayadvertisement[0].HomeAdvertisementRightIMG[0]);
-
+  console.log(arrayadvertisement[0].HomeAdvertisementRight);
 
   return(
       <>
@@ -59,7 +58,9 @@ function Item1({home,arrayadvertisement}) {
                 </p>
               </div>
               <div className="left-quangcao">
+              <a href={arrayadvertisement[0].HomeAdvertisementRight}>
                 <img className="left-quangcao-img" src={iplink+arrayadvertisement[0].HomeAdvertisementRightIMG[0].url} alt="" />
+                </a>
               </div>
             </div>
             <div className="left-content">
