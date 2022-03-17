@@ -10,7 +10,7 @@ function Subitemtitle({arraydetaillstory}) {
   return(
       <>
         <section className="one" style={{ backgroundImage:`url(${link})`,backgroundRepeat:'no-repeat',backgroundAttachment: 'fixed',backgroundSize: 'cover'}}>
-               <h1>{arraydetaillstory.Title}</h1>
+               <h1>{arraydetaillstory.TieuDe}</h1>
           </section>
       </>
   )

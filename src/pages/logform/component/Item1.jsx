@@ -27,18 +27,18 @@ function Item1({arraylogform}) {
           <div className="content-title">
           <Link to={`/layout/logform/${arraylogform.id}`}>
               <span>
-               {arraylogform.Title}
+               {arraylogform.TieuDe}
               </span>
             </Link>
           </div>
           <div className="content-time">
           <span className="date">{Datetime}</span>
-            <span className="time" style={{marginLeft:5}}>{arraylogform.Authorasd}</span>
+            <span className="time" style={{marginLeft:5}}>{arraylogform.TacGia}</span>
           </div>
           <div className="content-description">
             <span>
                 {
-                    arraylogform.Description
+                    arraylogform.TomTat
                 }
             </span>
           </div>

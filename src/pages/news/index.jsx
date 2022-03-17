@@ -41,7 +41,7 @@ var arraystory =[];
 function filter(x)
 {
   x.forEach((a,b) => {
-      if(a.Category === "TinMois")
+      if(a.DanhMuc === "TinMois")
       {
         arraynews.push(a);
       }
@@ -55,19 +55,19 @@ var arraynews = array.reverse();
 function filterlogform(x)
 {
   x.forEach((a,b) => {
-      if(a.Category === "TinMois")
+      if(a.DanhMuc === "TinMois")
       {
         arraylogform.push(a);
       }
   });
 }
 filterlogform(state.logform);
-var arrraylogform = logform.reverse();
+var arrraylogform = arraylogform.reverse();
 
 function filterstory(x)
 {
   x.forEach((a,b) => {
-      if(a.Category === "TinMois")
+      if(a.DanhMuc === "TinMois")
       {
         arraystory.push(a);
       }

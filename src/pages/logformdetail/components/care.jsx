@@ -3,7 +3,7 @@ import useAuth from '../../../core/useAuth';
 
 // import { Container } from './styles';
 
-function Care({Avata,Authorasd,Time,Title,id}) {
+function Care({Avata,TacGia,Time,TieuDe,id}) {
   let {ipapi,iplink} = useAuth();
     var link =Avata[0].url;
          //---------------Time--------
@@ -26,12 +26,12 @@ function Care({Avata,Authorasd,Time,Title,id}) {
           <div className="content-item__content">
             <div className="item-content__title">
             <a href={`/layout/logform/${id}`}>
-                <h2>{Title}</h2>
+                <h2>{TieuDe}</h2>
               </a>
             </div>
             <div className="item-content__time">
               <span className="article-publish">
-                <span className="time">{Authorasd}</span>
+                <span className="time">{TacGia}</span>
                 <span className="upload">{Datetime}</span>
               </span>
             </div>

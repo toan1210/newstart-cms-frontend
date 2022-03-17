@@ -10,7 +10,7 @@ function Index({story,arrayadvertisement}) {
   function filter(x)
   {
     x.forEach((a,b) => {
-        if(a.Category === "DuLichs")
+        if(a.DanhMuc === "DuLichs")
         {
           arrayeconomy.push(a);
         }

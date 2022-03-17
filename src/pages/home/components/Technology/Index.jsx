@@ -23,9 +23,7 @@ function Sprot({story,arrayadvertisement}) {
     $(".slider-content").slick({
         slidesToShow: slidershow,
         slidesToScroll: 1,
-        autoplay: auto,
         centerMode: true,
-        autoplaySpeed: 1000,
         infinite: true,
       });
       $(".advertisement").slick({
@@ -40,7 +38,7 @@ function Sprot({story,arrayadvertisement}) {
   function filter(x)
   {
     x.forEach((a,b) => {
-        if(a.Category === "CongNghes")
+        if(a.DanhMuc === "CongNghes")
         {
           arraysport.push(a);
         }

@@ -15,7 +15,7 @@ function Item4({news}) {
               <p>
               <Link to={`/layout/logform/${news.id}`}>
                   {
-                    news.Title
+                    news.TieuDe
                   }
                 </Link>
               </p>

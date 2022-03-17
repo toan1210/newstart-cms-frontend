@@ -4,7 +4,7 @@ import useAuth from '../../../core/useAuth';
 
 // import { Container } from './styles';
 
-function Invole({id,Title,Avata,authorasd,Description}) {
+function Invole({id,TieuDe,Avata,TacGia,TomTat}) {
   let {ipapi,iplink} =useAuth();
     var link =Avata[0].url;
     
@@ -12,15 +12,15 @@ function Invole({id,Title,Avata,authorasd,Description}) {
       <>
       <div className="involve-content">
               <div className="involve-content__img">
-                <a href={`/brandstuff/${id}`}>
+                <a href={`/living/${id}`}>
                   <img src={iplink+link} alt="" srcSet />
                 </a>
               </div>
               <div className="involve-content__text">
-              <a href={`/brandstuff/${id}`}>
-                  <h3>{Title}</h3>
+              <a href={`/living/${id}`}>
+                  <h3>{TieuDe}</h3>
                 </a>
-                <span>{Description}</span>
+                <span>{TomTat}</span>
               </div>
             </div>
       </>

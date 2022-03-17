@@ -12,7 +12,12 @@ import News from './components/News/Index';
 import Living from './components/Living/Index';
 import Tourism from './components/Tourism/Index';
 import Brandstuff from './components/Brandstuff/Index';
+import Economy from './components/Economy/Index';
+import Cultural from './components/Cultural/Index';
+import Entertain from './components/Entertain/Index';
+import Sport from './components/Sport/Index';
 import useAuth from '../../core/useAuth';
+import Cuisine from './components/Cuisine/Index';
 // import { Container } from './styles';
 function Home() {
   let {ipapi,iplink} =useAuth();
@@ -51,14 +56,14 @@ arrayhome = array.reverse();
 function filter(x)
 {
   x.forEach((a,b) => {
-      if(a.Hotnews === true)
+      if(a.NoiBat === true)
       {
         arrayhomehotnews.push(a);
       }
   });
 }
 filter(state.home);
-console.log(state.home)
+console.log(arrayhomehotnews[0]);
   return (
       <>
   <main>
@@ -93,6 +98,11 @@ console.log(state.home)
   <Living story={state.story} arrayadvertisement={arrayadvertisement}></Living>
   <Tourism story={state.story} arrayadvertisement={arrayadvertisement}></Tourism>
   <Brandstuff story={state.story} arrayadvertisement={arrayadvertisement}></Brandstuff>
+  <Economy story={state.story} arrayadvertisement={arrayadvertisement}></Economy>
+  <Cultural story={state.story} arrayadvertisement={arrayadvertisement}></Cultural>
+  <Entertain story={state.story} arrayadvertisement={arrayadvertisement}></Entertain>
+  <Sport story={state.story} arrayadvertisement={arrayadvertisement}></Sport>
+  <Cuisine story={state.story} arrayadvertisement={arrayadvertisement}></Cuisine>
       </>
   );
 }

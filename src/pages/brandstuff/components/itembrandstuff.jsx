@@ -3,7 +3,7 @@ import useAuth from '../../../core/useAuth';
 
 // import { Container } from './styles';
 
-function Itembrandstuff({Content,Time,Title,Avata,Description,id,Authorasd}) {
+function Itembrandstuff({NoiDung,Time,TieuDe,Avata,TomTat,id,TacGia}) {
   let {ipapi,iplink} =useAuth();
   //---------------Time--------
   var date = Time.slice(0,10);
@@ -23,15 +23,15 @@ function Itembrandstuff({Content,Time,Title,Avata,Description,id,Authorasd}) {
             </div>
             <div className="content-news-text">
               <div className="news-text-title">
-              <h3>{Title}</h3>
+              <h3>{TieuDe}</h3>
               </div>
               <div className="news-text-time">
               <span className="date">{Datetime}</span>
-                <span className="time" style={{marginLeft:5}}>{Authorasd}</span>
+                <span className="time" style={{marginLeft:5}}>{TacGia}</span>
               </div>
               <div className="news-text-content">
                 <p>{
-                      Description
+                      TomTat
                     }
                     </p>
               </div>

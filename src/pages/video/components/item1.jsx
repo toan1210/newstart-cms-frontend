@@ -16,10 +16,10 @@ function Item1({video,arrayadvertisements}) {
               </Link>
               <div className="left-title">
                   <Link to={`/video/${video.id}`}>
-                   {video.Title}
+                   {video.TieuDe}
                 </Link>
                 <p>{
-                    video.Description
+                    video.TomTat
                 }</p>
               </div>
               <div className="left-quangcao">

@@ -43,7 +43,7 @@ function Item({arraydetaillstory}) {
   return(
       <>
       {
-        typeof(arraydetaillstory.Title) !== 'undefined'?
+        typeof(arraydetaillstory.TieuDe) !== 'undefined'?
         <Subitemtitle arraydetaillstory={arraydetaillstory}></Subitemtitle>:null
       }
       {

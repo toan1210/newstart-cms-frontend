@@ -41,7 +41,7 @@ var arraystory =[];
 function filter(x)
 {
   x.forEach((a,b) => {
-      if(a.Category === "HangHieus")
+      if(a.DanhMuc === "HangHieus")
       {
         arraybrandstuff.push(a);
       }
@@ -54,19 +54,19 @@ arraybrandstuff = array.reverse();
 function filterlogform(x)
 {
   x.forEach((a,b) => {
-      if(a.Category === "HangHieus")
+      if(a.DanhMuc === "HangHieus")
       {
         arraylogform.push(a);
       }
   });
 }
 filterlogform(state.logform);
-var arrraylogform = logform.reverse();
+var arrraylogform = arraylogform.reverse();
 
 function filterstory(x)
 {
   x.forEach((a,b) => {
-      if(a.Category === "HangHieus")
+      if(a.DanhMuc === "HangHieus")
       {
         arraystory.push(a);
       }
@@ -74,6 +74,7 @@ function filterstory(x)
 }
 filterstory(state.story);
 var arrraystory = arraystory.reverse();
+console.log(arrraystory);
   return(
       <>
           <main>

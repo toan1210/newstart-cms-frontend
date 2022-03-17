@@ -15,7 +15,7 @@ function Item5({video}) {
               <p>
               <Link to={`/video/${video.id}`}>
                   {
-                    video.Title
+                    video.TieuDe
                   }
                 </Link>
               </p>

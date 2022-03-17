@@ -27,18 +27,18 @@ function Item1({arraystory}) {
           <div className="content-title">
           <Link to={`/layoutstory/story/${arraystory.id}`}>
               <span>
-               {arraystory.Title}
+               {arraystory.TieuDe}
               </span>
             </Link>
           </div>
           <div className="content-time">
           {/* <span className="date">{Datetime}</span>
-            <span className="time" style={{marginLeft:5}}>{arraystory.Authorasd}</span> */}
+            <span className="time" style={{marginLeft:5}}>{arraystory.TacGia}</span> */}
           </div>
           <div className="content-description">
             <span>
                 {
-                    arraystory.Description
+                    arraystory.TomTat
                 }
             </span>
           </div>

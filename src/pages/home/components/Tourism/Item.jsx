@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../../../core/useAuth'
 // import { Container } from './styles';
 
-function Item({Avata,Title,id}) {
+function Item({Avata,TieuDe,id}) {
   let {ipapi,iplink} = useAuth();
   return(
       <>
@@ -21,7 +21,7 @@ function Item({Avata,Title,id}) {
             </div>
             <div className="content-img-title">
               <div className="content-title-img">
-                <p>{Title}</p>
+                <p>{TieuDe}</p>
               </div>
             </div>
             <div className="content-img-camera">

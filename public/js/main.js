@@ -18,17 +18,10 @@ $(document).ready(function () {
   //  {
   //   a = 3;
   //  }
-  
-
-
-
-
   $(".slider-content").slick({
     slidesToShow: slidershow,
     slidesToScroll: 1,
-    autoplay: auto,
     centerMode: true,
-    autoplaySpeed: 2000,
     infinite: true,
   });
   $(".header__menu>ul>li.dots").click(function (e) {
@@ -36,6 +29,7 @@ $(document).ready(function () {
     $(this).toggleClass("active");
     $(".header-sub-menu").toggleClass("show");
   });
+  $(".header-sub-menu show").click
   $(".dropdown__selected").click(function (e) { 
     e.preventDefault();
     $("ul.dropdown__list").toggleClass("activemultimedia");

@@ -16,11 +16,11 @@ function Index({arraylogform}) {
             <p className="title">
             <Link to={`/layout/logform/${arraylogform.id}`}> 
             <img src="img/10.png" alt="" srcSet />
-               {arraylogform.Title}
+               {arraylogform.TieuDe}
               </Link>
             </p>
             <p className="sub-text">
-              {arraylogform.Description}
+              {arraylogform.TomTat}
             </p>
           </div>
           </>

@@ -15,7 +15,7 @@ function Item2({tourism}) {
               <p>
               <Link to={`/layout/logform/${tourism.id}`}>
                   {
-                    tourism.Title
+                    tourism.TieuDe
                   }
                 </Link>
               </p>

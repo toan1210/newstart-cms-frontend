@@ -15,7 +15,7 @@ function Item3({living}) {
               <p>
               <Link to={`/layoutstory/story/${living.id}`}>
                 {
-                    living.Title
+                    living.TieuDe
                   }
                 </Link>
               </p>

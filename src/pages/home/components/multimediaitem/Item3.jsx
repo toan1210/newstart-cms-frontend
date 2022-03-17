@@ -16,7 +16,7 @@ function Item3({arraylogform}) {
                 <p className="item1-right-title">
                 <Link to={`/layout/logform/${arraylogform.id}`}> 
                  <img src="img/10.png" alt="" srcSet />
-                   {arraylogform.Title}
+                   {arraylogform.TieuDe}
                   </Link>
                 </p>
               </div>

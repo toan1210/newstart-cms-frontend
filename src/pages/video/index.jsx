@@ -36,7 +36,7 @@ var arrayvideo =[];
 function filter(x)
 {
   x.forEach((a,b) => {
-      if(a.Category === "Videos")
+      if(a.DanhMuc === "Videos")
       {
         arrayvideo.push(a);
       }
@@ -45,6 +45,7 @@ function filter(x)
 filter(state.video);
 var array = arrayvideo;
 var arrayvideo = array.reverse();
+console.log(arrayvideo);
   return (
       <>
                    <main>

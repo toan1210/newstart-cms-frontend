@@ -42,7 +42,7 @@ var arraystory =[];
 function filter(x)
 {
   x.forEach((a,b) => {
-      if(a.Category === "SucKhoes")
+      if(a.DanhMuc === "SucKhoes")
       {
         arrayliving.push(a);
       }
@@ -55,19 +55,19 @@ var arrayliving = array.reverse();
 function filterlogform(x)
 {
   x.forEach((a,b) => {
-      if(a.Category === "SucKhoes")
+      if(a.DanhMuc === "SucKhoes")
       {
         arraylogform.push(a);
       }
   });
 }
 filterlogform(state.logform);
-var arrraylogform = logform.reverse();
+var arrraylogform = arraylogform.reverse();
 
 function filterstory(x)
 {
   x.forEach((a,b) => {
-      if(a.Category === "SucKhoes")
+      if(a.DanhMuc === "SucKhoes")
       {
         arraystory.push(a);
       }

@@ -55,7 +55,7 @@ function Index() {
   function filter(x)
   {
     x.forEach((a,b) => {
-        if(a.Category === "Videos")
+        if(a.DanhMuc === "Videos")
         {
           arrayvideo.push(a);
         }
@@ -70,12 +70,12 @@ function Index() {
     </div>
     <div className="detail-title">
       <h1>
-        {state.listnew.Title}
+        {state.listnew.TieuDe}
       </h1>
     </div>
     <div className="detail-article">
       <div className="detail-article-author">
-        <span>{state.listnew.Authorasd}</span>
+        <span>{state.listnew.TacGia}</span>
       </div>
       <div className="detail-article-time">
         <span>{Datetime}</span>
@@ -89,7 +89,7 @@ function Index() {
                <source src={iplink+detailvideo} />
             </video>
             </div>
-          <ReactMarkdown>{state.listnew.Content}</ReactMarkdown>
+          <ReactMarkdown>{state.listnew.NoiDung}</ReactMarkdown>
         </div>
         <div className="detail-involve">
           <h2>Bài Liên Quan</h2>

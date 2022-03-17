@@ -17,7 +17,7 @@ import useAuth from '../../../../core/useAuth';
                 <p className="item1-left-title">
                 <Link to={`/layout/logform/${arraylogform.id}`}> 
                  <img src="img/10.png" alt="" srcSet />
-                   {arraylogform.Title}
+                   {arraylogform.TieuDe}
                   </Link>
                 </p>
               </div>

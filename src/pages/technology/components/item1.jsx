@@ -15,9 +15,9 @@ function Item1({technology,arrayadvertisements}) {
                 <img src={iplink+technology.Avata[0].url} alt="" srcSet />
               </Link>
               <div className="left-title">
-              <Link to={`/technology/${technology.id}`}>{technology.Title}</Link>
+              <Link to={`/technology/${technology.id}`}>{technology.TieuDe}</Link>
                 <p>{
-                    technology.Description
+                    technology.TomTat
                 }</p>
               </div>
               <div className="left-quangcao">

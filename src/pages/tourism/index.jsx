@@ -44,7 +44,7 @@ var arraystory =[];
 function filter(x)
 {
   x.forEach((a,b) => {
-      if(a.Category === "DuLichs")
+      if(a.DanhMuc === "DuLichs")
       {
         arraytourism.push(a);
       }
@@ -57,19 +57,19 @@ var arraytourism = array.reverse();
 function filterlogform(x)
 {
   x.forEach((a,b) => {
-      if(a.Category === "DuLichs")
+      if(a.DanhMuc === "DuLichs")
       {
         arraylogform.push(a);
       }
   });
 }
 filterlogform(state.logform);
-var arrraylogform = logform.reverse();
+var arrraylogform = arraylogform.reverse();
 
 function filterstory(x)
 {
   x.forEach((a,b) => {
-      if(a.Category === "DuLichs")
+      if(a.DanhMuc === "DuLichs")
       {
         arraystory.push(a);
       }

@@ -7,39 +7,39 @@ import useAuth from '../../../core/useAuth';
 function Item1({home,arrayadvertisement}) {
   let {ipapi,iplink} =useAuth();
   let url ='';
-  if(home.Category === 'CongNghes')
+  if(home.DanhMuc === 'CongNghes')
   {
     url='technology';
   }
-  else if(home.Category === 'DuLichs')
+  else if(home.DanhMuc === 'DuLichs')
   {
     url='tourism';
   }
-  else if(home.Category === 'HangHieus')
+  else if(home.DanhMuc === 'HangHieus')
   {
     url='brandstuff';
   }
-  else if(home.Category === 'SucKhoes')
+  else if(home.DanhMuc === 'SucKhoes')
   {
     url='living';
   }
-  else if(home.Category === 'ThoiTrangs')
+  else if(home.DanhMuc === 'ThoiTrangs')
   {
     url='fashion';
   }
-  else if(home.Category === 'DuLichs')
+  else if(home.DanhMuc === 'DuLichs')
   {
     url='tourism';
   }
-  else if(home.Category === 'Videos')
+  else if(home.DanhMuc === 'Videos')
   {
     url='Video';
   }
-  else if(home.Category === 'TinMois')
+  else if(home.DanhMuc === 'TinMois')
   {
     url='news';
   }
-  console.log(arrayadvertisement[0].HomeAdvertisementRight);
+  console.log(home.TieuDe);
 
   return(
       <>
@@ -50,10 +50,10 @@ function Item1({home,arrayadvertisement}) {
                 <img src={iplink+home.Avata[0].url} alt=""  />
               </Link>
               <div className="left-title">
-              <Link to={`/${url}/${home.id}`}>{home.Title}</Link>
+              <Link to={`/${url}/${home.id}`}>{home.TieuDe}</Link>
                 <p>
                   {
-                    home.Description
+                    home.TomTat
                   }
                 </p>
               </div>

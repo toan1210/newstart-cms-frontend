@@ -21,7 +21,16 @@ import Story from './pages/story/Index';
 import Page404 from './pages/page404';
 import DetailLogform from './pages/logformdetail/index';
 import DtailStory from './pages/storydetail/index.jsx';
-
+import Economy from './pages/economy/Index.jsx';
+import DetailEconomy from './pages/economy-detail/Index';
+import Cultural from './pages/cultural/Index';
+import DetailCultural from './pages/cultural-detail/Index';
+import Entertain from './pages/entertain/Index';
+import DetailEntertain from './pages/entertain-detail/Index';
+import Sport from './pages/sport/Index';
+import Cuisine from './pages/cuisine/Index';
+import DetailCuisine from './pages/cuisine-detail/Index';
+import DetailSport from './pages/sport-detail/Index';
 const routers = [
     {
         path:'/layoutstory',
@@ -51,6 +60,46 @@ const routers = [
         path:'/',
         component:Main,
         routers: [
+            {
+                path: '/cuisine/:slug',
+                component:DetailCuisine,
+            },
+            {
+                path: '/cuisine',
+                component:Cuisine,
+            },
+            {
+                path: '/sport/:slug',
+                component:DetailSport,
+            },
+            {
+                path: '/sport',
+                component:Sport,
+            },
+            {
+                path: '/entertain/:slug',
+                component:DetailEntertain,
+            },
+            {
+                path: '/entertain',
+                component:Entertain,
+            },
+            {
+                path: '/cultural/:slug',
+                component:DetailCultural,
+            },
+            {
+                path: '/cultural',
+                component:Cultural,
+            },
+            {
+                path: '/economy/:slug',
+                component:DetailEconomy,
+            },
+            {
+                path: '/economy',
+                component:Economy,
+            },
             {
                 path: '/fashion/:slug',
                 component:DetailFashion,

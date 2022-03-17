@@ -3,7 +3,7 @@ import useAuth from '../../../core/useAuth';
 
 // import { Container } from './styles';
 
-function View({id,Title,Time,Authorasd,Avata,Description,Category}) {
+function View({id,TieuDe,Time,TacGia,Avata,TomTat,DanhMuc}) {
   let {ipapi,iplink} = useAuth();
     var link =Avata[0].url;
       //---------------Time--------
@@ -16,35 +16,35 @@ function View({id,Title,Time,Authorasd,Avata,Description,Category}) {
   var Datetime = datetime.join("-");
   //------------------------------
   let url ='';
-  if(Category === 'CongNghes')
+  if(DanhMuc === 'CongNghes')
   {
     url='technology';
   }
-  else if(Category === 'DuLichs')
+  else if(DanhMuc === 'DuLichs')
   {
     url='tourism';
   }
-  else if(Category === 'HangHieus')
+  else if(DanhMuc === 'HangHieus')
   {
     url='brandstuff';
   }
-  else if(Category === 'SucKhoes')
+  else if(DanhMuc === 'SucKhoes')
   {
     url='living';
   }
-  else if(Category === 'ThoiTrangs')
+  else if(DanhMuc === 'ThoiTrangs')
   {
     url='fashion';
   }
-  else if(Category === 'DuLichs')
+  else if(DanhMuc === 'DuLichs')
   {
     url='tourism';
   }
-  else if(Category === 'Videos')
+  else if(DanhMuc === 'Videos')
   {
     url='Video';
   }
-  else if(Category === 'TinMois')
+  else if(DanhMuc === 'TinMois')
   {
     url='news';
   }
@@ -59,17 +59,17 @@ function View({id,Title,Time,Authorasd,Avata,Description,Category}) {
         <div className="content-text">
           <div className="seemore__content-text">
           <a href={`/${url}/${id}`}>
-              <h3>{Title}</h3>
+              <h3>{TieuDe}</h3>
             </a>
           </div>
           <div className="article-meta">
             <span className="article-publish">
-              <span className="time">{Authorasd}</span>
+              <span className="time">{TacGia}</span>
               <span className="date"> {Datetime}</span>
             </span>
             <span className="article">
                  {
-                    Description
+                    TomTat
                 }
             </span>
           </div>

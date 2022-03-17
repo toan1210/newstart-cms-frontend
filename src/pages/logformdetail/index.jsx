@@ -66,11 +66,11 @@ function Index() {
       <div className="container">
         <div className="detaillogform-content__title">
           <h2>
-            {arraydetaillogform.Title};
+            {arraydetaillogform.TieuDe};
           </h2>
         </div>
         <div className="detaillogform-content__content">
-        <ReactMarkdown>{arraydetaillogform.Content}</ReactMarkdown>
+        <ReactMarkdown>{arraydetaillogform.NoiDung}</ReactMarkdown>
         </div>
         {/* <div className="detaillogform-content__img">
           <img src="/img/32.jpg" alt="" srcSet className="detaillogform-img__item1" />

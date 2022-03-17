@@ -3,7 +3,7 @@ import useAuth from '../../../core/useAuth';
 
 // import { Container } from './styles';
 
-function Index({id,Title,Time,Authorasd,Avata,Description,Category}) {
+function Index({id,TieuDe,Time,TacGia,Avata,TomTat,DanhMuc}) {
     let {ipapi,iplink} =useAuth();
     var link =Avata[0].url;
       //---------------Time--------
@@ -16,37 +16,61 @@ function Index({id,Title,Time,Authorasd,Avata,Description,Category}) {
   var Datetime = datetime.join("-");
   //------------------------------
   let url ='';
-  if(Category === 'CongNghes')
+  if(DanhMuc === 'CongNghes')
   {
     url='technology';
   }
-  else if(Category === 'DuLichs')
+  else if(DanhMuc === 'DuLichs')
   {
     url='tourism';
   }
-  else if(Category === 'HangHieus')
+  else if(DanhMuc === 'HangHieus')
   {
     url='brandstuff';
   }
-  else if(Category === 'SucKhoes')
+  else if(DanhMuc === 'SucKhoes')
   {
     url='living';
   }
-  else if(Category === 'ThoiTrangs')
+  else if(DanhMuc === 'ThoiTrangs')
   {
     url='fashion';
   }
-  else if(Category === 'DuLichs')
+  else if(DanhMuc === 'DuLichs')
   {
     url='tourism';
   }
-  else if(Category === 'Videos')
+  else if(DanhMuc === 'Videos')
   {
     url='Video';
   }
-  else if(Category === 'TinMois')
+  else if(DanhMuc === 'TinMois')
   {
     url='news';
+  }
+  else if(DanhMuc === 'KinhTes')
+  {
+    url='economy';
+  }
+  else if(DanhMuc === 'KinhTes')
+  {
+    url='economy';
+  }
+  else if(DanhMuc === 'VHXHs')
+  {
+    url='cultural';
+  }
+  else if(DanhMuc === 'GiaiTris')
+  {
+    url='entertain';
+  }
+  else if(DanhMuc === 'TheThaos')
+  {
+    url='sport';
+  }
+  else if(DanhMuc === 'AmThucs')
+  {
+    url='cuisine';
   }
   return(
       <>
@@ -57,20 +81,20 @@ function Index({id,Title,Time,Authorasd,Avata,Description,Category}) {
             </a>
           </div>
           <div className="care-content__text">
-          <a href={`/technology/${id}`}>
-              <h3>{Title}</h3>
+          <a href={`/${url}/${id}`}>
+              <h3>{TieuDe}</h3>
             </a>
             <p className="time">
               <span className="time-day">
                 {Datetime}
               </span>
-              <span className="category">
-               {Authorasd}
+              <span className="DanhMuc">
+               {TacGia}
               </span>
             </p>
             <span className="demo">
                 {
-                    Description
+                    TomTat
                 }
             </span>
           </div>

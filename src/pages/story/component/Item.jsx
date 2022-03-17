@@ -4,7 +4,7 @@ import useAuth from '../../../core/useAuth';
 
 // import { Container } from './styles';
 
-function Item({Avata,id,Title}) {
+function Item({Avata,id,TieuDe}) {
   let {ipapi,iplink} = useAuth();
     var link =Avata[0].url;
   return(
@@ -16,7 +16,7 @@ function Item({Avata,id,Title}) {
           <div className="news-itme__content">
           <Link to={`/layoutstory/story/${id}`}>
               <span>
-               {Title}
+               {TieuDe}
               </span>
             </Link>
           </div>

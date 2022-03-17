@@ -15,7 +15,7 @@ function Item5({technology}) {
               <p>
               <Link to={`/layoutstory/story/${technology.id}`}>
                 {
-                    technology.Title
+                    technology.TieuDe
                 }
                 </Link>
               </p>

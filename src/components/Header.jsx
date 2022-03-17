@@ -23,6 +23,11 @@ function Header() {
             <li><NavLink to="/fashion">Thời Trang</NavLink></li>
             <li><NavLink to="/tourism">Du Lịch</NavLink></li>
             <li><NavLink to="/brandstuff">Hàng Hiệu</NavLink></li>
+            <li><NavLink to="/economy">Kinh Tế</NavLink></li>
+            <li><NavLink to="/cultural">VH-XH</NavLink></li>
+            <li><NavLink to="/entertain">Giải Trí</NavLink></li>
+            <li><NavLink to="/sport">Thể Thao</NavLink></li>
+            <li><NavLink to="/cuisine">Ẩm Thực</NavLink></li>
             <li className="dots">
               <span />
             </li>
@@ -43,304 +48,40 @@ function Header() {
         <div className="container">
           <ul className="headerr__popup-menu">
             <li className="parent thoi-su">
-              <NavLink className="headerr__popup-link" to="" title="Thời sự">Tin Mới</NavLink>
-              <div className="subcate">
-                <ul className="subcate-ul">
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Công Nghệ</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Sống Khỏe</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Video</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Thời Trang</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Du Lịch</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Hàng Hiệu</NavLink>
-                  </li>
-                </ul>
-              </div>
+              <a className="headerr__popup-link" href="/news" >Tin Mới</a>
             </li>
             <li className="parent thoi-su">
-            <NavLink className="headerr__popup-link" to="" title="Thời sự">Tin Mới</NavLink>
-              <div className="subcate">
-                <ul className="subcate-ul">
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Công Nghệ</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Sống Khỏe</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Video</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Thời Trang</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Du Lịch</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Hàng Hiệu</NavLink>
-                  </li>
-                </ul>
-              </div>
+            <a className="headerr__popup-link" href="/technology" >Công Nghệ</a>
             </li>
             <li className="parent thoi-su">
-              <NavLink className="headerr__popup-link" to="" title="Thời sự">Tin Mới</NavLink>
-              <div className="subcate">
-                <ul className="subcate-ul">
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Công Nghệ</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Sống Khỏe</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Video</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Thời Trang</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Du Lịch</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Hàng Hiệu</NavLink>
-                  </li>
-                </ul>
-              </div>
+              <a className="headerr__popup-link" href="/living" >Sống Khỏe</a>
             </li>
             <li className="parent thoi-su">
-              <NavLink className="headerr__popup-link" to="" title="Thời sự">Tin Mới</NavLink>
-              <div className="subcate">
-                <ul className="subcate-ul">
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Công Nghệ</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Sống Khỏe</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Video</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Thời Trang</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Du Lịch</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Hàng Hiệu</NavLink>
-                  </li>
-                </ul>
-              </div>
+              <a className="headerr__popup-link" href="/video" >Video</a>
             </li>
             <li className="parent thoi-su">
-              <NavLink className="headerr__popup-link" to="" title="Thời sự">Tin Mới</NavLink>
-              <div className="subcate">
-                <ul className="subcate-ul">
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Công Nghệ</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Sống Khỏe</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Video</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Thời Trang</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Du Lịch</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Hàng Hiệu</NavLink>
-                  </li>
-                </ul>
-              </div>
+              <a className="headerr__popup-link" href="/fashion" >Thời Trang</a>
             </li>
             <li className="parent thoi-su">
-              <NavLink className="headerr__popup-link" to="" title="Thời sự">Tin Mới</NavLink>
-              <div className="subcate">
-                <ul className="subcate-ul">
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Công Nghệ</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Sống Khỏe</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Video</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Thời Trang</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Du Lịch</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Hàng Hiệu</NavLink>
-                  </li>
-                </ul>
-              </div>
+              <a className="headerr__popup-link" href="/tourism" >Du Lịch</a>
             </li>
             <li className="parent thoi-su">
-              <NavLink className="headerr__popup-link" to="" title="Thời sự">Tin Mới</NavLink>
-              <div className="subcate">
-                <ul className="subcate-ul">
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Công Nghệ</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Sống Khỏe</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Video</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Thời Trang</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Du Lịch</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Hàng Hiệu</NavLink>
-                  </li>
-                </ul>
-              </div>
+              <a className="headerr__popup-link" href="/brandstuff" >Hàng Hiệu</a>
             </li>
             <li className="parent thoi-su">
-              <NavLink className="headerr__popup-link" to="" title="Thời sự">Tin Mới</NavLink>
-              <div className="subcate">
-                <ul className="subcate-ul">
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Công Nghệ</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Sống Khỏe</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Video</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Thời Trang</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Du Lịch</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Hàng Hiệu</NavLink>
-                  </li>
-                </ul>
-              </div>
+              <a className="headerr__popup-link" href="/economy" >Kinh Tế</a>
             </li>
             <li className="parent thoi-su">
-              <NavLink className="headerr__popup-link" to="" title="Thời sự">Tin Mới</NavLink>
-              <div className="subcate">
-                <ul className="subcate-ul">
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Công Nghệ</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Sống Khỏe</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Video</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Thời Trang</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Du Lịch</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Hàng Hiệu</NavLink>
-                  </li>
-                </ul>
-              </div>
+              <a className="headerr__popup-link" href="/cultural" >VH-XH</a>
             </li>
             <li className="parent thoi-su">
-              <NavLink className="headerr__popup-link" to="" title="Thời sự">Tin Mới</NavLink>
-              <div className="subcate">
-                <ul className="subcate-ul">
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Công Nghệ</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Sống Khỏe</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Video</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Thời Trang</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Du Lịch</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Hàng Hiệu</NavLink>
-                  </li>
-                </ul>
-              </div>
+              <a className="headerr__popup-link" href="/entertain" >Giải Trí</a>
             </li>
             <li className="parent thoi-su">
-              <NavLink className="headerr__popup-link" to="" title="Thời sự">Tin Mới</NavLink>
-              <div className="subcate">
-                <ul className="subcate-ul">
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Công Nghệ</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Sống Khỏe</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Video</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Thời Trang</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Du Lịch</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Hàng Hiệu</NavLink>
-                  </li>
-                </ul>
-              </div>
+              <a className="headerr__popup-link" href="/sport" >Thể Thao</a>
             </li>
             <li className="parent thoi-su">
-              <NavLink className="headerr__popup-link" to="" title="Thời sự">Tin Mới</NavLink>
-              <div className="subcate">
-                <ul className="subcate-ul">
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Công Nghệ</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Sống Khỏe</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Video</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Thời Trang</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Du Lịch</NavLink>
-                  </li>
-                  <li className="subcate-ul-li">
-                    <NavLink className="subcate-ul-a" to="">Hàng Hiệu</NavLink>
-                  </li>
-                </ul>
-              </div>
+              <a className="headerr__popup-link" href="/cuisine" >Ẩm Thực</a>
             </li>
           </ul>
         </div>

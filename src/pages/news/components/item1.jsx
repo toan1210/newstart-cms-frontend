@@ -15,10 +15,10 @@ function Item1({news,arrayadvertisements}) {
                 <img src={iplink+news.Avata[0].url} alt="" srcSet />
               </Link>
               <div className="left-title">
-              <Link to={`/news/${news.id}`}>{news.Title}</Link>
+              <Link to={`/news/${news.id}`}>{news.TieuDe}</Link>
               <p>
                 {
-                    news.Description
+                    news.TomTat
                 }
                 </p>
               </div>

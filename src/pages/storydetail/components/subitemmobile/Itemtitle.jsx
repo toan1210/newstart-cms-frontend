@@ -9,7 +9,7 @@ function Subitemtitle({arraydetaillstory}) {
    var link = iplink + car;
   return(
       <>
-               <h1 className='the-article-title'>{arraydetaillstory.Title}</h1>
+               <h1 className='the-article-title'>{arraydetaillstory.TieuDe}</h1>
       </>
   )
 }
