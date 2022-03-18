@@ -442,6 +442,22 @@ section .Advertisement img
 {
   width: 500px;
 }
+.page-detail .detail-content .detail-content__left .content-left p>strong 
+{
+  font-weight: 800;
+}
+.page-detail .detail-content .detail-content__left .content-left p>em 
+{
+  font-style: italic ;
+}
+.page-detaillogform .detaillogform-content .detaillogform-content__content p>strong
+{
+  font-weight: 800 ;
+}
+.page-detaillogform .detaillogform-content .detaillogform-content__content p>em
+{
+  font-style: italic;
+}
 .page-detail .detail-content .detail-content__left .content-left>h1 
 {
   display: block;
