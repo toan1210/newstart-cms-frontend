@@ -45,7 +45,6 @@ p.time > span.time-day {
   > .content-news-img
   > img {
   width: 100%;
-  height: 100%;
 }
 .detail-involve__content > .involve-content {
   grid-template-columns: 34% 64% !important;
@@ -121,7 +120,7 @@ main .page__home
 }
 .page-detail .detail-content .detail-content__left .content-left .content-left_video video
 {
-  width: 500%;
+  width: 100%;
 }
 /* Slider
 .slick-slider
@@ -443,17 +442,36 @@ section .Advertisement img
 {
   width: 500px;
 }
-.page-detail .detail-content .detail-content__left .content-left p strong 
+.page-detail .detail-content .detail-content__left .content-left>h1 
 {
   display: block;
   text-align: left;
 }
-.page-detail .detail-content .detail-content__left .content-left p > code {
+.page-detail .detail-content .detail-content__left .content-left>h2 
+{
   display: block;
   text-align: center;
 }
-.page-detail .detail-content .detail-content__left .content-left p em 
+.page-detail .detail-content .detail-content__left .content-left>h3
 {
+  display: block;
+  text-align: right;
+}
+.page-detaillogform .detaillogform-content .detaillogform-content__content>h1
+{
+  color: white;
+  display: block;
+  text-align: left;
+}
+.page-detaillogform .detaillogform-content .detaillogform-content__content>h2
+{
+  color: white;
+  display: block;
+  text-align: center;
+}
+.page-detaillogform .detaillogform-content .detaillogform-content__content>h3
+{
+  color: white;
   display: block;
   text-align: right;
 }

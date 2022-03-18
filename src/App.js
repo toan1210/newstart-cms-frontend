@@ -10,8 +10,8 @@ import renderRouters from './core/routersConfig.jsx';
 import routers from './routers.jsx';
 export let Context = React.createContext();
 function App() {
-  let ipapi="http://localhost:2022/api";
-  let iplink="http://localhost:2022";
+  let ipapi="http://34.87.31.207/api";
+  let iplink="http://34.87.31.207";
   return (
  <BrowserRouter>
      <Context.Provider  value={{ipapi,iplink}}>

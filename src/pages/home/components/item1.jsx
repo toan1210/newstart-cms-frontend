@@ -39,8 +39,30 @@ function Item1({home,arrayadvertisement}) {
   {
     url='news';
   }
-  console.log(home.TieuDe);
-
+  else if(home.DanhMuc === 'KinhTes')
+  {
+    url='economy';
+  }
+  else if(home.DanhMuc === 'KinhTes')
+  {
+    url='economy';
+  }
+  else if(home.DanhMuc === 'VHXHs')
+  {
+    url='cultural';
+  }
+  else if(home.DanhMuc === 'GiaiTris')
+  {
+    url='entertain';
+  }
+  else if(home.DanhMuc === 'TheThaos')
+  {
+    url='sport';
+  }
+  else if(home.DanhMuc === 'AmThucs')
+  {
+    url='cuisine';
+  }
   return(
       <>
       <div className="page__home-content">
