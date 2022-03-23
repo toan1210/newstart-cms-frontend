@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
 import { useHistory } from "react-router-dom";
+import useAuth from '../core/useAuth';
 // import { Container } from './styles';
 
 function Headerlogform() {
+  let {ipapi,iplink,domain} =useAuth();
   // let history = useHistory();
   function linkloangding(e) {
-    navigator.clipboard.writeText(document.location.href);
+    navigator.clipboard.writeText(domain + window.location.pathname);
     setTimeout(alert("Coppy Link Thành Công"), 100);
   }
   return(

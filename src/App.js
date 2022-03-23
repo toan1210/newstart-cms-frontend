@@ -12,9 +12,10 @@ export let Context = React.createContext();
 function App() {
   let ipapi="http://34.87.31.207/api";
   let iplink="http://34.87.31.207";
+  let domain = "http://newstartv.com.vn";
   return (
  <BrowserRouter>
-     <Context.Provider  value={{ipapi,iplink}}>
+     <Context.Provider  value={{ipapi,iplink,domain}}>
          {renderRouters(routers)}
      </Context.Provider>
  </BrowserRouter>
