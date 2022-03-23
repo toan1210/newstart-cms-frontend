@@ -23,6 +23,9 @@ $(document).ready(function () {
     slidesToScroll: 1,
     centerMode: true,
     infinite: true,
+    appendArrows: $('.slick-slider-nav'),
+    prevArrow: "<button class='slick-prev btn btn-white rounded-circle'><i class='mdi mdi-chevron-left'></i></button>",
+    nextArrow: "<button class='slick-next btn btn-white rounded-circle'><i class='mdi mdi-chevron-right'></i></button>",
   });
   $(".header__menu>ul>li.dots").click(function (e) {
     e.preventDefault();
@@ -46,12 +49,10 @@ window.onscroll = function(){
       windowscroll = window.pageYOffset;
       if(windowscroll > vitri)
       {
-          menu.classList.add("activemenu");
           vitri=windowscroll;
       }
       else if(windowscroll < vitri)
       {
-          menu.classList.remove("activemenu");
           vitri=windowscroll;
       }
 }

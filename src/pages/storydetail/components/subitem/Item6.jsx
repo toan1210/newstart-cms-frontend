@@ -10,7 +10,9 @@ function Subitem6({arraydetaillstory}) {
 return(
     <>
       <section className="one" style={{ backgroundImage:`url(${link})`,backgroundRepeat:'no-repeat',backgroundAttachment: 'fixed',backgroundSize: 'cover'}}>
-             <h1>{arraydetaillstory.Content6}</h1>
+             <div className="container">
+                <h1>{arraydetaillstory.Content6}</h1>
+             </div>
         </section>
     </>
 )

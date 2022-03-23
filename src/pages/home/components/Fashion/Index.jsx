@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import useAuth from '../../../../core/useAuth';
 import Item from './Item';
 let $ = window.$;
@@ -24,6 +25,9 @@ function Index({story,arrayadvertisement}) {
     <div className="container">
       <div className="slider-title">
         <h3>Thời Trang</h3>
+        <div className="slider-title-xemthem">
+        <Link to={'/story'}>Xem Thêm...</Link>
+        </div>
       </div>
       <div className="slider-content">
         {

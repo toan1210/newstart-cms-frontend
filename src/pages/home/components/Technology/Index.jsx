@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import useAuth from '../../../../core/useAuth';
 import Item from './Item';
 let $ = window.$;
@@ -25,6 +26,9 @@ function Sprot({story,arrayadvertisement}) {
         slidesToScroll: 1,
         centerMode: true,
         infinite: true,
+        // appendArrows: $(".slick-slider-nav"),
+        // prevArrow: "<button className='slick-prev btn btn-white rounded-circle'><i className='mdi mdi-chevron-left' /></button>",
+        // nextArrow: "<button className='slick-next btn btn-white rounded-circle'><i className='mdi mdi-chevron-right'></i></button>",
       });
       $(".advertisement").slick({
         slidesToShow: 1,
@@ -52,6 +56,9 @@ function Sprot({story,arrayadvertisement}) {
     <div className="container ">
       <div className="slider-title">
         <h3>Công Nghệ</h3>
+        <div className="slider-title-xemthem">
+        <Link to={'/story'}>Xem Thêm...</Link>
+        </div>
       </div>
       <div className="slider-content">
         {
@@ -60,6 +67,8 @@ function Sprot({story,arrayadvertisement}) {
             )
         }
       </div>
+      <div className="slick-slider-nav" />
+       <div className="slick-slider-dots" />
     </div>
   </div>
   <div className="advertisement">

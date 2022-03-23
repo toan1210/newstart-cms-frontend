@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import useAuth from '../../../core/useAuth';
 import Item1 from './multimediaitem/Item1';
 import Item2 from './multimediaitem/Item2';
@@ -40,63 +41,9 @@ arraylogform = array.reverse();
           <div className="multimedia__title">
             <img src="./img/40.png" alt="" srcSet />
           </div>
-          <div className="multimedia__menu">
-            <ul>
-              <li>
-                <a href="http://">video</a>
-              </li>
-              <li>
-                <a href="longform.html">longform</a>
-              </li>
-              <li>
-                <a href="http://">voices</a>
-              </li>
-              <li>
-                <a href="http://">lens</a>
-              </li>
-              <li>
-                <a href="./story.html">story</a>
-              </li>
-              <li>
-                <a href="http://">quizz</a>
-              </li>
-            </ul>
-          </div>
-          <div className="multimedia__menumobile">
-            <span className="dropdown__selected">Danh Mục</span>
-            <ul className="dropdown__list">
-              <li className="dropdown__item">
-                <a href="http://">
-                  VIDEO
-                </a>
-              </li>
-              <li className="dropdown__item">
-                <a href="./longform.html">
-                  LONGFORM
-                </a>
-              </li>
-              <li className="dropdown__item">
-                <a href="http://">
-                  VOICES
-                </a>
-              </li>
-              <li className="dropdown__item">
-                <a href="http://">
-                  LENS
-                </a>
-              </li>
-              <li className="dropdown__item">
-                <a href="./story.html">
-                  STORY
-                </a>
-              </li>
-              <li className="dropdown__item">
-                <a href="http://">
-                  QUIZZ
-                </a>
-              </li>
-            </ul>
-          </div>
+          <div className="slider-title-xemthem">
+            <Link to={'/logform'}>Xem Thêm...</Link>
+        </div>
         </div>
         <div className="home-content">
           <Item1 arraylogform={arraylogform[0]}></Item1>

@@ -48,7 +48,7 @@ function Item3({home}) {
               <p>
               <Link to={`/${url}/${home.id}`}>
                   {
-                    home.Title
+                    home.TieuDe
                   }
                 </Link>
               </p>

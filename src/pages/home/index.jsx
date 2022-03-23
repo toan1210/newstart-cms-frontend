@@ -15,7 +15,7 @@ import Brandstuff from './components/Brandstuff/Index';
 import Economy from './components/Economy/Index';
 import Cultural from './components/Cultural/Index';
 import Entertain from './components/Entertain/Index';
-import Sport from './components/Sport/Index';
+import Sports from './components/Sports/Index';
 import useAuth from '../../core/useAuth';
 import Cuisine from './components/Cuisine/Index';
 // import { Container } from './styles';
@@ -92,16 +92,16 @@ console.log(arrayhomehotnews[0]);
      <Multimedia home={arrayhome} ></Multimedia>
     </div>
   </main>
-  <Fashion story={state.story} arrayadvertisement={arrayadvertisement}></Fashion>
-  <Technology story={state.story} arrayadvertisement={arrayadvertisement}></Technology>
   <News story={state.story} arrayadvertisement={arrayadvertisement}></News>
-  <Living story={state.story} arrayadvertisement={arrayadvertisement}></Living>
-  <Tourism story={state.story} arrayadvertisement={arrayadvertisement}></Tourism>
-  <Brandstuff story={state.story} arrayadvertisement={arrayadvertisement}></Brandstuff>
+  <Technology story={state.story} arrayadvertisement={arrayadvertisement}></Technology>
   <Economy story={state.story} arrayadvertisement={arrayadvertisement}></Economy>
   <Cultural story={state.story} arrayadvertisement={arrayadvertisement}></Cultural>
   <Entertain story={state.story} arrayadvertisement={arrayadvertisement}></Entertain>
-  <Sport story={state.story} arrayadvertisement={arrayadvertisement}></Sport>
+  <Living story={state.story} arrayadvertisement={arrayadvertisement}></Living>
+  <Tourism story={state.story} arrayadvertisement={arrayadvertisement}></Tourism>
+  <Brandstuff story={state.story} arrayadvertisement={arrayadvertisement}></Brandstuff>
+  <Fashion story={state.story} arrayadvertisement={arrayadvertisement}></Fashion>
+   <Sports story={state.story} arrayadvertisement={arrayadvertisement}></Sports> 
   <Cuisine story={state.story} arrayadvertisement={arrayadvertisement}></Cuisine>
       </>
   );

@@ -1,9 +1,14 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-
+import { Link, useRouteMatch } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 // import { Container } from './styles';
 
 function Headerlogform() {
+  // let history = useHistory();
+  function linkloangding(e) {
+    navigator.clipboard.writeText(window.location.href);
+    setTimeout(alert("Coppy Link Thành Công"), 100);
+  }
   return(
       <>
          <header className="detaillogform-header">
@@ -20,7 +25,7 @@ function Headerlogform() {
         </Link>
       </div>
       <div className="header-society">
-        <div className="header-society__zalo">
+        {/* <div className="header-society__zalo">
           <a href="http://" title="Chia sẻ zalo">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
               <path fill="#2962ff" d="M15,36V6.827l-1.211-0.811C8.64,8.083,5,13.112,5,19v10c0,7.732,6.268,14,14,14h10 c4.722,0,8.883-2.348,11.417-5.931V36H15z" />
@@ -39,6 +44,9 @@ function Headerlogform() {
               <path fill="#fff" d="M26.572,29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z" />
             </svg>
           </a>
+        </div> */}
+        <div className="header-society__chiase">
+              <img className="chiase" src="/img/icons8-link-30.png" alt="" srcset="" onClick={linkloangding}/>
         </div>
       </div>
     </div>

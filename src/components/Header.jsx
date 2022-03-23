@@ -18,14 +18,14 @@ function Header() {
           <ul>
             <li><NavLink to="/news">Tin Mới</NavLink></li>
             <li><NavLink to="/technology">Công Nghệ</NavLink></li>
-            <li><NavLink to="/living">Sống Khỏe</NavLink></li>
-            <li><NavLink to="/video">Video</NavLink></li>
-            <li><NavLink to="/fashion">Thời Trang</NavLink></li>
-            <li><NavLink to="/tourism">Du Lịch</NavLink></li>
-            <li><NavLink to="/brandstuff">Hàng Hiệu</NavLink></li>
             <li><NavLink to="/economy">Kinh Tế</NavLink></li>
             <li><NavLink to="/cultural">VH-XH</NavLink></li>
             <li><NavLink to="/entertain">Giải Trí</NavLink></li>
+            <li><NavLink to="/living">Sống Khỏe</NavLink></li>
+            <li><NavLink to="/video">Video</NavLink></li>
+            <li><NavLink to="/tourism">Du Lịch</NavLink></li>
+            <li><NavLink to="/brandstuff">Hàng Hiệu</NavLink></li>
+            <li><NavLink to="/fashion">Thời Trang</NavLink></li>
             <li><NavLink to="/sport">Thể Thao</NavLink></li>
             <li><NavLink to="/cuisine">Ẩm Thực</NavLink></li>
             <li className="dots">
@@ -51,22 +51,7 @@ function Header() {
               <a className="headerr__popup-link" href="/news" >Tin Mới</a>
             </li>
             <li className="parent thoi-su">
-            <a className="headerr__popup-link" href="/technology" >Công Nghệ</a>
-            </li>
-            <li className="parent thoi-su">
-              <a className="headerr__popup-link" href="/living" >Sống Khỏe</a>
-            </li>
-            <li className="parent thoi-su">
-              <a className="headerr__popup-link" href="/video" >Video</a>
-            </li>
-            <li className="parent thoi-su">
-              <a className="headerr__popup-link" href="/fashion" >Thời Trang</a>
-            </li>
-            <li className="parent thoi-su">
-              <a className="headerr__popup-link" href="/tourism" >Du Lịch</a>
-            </li>
-            <li className="parent thoi-su">
-              <a className="headerr__popup-link" href="/brandstuff" >Hàng Hiệu</a>
+              <a className="headerr__popup-link" href="/technology" >Công Nghệ</a>
             </li>
             <li className="parent thoi-su">
               <a className="headerr__popup-link" href="/economy" >Kinh Tế</a>
@@ -76,6 +61,21 @@ function Header() {
             </li>
             <li className="parent thoi-su">
               <a className="headerr__popup-link" href="/entertain" >Giải Trí</a>
+            </li>
+            <li className="parent thoi-su">
+              <a className="headerr__popup-link" href="/living" >Sống Khỏe</a>
+            </li>
+            <li className="parent thoi-su">
+              <a className="headerr__popup-link" href="/video" >Video</a>
+            </li>
+            <li className="parent thoi-su">
+              <a className="headerr__popup-link" href="/tourism" >Du Lịch</a>
+            </li>
+            <li className="parent thoi-su">
+              <a className="headerr__popup-link" href="/brandstuff" >Hàng Hiệu</a>
+            </li>
+            <li className="parent thoi-su">
+              <a className="headerr__popup-link" href="/fashion" >Thời Trang</a>
             </li>
             <li className="parent thoi-su">
               <a className="headerr__popup-link" href="/sport" >Thể Thao</a>
@@ -88,22 +88,17 @@ function Header() {
       </div>
       <div className="headerr-channels-menu">
         <div className="container">
-          <ul className="channels-menu-ul">
-            <li><NavLink to="http://">
-              </NavLink></li>
-            <li><NavLink to="http://">
-              </NavLink></li>
-            <li><NavLink to="http://">
-              </NavLink></li>
-            <li><NavLink to="http://">
-              </NavLink></li>
-            <li><NavLink to="http://">
-              </NavLink></li>
-            <li><NavLink to="http://">
-              </NavLink></li>
-            <li><NavLink to="http://">
-              </NavLink></li>
-          </ul>
+            <div className="headerr-channels-logo">
+              <img src="/img/star_logo.dffe8010.png" alt="" srcset="" />
+            </div>
+            <div className="headerr-channels-content">
+              <p>Giấy phép thiết lập : TTTĐT số 42/GP-STTTT</p>
+              <p>Chịu trách nhiệm nội dung : NGUYỄN TẤN HÙNG ANH</p>
+              <p>CTY CP TTĐPT PHÁP LUẬT SAO</p>
+              <p>Địa chỉ: 22 Đường 30b, khu phố 2, Phường Bình An, Quận 2, Thành phố Hồ Chí Minh, Việt Nam</p>
+              <p>Email : nstartv.vn@gmail.com</p>
+              <p>Hotline : 0909430791</p>
+            </div>
         </div>
       </div>
     </div>

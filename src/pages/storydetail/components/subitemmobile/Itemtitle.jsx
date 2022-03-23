@@ -9,6 +9,7 @@ function Subitemtitle({arraydetaillstory}) {
    var link = iplink + car;
   return(
       <>
+                 <img src={link}></img>
                <h1 className='the-article-title'>{arraydetaillstory.TieuDe}</h1>
       </>
   )

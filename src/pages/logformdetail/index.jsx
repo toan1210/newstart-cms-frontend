@@ -63,7 +63,6 @@ function Index() {
       <img src={iplink + arraydetaillogform.ImgTitle[0].url}  alt="" srcSet />
     </div>
     <div className="detaillogform-content">
-      <div className="container">
         <div className="detaillogform-content__title">
           <h2>
             {arraydetaillogform.TieuDe};
@@ -76,7 +75,6 @@ function Index() {
           <img src="/img/32.jpg" alt="" srcSet className="detaillogform-img__item1" />
           <img src="/img/32.jpg" alt="" srcSet className="detaillogform-img__item2" />
         </div> */}
-      </div>
     </div>
   </main>
   <div className="section-care">
