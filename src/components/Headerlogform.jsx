@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 function Headerlogform() {
   // let history = useHistory();
   function linkloangding(e) {
-    navigator.clipboard.writeText(window.location.href);
+    navigator.clipboard.writeText(document.location.href);
     setTimeout(alert("Coppy Link Thành Công"), 100);
   }
   return(
