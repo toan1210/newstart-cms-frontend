@@ -433,6 +433,10 @@ section .Advertisement img
   line-height: 1.618;
   color: #fbfbfa;
 }
+.chiase
+{
+  cursor: pointer;
+}
 .advertisement .slick-prev 
 {
   display: none !important;
