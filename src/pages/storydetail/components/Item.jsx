@@ -1,7 +1,22 @@
 import React, { useEffect } from 'react';
 import Subitem1 from './subitem/Item1';
 import Subitem10 from './subitem/Item10';
+import Subitem11 from './subitem/Item11';
+import Subitem12 from './subitem/Item12';
+import Subitem13 from './subitem/Item13';
+import Subitem14 from './subitem/Item14';
+import Subitem15 from './subitem/Item15';
+import Subitem16 from './subitem/Item16';
+import Subitem17 from './subitem/Item17';
+import Subitem18 from './subitem/Item18';
+import Subitem19 from './subitem/Item19';
 import Subitem2 from './subitem/Item2';
+import Subitem20 from './subitem/Item20';
+import Subitem21 from './subitem/Item21';
+import Subitem22 from './subitem/Item22';
+import Subitem23 from './subitem/Item23';
+import Subitem24 from './subitem/Item24';
+import Subitem25 from './subitem/Item25';
 import Subitem3 from './subitem/Item3';
 import Subitem4 from './subitem/Item4';
 import Subitem5 from './subitem/Item5';
@@ -86,6 +101,67 @@ function Item({arraydetaillstory}) {
         typeof(arraydetaillstory.Content10)!== 'undefined'?
         <Subitem10  arraydetaillstory={arraydetaillstory}></Subitem10>:null
       }
+       {
+        typeof(arraydetaillstory.Content11)!== 'undefined'?
+        <Subitem11 arraydetaillstory={arraydetaillstory}></Subitem11>:null
+      }
+       {
+        typeof(arraydetaillstory.Content12)!== 'undefined'?
+        <Subitem12  arraydetaillstory={arraydetaillstory}></Subitem12>:null
+      }
+       {
+        typeof(arraydetaillstory.Content13)!== 'undefined'?
+        <Subitem13  arraydetaillstory={arraydetaillstory}></Subitem13>:null
+      }
+       {
+        typeof(arraydetaillstory.Content14)!== 'undefined'?
+        <Subitem14  arraydetaillstory={arraydetaillstory}></Subitem14>:null
+      }
+       {
+        typeof(arraydetaillstory.Content15)!== 'undefined'?
+        <Subitem15  arraydetaillstory={arraydetaillstory}></Subitem15>:null
+      }
+       {
+        typeof(arraydetaillstory.Content16)!== 'undefined'?
+        <Subitem16  arraydetaillstory={arraydetaillstory}></Subitem16>:null
+      }
+       {
+        typeof(arraydetaillstory.Content17)!== 'undefined'?
+        <Subitem17  arraydetaillstory={arraydetaillstory}></Subitem17>:null
+      }
+      {
+        typeof(arraydetaillstory.Content18)!== 'undefined'?
+        <Subitem18  arraydetaillstory={arraydetaillstory}></Subitem18>:null
+      }
+      {
+        typeof(arraydetaillstory.Content19)!== 'undefined'?
+        <Subitem19  arraydetaillstory={arraydetaillstory}></Subitem19>:null
+      }
+      {
+        typeof(arraydetaillstory.Content20)!== 'undefined'?
+        <Subitem20  arraydetaillstory={arraydetaillstory}></Subitem20>:null
+      }
+        {
+        typeof(arraydetaillstory.Content21)!== 'undefined'?
+        <Subitem21  arraydetaillstory={arraydetaillstory}></Subitem21>:null
+      }
+       {
+        typeof(arraydetaillstory.Content22)!== 'undefined'?
+        <Subitem22  arraydetaillstory={arraydetaillstory}></Subitem22>:null
+      }
+      {
+        typeof(arraydetaillstory.Content23)!== 'undefined'?
+        <Subitem23  arraydetaillstory={arraydetaillstory}></Subitem23>:null
+      }
+      {
+        typeof(arraydetaillstory.Content24)!== 'undefined'?
+        <Subitem24  arraydetaillstory={arraydetaillstory}></Subitem24>:null
+      }
+      {
+        typeof(arraydetaillstory.Content25)!== 'undefined'?
+        <Subitem25  arraydetaillstory={arraydetaillstory}></Subitem25>:null
+      }
+      
       </>
   )
 }

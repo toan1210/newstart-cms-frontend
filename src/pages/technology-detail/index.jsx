@@ -61,6 +61,18 @@ function Index() {
     });
   }
   filter(state.allnew);
+  
+var arraykhac =[];
+function filter2(x)
+{
+  x.forEach((a,b) => {
+      if(a.DanhMuc !== "CongNghes")
+      {
+        arraykhac.push(a);
+      }
+  });
+}
+filter2(state.allnew);
 
 
 
@@ -114,7 +126,7 @@ function Index() {
           <h2>BẠN CÓ THỂ QUAN TÂM</h2>
         </div>
              {
-                arrayallnew.map((x,y)=>
+                arraykhac.map((x,y)=>
                 y<=30?<Care key={x.id} {...x}></Care>:null
                 )
               }

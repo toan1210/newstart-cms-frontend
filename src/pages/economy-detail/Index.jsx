@@ -54,13 +54,26 @@ function Index() {
     function filter(x)
     {
       x.forEach((a,b) => {
-          if(a.DanhMuc === "HangHieus")
+          if(a.DanhMuc === "KinhTes")
           {
             arrayeconomy.push(a);
           }
       });
     }
     filter(state.allnew);
+
+    var arraykhac =[];
+    function filter2(x)
+    {
+      x.forEach((a,b) => {
+          if(a.DanhMuc !== "KinhTes")
+          {
+            arraykhac.push(a);
+          }
+      });
+    }
+    filter2(state.allnew);
+
   return(
       <>
               <main className="page-detail">
@@ -110,7 +123,7 @@ function Index() {
           <h2>BẠN CÓ THỂ QUAN TÂM</h2>
         </div>
             {
-                arrayallnew.map((x,y)=>
+                arraykhac.map((x,y)=>
                   <Care key={x.id} {...x}></Care>
                 )
               }

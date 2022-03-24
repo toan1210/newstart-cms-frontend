@@ -2,6 +2,86 @@
 {
   height: 50px;
 }
+.page-detail .detail-content .detail-content__left .content-left h1 strong
+{
+  font-weight: 900;
+}
+.page-detail .detail-content .detail-content__left .content-left h1 strong em
+{
+  font-weight: 900;
+  font-style: oblique;
+}
+.page-detail .detail-content .detail-content__left .content-left h1 em 
+{
+  font-style: oblique;
+}
+.page-detail .detail-content .detail-content__left .content-left h2 strong
+{
+  font-weight: 900;
+}
+.page-detail .detail-content .detail-content__left .content-left h2 strong em
+{
+  font-weight: 900;
+  font-style: oblique;
+}
+.page-detail .detail-content .detail-content__left .content-left h2 em 
+{
+  font-style: oblique;
+}
+
+.page-detail .detail-content .detail-content__left .content-left h3 strong
+{
+  font-weight: 900;
+}
+.page-detail .detail-content .detail-content__left .content-left h3 strong em
+{
+  font-weight: 900;
+  font-style: oblique;
+}
+.page-detail .detail-content .detail-content__left .content-left h3 em 
+{
+  font-style: oblique;
+}
+
+.page-detail .detail-content .detail-content__left .content-left h4
+{
+  text-align: justify;
+}
+.page-detail .detail-content .detail-content__left .content-left h4 strong
+{
+  font-weight: 900;
+}
+.page-detail .detail-content .detail-content__left .content-left h4 em
+{
+  font-style: oblique;
+}
+
+.page-detail .detail-content .detail-content__left .content-left h4 strong em
+{
+  font-weight: 900;
+  font-style: oblique;
+}
+.page-detail .detail-content .detail-content__left .content-left h5 
+{
+  font-size: 20px;
+  font-weight: 900;
+  text-align: justify;
+}
+.page-detail .detail-content .detail-content__left .content-left h6
+{
+  font-size: 24px;
+  font-weight: 900;
+  text-align: center;
+}
+.page-detail .detail-content .detail-content__left .content-left p strong
+{
+  font-weight: 900;
+}
+.page-detail .detail-content .detail-content__left .content-left p em
+{
+  font-style: oblique;
+}
+
 .page-detail {
   margin-top: 72px;
 }
@@ -33,11 +113,6 @@ p.time > span.time-day {
 .new__left > a > img {
   object-fit: cover;
 }
-.new-content > .new-content-left > .new-content-news > a {
-  height: 190px;
-  overflow: hidden;
-  width: 100%;
-}
 .new-content
   > .new-content-left
   > .new-content-news
@@ -48,13 +123,46 @@ p.time > span.time-day {
 }
 .detail-involve__content > .involve-content {
   grid-template-columns: 34% 64% !important;
-  height: 210px;
-  overflow: hidden;
   width: 100%;
 }
-.detail-involve__content > .involve-content > .involve-content__img > a {
-  height: 210px;
+.page-detail .detail-content .detail-content__left .detail-involve .detail-involve__content .involve-content .involve-content__text span
+{
   overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 6;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    height: 152px;
+    line-height: 25px;
+    font-size: 15px;
+}
+.page-detail .detail-care .detail-care__left .detail-care__content .care-content__text span.demo
+{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  height: 135px;
+  line-height: 25px;
+  font-size: 15px;
+}
+.page-logform .topic-section__content .section-content .section-content__text .content-description span
+{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 7;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    height: 180px;
+    line-height: 25px;
+    font-size: 15px;
+}
+main .page__home .page__home-content .left .left__header>a
+{
+  height: 100%;
+}
+.detail-involve__content > .involve-content > .involve-content__img > a {
   width: 100%;
 }
 .detail-involve__content > .involve-content > .involve-content__img > a > img {
@@ -342,16 +450,20 @@ main .page__home
   width: 100%;
   height: 100%;
 }
-
+.section-seemore .section-seemore__content .content-text span.article
+{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  height: 72px;
+  line-height: 25px;
+  font-size: 15px;
+}
 .section-seemore__content .content-text .seemore__content-text a h3 
 {
   color: #ffffff;
-}
-.section-seemore .section-seemore__content
-{
-  
-  height: 210px;
-  overflow: hidden;
 }
 .section-seemore .section-seemore__content .seemore-content__img img
 {
@@ -395,10 +507,6 @@ section .Advertisement img
 .home-headerr .headerr .header .header__login 
 {
   display: none;
-}
-.new-content > .new-content-left > .new-content-news > a
-{
-  height: 200px;
 }
 .containera.active 
 {
@@ -700,16 +808,13 @@ main .home-multimedia .home-content .home-content-right .content-right-item1 .ri
   color: #c2c2c2;
 }
 .slider .slider-title .slider-title-xemthem::before
-{
+{ 
   display: none;
 }
-main .page__home .page__home-content .left .left__header a
+main .page__home .page__home-content .left .left__header a img.left-quangcao-img
 {
-
-}
-main .page__home .page__home-content .left .left__header a img
-{
-  height: 100%;
+  height: 360px;
+  width: 220px;
 }
 main .home-multimedia .home-multimedia-title
 {
@@ -717,7 +822,57 @@ main .home-multimedia .home-multimedia-title
     align-items: self-end;
     justify-content: space-between;
 }
+main .home-multimedia .home-content .home-content-left .sub-text
+{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    height: 72px;
+    line-height: 25px;
+    font-size: 15px;
+}
+main .page__home .page__home-content .left .left__header .left-title p
+{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 7;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  height: 180px;
+  line-height: 25px;
+  font-size: 15px;
+}
+.new .new-content .new-content-left .new-content-news .content-news .content-news-text .news-text-content p 
+{
+  overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    height: 107px;
+    line-height: 25px;
+    font-size: 14px;
+}
+.page-detail .detail-content .detail-content__left .content-left p code 
+{
+  display: block;
+  text-align: center;
+  font-size: 13px;
+  color: #9f9797;
+}
 @media only screen and (max-width: 991px) and (min-width: 768px){
+  main .home-multimedia .home-content .home-content-left .sub-text
+  {
+    -webkit-line-clamp: 8;
+    height: 195px;
+  }
+  main .page__home .page__home-content .left .left__header .left-title p
+  {
+    -webkit-line-clamp: 5;
+    height: 125px;
+  }
   .page-logform .topic-section__content .section-content .section-content__text .content-title a span {
     font-size: 25px;
   }
@@ -812,6 +967,16 @@ main .home-multimedia .home-multimedia-title
   }
 }
 @media only screen and (max-width: 767px) and (min-width: 320px){
+  main .page__home .page__home-content .left .left__header .left-title p
+  {
+    -webkit-line-clamp: 5;
+    height: 125px;
+  }
+  main .page__home .page__home-header
+  {
+    display: block;
+    font-size: 25px;
+  }
   .the-article-title
   {
     font-size: 20px;
@@ -888,14 +1053,6 @@ main .home-multimedia .home-multimedia-title
   {
     width:320px;
   }
-  .new .new-content .new-content-left .new-content-news .content-news .content-news-img
-  {
-    height: 250px;
-  }
-  .new .new-content .new-content-left .new-content-news a.content-news
-  {
-    height: 360px;
-  }
   .new-content > .new-content-left > .new-content-news > a > .content-news-img > img
   {
     width: 320px !important;
@@ -918,6 +1075,11 @@ main .home-multimedia .home-multimedia-title
   }
 }
 @media only screen and (max-width: 767px) and (min-width: 667px){
+  main .page__home .page__home-content .left .left__header .left-title p
+  {
+    -webkit-line-clamp: 4;
+    height: 100px;
+  }
   .home-headerr .headerr .header-sub-menu .headerr__popup ul.headerr__popup-menu
   {
     grid-template-columns: repeat(3, 1fr);
@@ -973,8 +1135,6 @@ main .home-multimedia .home-multimedia-title
   }
   .new .new-content .new-content-left .new-content-news a.content-news
   {
-    height: 200px;
-    overflow: hidden;
     grid-template-columns: 50% 50%;
   }
   main .page__home .page__home-content .left .left__header
