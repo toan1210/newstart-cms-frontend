@@ -59,9 +59,12 @@ function Index() {
   return (
       <>
       <main className="page-detaillogform">
-    {/* <div className="detaillogform-img">
-      <img src={iplink + arraydetaillogform.ImgTitle[0].url}  alt="" srcSet />
-    </div> */}
+    <div className="detaillogform-img">
+     {
+       typeof(arraydetaillogform.ImgTitle[0]) !== 'undefined'?
+        <img src={iplink + arraydetaillogform.ImgTitle[0].url}  alt="" srcSet />:null
+     }
+    </div>
     <div className="detaillogform-content">
         {/* <div className="detaillogform-content__title">
           <h2>
