@@ -86,11 +86,13 @@ function Index() {
       </h1>
     </div>
     <div className="detail-article">
+    <div className="detail-article-wappe">
       <div className="detail-article-author">
         <span>{state.listnew.TacGia}</span>
       </div>
       <div className="detail-article-time">
         <span>{Datetime}</span>
+      </div>
       </div>
     </div>
     <div className="detail-content">

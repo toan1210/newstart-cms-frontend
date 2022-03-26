@@ -41,40 +41,14 @@ var arraystory =[];
 function filter(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "TinMois")
+      if(a.NoiBat === false )
       {
         arraynews.push(a);
       }
   });
 }
 filter(state.news);
-var array = arraynews;
-var arraynews = array.reverse();
-
-
-function filterlogform(x)
-{
-  x.forEach((a,b) => {
-      if(a.DanhMuc === "TinMois")
-      {
-        arraylogform.push(a);
-      }
-  });
-}
-filterlogform(state.logform);
-var arrraylogform = arraylogform.reverse();
-
-function filterstory(x)
-{
-  x.forEach((a,b) => {
-      if(a.DanhMuc === "TinMois")
-      {
-        arraystory.push(a);
-      }
-  });
-}
-filterstory(state.story);
-var arrraystory = arraystory.reverse();
+var array = arraynews.reverse();
   return (
       <>
  <main>
@@ -88,15 +62,15 @@ var arrraystory = arraystory.reverse();
           <li><a href>TÁC GIẢ</a></li>
         </ul>
       </div>
-      <Item1 news={state.news[0]} arrayadvertisements={arrayadvertisements}></Item1>
+      <Item1 news={array[0]} arrayadvertisements={arrayadvertisements}></Item1>
       <div className="page__home-listnew">
         <div className="right__left">
-          <Item2 news={arrraylogform[0]} ></Item2>
-          <Item3 news={arrraystory[0]}></Item3>
+          <Item2 news={array[1]} ></Item2>
+          <Item3 news={array[2]}></Item3>
         </div>
         <div className="right__right">
-          <Item4 news={arrraylogform[1]} ></Item4>
-          <Item5 news={arrraystory[1]} ></Item5>
+          <Item4 news={array[3]} ></Item4>
+          <Item5 news={array[4]} ></Item5>
         </div>
       </div>
     </div>

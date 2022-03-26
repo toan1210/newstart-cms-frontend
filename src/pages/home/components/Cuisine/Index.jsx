@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../../core/useAuth';
 import Item from './Item';
-let $ = window.$;
 // import { Container } from './styles';
 
 function Index({story,arrayadvertisement}) {

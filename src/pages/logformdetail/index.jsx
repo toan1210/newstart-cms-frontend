@@ -59,15 +59,15 @@ function Index() {
   return (
       <>
       <main className="page-detaillogform">
-    <div className="detaillogform-img">
+    {/* <div className="detaillogform-img">
       <img src={iplink + arraydetaillogform.ImgTitle[0].url}  alt="" srcSet />
-    </div>
+    </div> */}
     <div className="detaillogform-content">
-        <div className="detaillogform-content__title">
+        {/* <div className="detaillogform-content__title">
           <h2>
             {arraydetaillogform.TieuDe};
           </h2>
-        </div>
+        </div> */}
         <div className="detaillogform-content__content">
         <ReactMarkdown>{arraydetaillogform.NoiDung}</ReactMarkdown>
         </div>

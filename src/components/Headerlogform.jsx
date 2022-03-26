@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
 import { useHistory } from "react-router-dom";
 import useAuth from '../core/useAuth';
+let $ =window.$;
 // import { Container } from './styles';
 
 function Headerlogform() {
@@ -11,6 +12,23 @@ function Headerlogform() {
     navigator.clipboard.writeText(domain + window.location.pathname);
     setTimeout(alert("Coppy Link Thành Công"), 100);
   }
+  useEffect(() =>{
+    let menu = $(".detaillogform-header");
+    let vitri = 0;
+     window.onscroll = function(){
+     var windowscroll = window.pageYOffset;
+      if(windowscroll > vitri)
+      {
+           menu.add("activemenu");
+          vitri=windowscroll;
+      }
+      else if(windowscroll < vitri)
+      {
+        menu.removeClass("activemenu");
+          vitri=windowscroll;
+      }
+}
+},[])
   return(
       <>
          <header className="detaillogform-header">

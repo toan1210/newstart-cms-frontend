@@ -11,7 +11,10 @@ function Subitem10({arraydetaillstory}) {
       <>
          <section className="one" style={{ backgroundImage:`url(${link})`,backgroundRepeat:'no-repeat',backgroundAttachment: 'fixed',backgroundSize: 'cover'}}>
          <div className="container">
-              <h1>{arraydetaillstory.Content10}</h1>
+                {
+                  typeof(arraydetaillstory.Content10)!== 'undefined'?
+                  <h1>{arraydetaillstory.Content10}</h1>:null
+                }
              </div> 
         </section>
       </>

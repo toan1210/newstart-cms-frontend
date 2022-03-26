@@ -5,13 +5,17 @@ import useAuth from '../../../../core/useAuth';
 
 function Subitem2({arraydetaillstory}) {
   let {ipapi,iplink} = useAuth();
+  console.log(arraydetaillstory);
   var car = arraydetaillstory.Img2[0].url;
- var link = iplink + car;
+  var link = iplink + car;
 return(
     <>
       <section className="one" style={{ backgroundImage:`url(${link})`,backgroundRepeat:'no-repeat',backgroundAttachment: 'fixed',backgroundSize: 'cover'}}>
           <div className="container">
-                <h1>{arraydetaillstory.Content2}</h1>
+          {
+                  typeof(arraydetaillstory.Content2)!== 'undefined'?
+                  <h1>{arraydetaillstory.Content2}</h1>:null
+               }
              </div>
         </section>
     </>

@@ -2,6 +2,31 @@
 {
   height: 50px;
 }
+.page-detail .detail-article
+{
+  display: grid;
+  grid-template-columns: 75% 25%;
+}
+.page-detail .detail-article .detail-article-wappe
+{
+  display: flex;
+  align-content: center;
+    justify-content: space-between;
+}
+.page-detail .detail-title h1
+{
+  display: grid;
+  grid-template-columns: 75% 25%;
+}
+.home-headerr .headerr .header .header__logo
+{
+  padding-top: 4px;
+  padding-bottom: 0px;
+}
+.page_detaillogform .page-detaillogform .detaillogform-content .detaillogform-content__content
+{
+  font-size: 20px;
+}
 .page-detail .detail-content .detail-content__left .content-left h1 strong
 {
   font-weight: 900;
@@ -14,6 +39,10 @@
 .page-detail .detail-content .detail-content__left .content-left h1 em 
 {
   font-style: oblique;
+}
+.page_detaillogform .detaillogform-header.activemenu
+{
+  transform: translateY(-100%);
 }
 .page-detail .detail-content .detail-content__left .content-left h2 strong
 {
@@ -95,23 +124,97 @@ p.time > span.time-day {
   margin-right: 5px;
 }
 .left__header {
-  height: 362px;
+  height: 250px;
   overflow: hidden;
 }
 .left__header > a {
   height: 360px;
   position: relative;
 }
+main .page__home .page__home-content .left .left__header a img
+{
+  height: auto;
+}
 .left__header > a > img {
   position: absolute;
   top: 0%;
-  bottom: 0%;
   width: 100%;
-  height: 100%;
   object-fit: revert;
 }
 .new__left > a > img {
   object-fit: cover;
+}
+main .page__home .page__home-listnew .right__left .new__left p 
+{
+  white-space:initial;
+  font-size: 14px; 
+  margin-top: 12px;
+}
+main .page__home .page__home-listnew .right__left .new__middo p a
+{
+  text-align: justify;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  height: 40px;
+  line-height: 18px;
+  font-size: 11px;
+}
+main .page__home .page__home-listnew .right__left .new__middo p 
+{
+  white-space:initial;
+  font-size: 14px; 
+  margin-top: 12px;
+}
+main .page__home .page__home-listnew .right__left .new__left p a
+{
+  text-align: justify;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  height: 40px;
+  line-height: 18px;
+  font-size: 11px;
+}
+main .page__home .page__home-listnew .right__right .new__left p a
+{
+  text-align: justify;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  height: 40px;
+  line-height: 18px;
+  font-size: 11px;
+}
+main .page__home .page__home-listnew .right__right .new__left p 
+{
+  white-space:initial;
+  font-size: 14px; 
+  margin-top: 12px;
+}
+main .page__home .page__home-listnew .right__right .new__middo p a
+{
+  text-align: justify;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  height: 40px;
+  line-height: 18px;
+  font-size: 11px;
+}
+main .page__home .page__home-listnew .right__right .new__middo p
+{
+  white-space:initial;
+  font-size: 14px; 
+  margin-top: 12px;
 }
 .new-content
   > .new-content-left
@@ -127,7 +230,7 @@ p.time > span.time-day {
 }
 .page-detail .detail-content .detail-content__left .detail-involve .detail-involve__content .involve-content .involve-content__text span
 {
-  overflow: hidden;
+    overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 6;
     display: -webkit-box;
@@ -135,6 +238,14 @@ p.time > span.time-day {
     height: 152px;
     line-height: 25px;
     font-size: 15px;
+}
+main .page__home .page__home-listnew .right__left .new__left p
+{
+  font-size: 12px;
+}
+main .page__home .page__home-header h1
+{
+  font-size: 25px;
 }
 .page-detail .detail-care .detail-care__left .detail-care__content .care-content__text span.demo
 {
@@ -216,7 +327,7 @@ main .home-multimedia .home-content .home-content-left .title a
 }
 main .page__home
 {
-  margin-top: 87px;
+  margin-top: 60px;
 }
 .home-headerr .headerr .header
 {
@@ -489,11 +600,62 @@ main .page__home
     background: #c2c2c2;
     height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
     color: white;
     scroll-snap-align:start ;
+    position: relative;
    
+}
+main .page__home .page__home-content .left .left__header .left-title a
+{
+  text-align: justify;
+  font-size: 21px;
+}
+
+.one.active2
+{
+  display: none;
+}
+header.detailstory-header.activemenu 
+{
+  transform: translateY(-100%);
+}
+.page_detailstory .detailstory-header
+{
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  transform: translateY(0%);
+  transition: 0.5s;
+}
+.one::before
+{
+  content: "";
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  width: 100%;
+  background-image: linear-gradient(to bottom, rgba(216,216,216,0) 40%, #0d0d1f);
+}
+.page_detaillogform .page-detaillogform .detaillogform-content .detaillogform-content__content blockquote
+{
+  width: 80%;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+.one h1 
+{
+  font-size: 20px;
+  line-height: 1.5;
+  bottom: 5%;
+  font-size: 16px;
+  position: absolute;
+  text-align: justify;
+  margin-right: 20px;
 }
 section .Advertisement 
 {
@@ -532,11 +694,11 @@ section .Advertisement img
 }
 .storymobile.active1 img 
 {
-  height: 300px;
   width: 100%;
 }
 .storymobile.active1 h1.caption
 {
+  text-align: center;
   padding-top: 4px;
   line-height: 1.618;
   color: #fbfbfa;
@@ -614,6 +776,8 @@ section .Advertisement img
 }
 .page-detaillogform .detaillogform-content .detaillogform-content__content>h2
 {
+  margin-bottom: 10px;
+  margin-top: 10px;
   color: white;
   display: block;
   text-align: center;
@@ -682,7 +846,21 @@ main .home-multimedia .home-content .home-content-left .title a
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: bold;
-  display: inline-block;
+  text-align: justify;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  height: 60px;
+  line-height: 18px;
+  line-height: 1.2;
+}
+main .home-multimedia .home-content .home-content-left .title 
+{
+  white-space: initial;
+  font-size: 14px;
+  margin-top: 12px;
 }
 .slider .slider-content .slick-prev
 {
@@ -824,6 +1002,7 @@ main .home-multimedia .home-multimedia-title
 }
 main .home-multimedia .home-content .home-content-left .sub-text
 {
+   text-align: justify;
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 3;
@@ -833,16 +1012,33 @@ main .home-multimedia .home-content .home-content-left .sub-text
     line-height: 25px;
     font-size: 15px;
 }
+.page-detaillogform .detaillogform-content .detaillogform-content__content h1 img
+{
+  width: 100%;
+}
+.page-detaillogform .detaillogform-content .detaillogform-content__content h2 img
+{
+  width: 100%;
+}
+.page-detaillogform .detaillogform-content .detaillogform-content__content h3 img
+{
+  width: 100%;
+}
+.page-detaillogform .detaillogform-content .detaillogform-content__content h4 img
+{
+  width: 100%;
+}
 main .page__home .page__home-content .left .left__header .left-title p
 {
+  text-align: justify;
   overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 7;
+  -webkit-line-clamp: 6;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  height: 180px;
-  line-height: 25px;
-  font-size: 15px;
+  height: 113px;
+  line-height: 18px;
+  font-size: 11px;
 }
 .new .new-content .new-content-left .new-content-news .content-news .content-news-text .news-text-content p 
 {
@@ -895,7 +1091,7 @@ main .page__home .page__home-content .left .left__header .left-title p
 }
   .page-detaillogform .detaillogform-content .detaillogform-content__content p img
 {
-  width: 450px;
+  
 }
   .section-seemore .section-seemore__content
   {
@@ -967,6 +1163,10 @@ main .page__home .page__home-content .left .left__header .left-title p
   }
 }
 @media only screen and (max-width: 767px) and (min-width: 320px){
+  .storymobile.active1 img 
+  {
+    height:auto;
+  }
   main .page__home .page__home-content .left .left__header .left-title p
   {
     -webkit-line-clamp: 5;
@@ -1094,7 +1294,7 @@ main .page__home .page__home-content .left .left__header .left-title p
   }
   .page-detaillogform .detaillogform-content .detaillogform-content__content p img
   {
-    width: 430px;
+
   }
   main .home-multimedia .home-content
   {

@@ -10,8 +10,10 @@ function Subitem13({arraydetaillstory}) {
 return(
     <>
             <img src={link}></img>
-             <h1 className='caption'>{arraydetaillstory.Content13}</h1>
-             
+            {
+                  typeof(arraydetaillstory.Content13)!== 'undefined'?
+                  <h1 className='caption'>{arraydetaillstory.Content13}</h1>:null
+              }
     </>
 )
 }

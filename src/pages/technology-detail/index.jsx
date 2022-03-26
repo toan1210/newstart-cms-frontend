@@ -50,6 +50,7 @@ function Index() {
     })
     var Datetime = datetime.join("-");
     var arraytechnology =[];
+    
     //----------------------------------------
   function filter(x)
   {
@@ -93,11 +94,13 @@ filter2(state.allnew);
       </h1>
     </div>
     <div className="detail-article">
+    <div className="detail-article-wappe">
       <div className="detail-article-author">
         <span>{state.listnew.TacGia}</span>
       </div>
       <div className="detail-article-time">
         <span>{Datetime}</span>
+      </div>
       </div>
     </div>
     <div className="detail-content">
@@ -118,6 +121,11 @@ filter2(state.allnew);
         </div>
       </div>
       <div className="detail-content__right">
+         <div className="left-quangcao">
+                  <a href="">
+                      <img className="left-quangcao-img" src="/img/star_logo.dffe8010.png" alt="" />
+                  </a>
+              </div>          
       </div>
     </div>
     <div className="detail-care">

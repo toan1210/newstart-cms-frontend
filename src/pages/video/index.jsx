@@ -14,24 +14,22 @@ function Video() {
     video:null,
     loanding:true,
     arrayadvertisements:null,
-    
-  }
+   }
 )
 useEffect(() =>{
   Promise.all([
       fetch(`${ipapi}/homes/`).then(res =>res.json()),
       fetch(`${ipapi}/advertisements/`).then(res =>res.json()),
   ])
-  .then(([res1,res2]) =>{
+  .then(([res1,res2,res3]) =>{
     setState({
        video:res1,
         arrayadvertisements:res2,
-        loanding:false,
     })
 })
 },[])
-let {video,arrayadvertisements} = state;
-if(!video && !arrayadvertisements) return 'loading...';
+let {video,arrayadvertisements,test} = state;
+if(!video && !arrayadvertisements && !test) return 'loading...';
 var arrayvideo =[];
 function filter(x)
 {

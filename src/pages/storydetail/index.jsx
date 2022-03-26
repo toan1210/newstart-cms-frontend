@@ -45,9 +45,7 @@ function Index() {
           <Item arraydetaillstory={arraydetaillstory}></Item>
         </div>
         <div className="storymobile">
-          <div className="container">
           <Mobile arraydetaillstory={arraydetaillstory}></Mobile>
-          </div>
         </div>
         <div className="section-care">
              <div className="container">

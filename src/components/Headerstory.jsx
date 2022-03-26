@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
+let $ =window.$;
 // import { Container } from './styles';
 
 function Headerstory() {
@@ -8,6 +8,23 @@ function Headerstory() {
     navigator.clipboard.writeText(window.location.href);
     setTimeout(alert("Coppy Link Thành Công"), 100);
   }
+  useEffect(() =>{
+    let menu = $(".detailstory-header");
+    let vitri = 0;
+     window.onscroll = function(){
+     var windowscroll = window.pageYOffset;
+      if(windowscroll > vitri)
+      {
+           menu.addClass("activemenu");
+          vitri=windowscroll;
+      }
+      else if(windowscroll < vitri)
+      {
+        menu.removeClass("activemenu");
+          vitri=windowscroll;
+      }
+}
+},[])
   return(
       <>
         <header className="detailstory-header">

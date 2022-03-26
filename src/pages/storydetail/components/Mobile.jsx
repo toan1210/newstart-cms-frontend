@@ -32,121 +32,120 @@ function Mobile({arraydetaillstory}) {
     useEffect(() =>{
         let slider = $("#root");
         let sliderwidth = slider.width();
-        if(sliderwidth <= 767)
+        if(sliderwidth <= 991)
         {
            $('.containera').addClass('active');
            $('.storymobile').addClass('active1');
+           $('.one').addClass('active2');
         }
-        else if(sliderwidth >= 767)
+        else if(sliderwidth >= 991)
         {
            $('.containera').removeClass('active');
            $('.storymobile').removeClass('active1');
+           $('.one').removeClass('active2');
         }
     },[])
+    console.log(typeof(arraydetaillstory.Img2[0]));
   return (
       <>
-       {
-        typeof(arraydetaillstory.TieuDe) !== 'undefined'?
-        <Subitemtitle arraydetaillstory={arraydetaillstory}></Subitemtitle>:null
-      }
       {
-        typeof(arraydetaillstory.Content1)!== 'undefined'?
+        typeof(arraydetaillstory.Img1[0])!== 'undefined'?
         <Subitem1 arraydetaillstory={arraydetaillstory}></Subitem1>:null
       }
        {
-        typeof(arraydetaillstory.Content2)!== 'undefined'?
-        <Subitem2  arraydetaillstory={arraydetaillstory}></Subitem2>:null
+        typeof(arraydetaillstory.Img2[0])!== 'undefined'?
+        <Subitem2 arraydetaillstory={arraydetaillstory}></Subitem2>:null
       }
        {
-        typeof(arraydetaillstory.Content3)!== 'undefined'?
+        typeof(arraydetaillstory.Img3[0])!== 'undefined'?
         <Subitem3  arraydetaillstory={arraydetaillstory}></Subitem3>:null
       }
        {
-        typeof(arraydetaillstory.Content4)!== 'undefined'?
+        typeof(arraydetaillstory.Img4[0])!== 'undefined'?
         <Subitem4  arraydetaillstory={arraydetaillstory}></Subitem4>:null
       }
        {
-        typeof(arraydetaillstory.Content5)!== 'undefined'?
+        typeof(arraydetaillstory.Img5[0])!== 'undefined'?
         <Subitem5  arraydetaillstory={arraydetaillstory}></Subitem5>:null
       }
        {
-        typeof(arraydetaillstory.Content6)!== 'undefined'?
+        typeof(arraydetaillstory.Img6[0])!== 'undefined'?
         <Subitem6  arraydetaillstory={arraydetaillstory}></Subitem6>:null
       }
        {
-        typeof(arraydetaillstory.Content7)!== 'undefined'?
+        typeof(arraydetaillstory.Img7[0])!== 'undefined'?
         <Subitem7  arraydetaillstory={arraydetaillstory}></Subitem7>:null
       }
        {
-        typeof(arraydetaillstory.Content8)!== 'undefined'?
+        typeof(arraydetaillstory.Img8[0])!== 'undefined'?
         <Subitem8  arraydetaillstory={arraydetaillstory}></Subitem8>:null
       }
        {
-        typeof(arraydetaillstory.Content9)!== 'undefined'?
+        typeof(arraydetaillstory.Img9[0])!== 'undefined'?
         <Subitem9  arraydetaillstory={arraydetaillstory}></Subitem9>:null
       }
        {
-        typeof(arraydetaillstory.Content10)!== 'undefined'?
+        typeof(arraydetaillstory.Img10[0])!== 'undefined'?
         <Subitem10  arraydetaillstory={arraydetaillstory}></Subitem10>:null
       }
           {
-        typeof(arraydetaillstory.Content11)!== 'undefined'?
+        typeof(arraydetaillstory.Img11[0])!== 'undefined'?
         <Subitem11 arraydetaillstory={arraydetaillstory}></Subitem11>:null
       }
        {
-        typeof(arraydetaillstory.Content12)!== 'undefined'?
+        typeof(arraydetaillstory.Img12[0])!== 'undefined'?
         <Subitem12  arraydetaillstory={arraydetaillstory}></Subitem12>:null
       }
        {
-        typeof(arraydetaillstory.Content13)!== 'undefined'?
+        typeof(arraydetaillstory.Img13[0])!== 'undefined'?
         <Subitem13  arraydetaillstory={arraydetaillstory}></Subitem13>:null
       }
        {
-        typeof(arraydetaillstory.Content14)!== 'undefined'?
+        typeof(arraydetaillstory.Img14[0])!== 'undefined'?
         <Subitem14  arraydetaillstory={arraydetaillstory}></Subitem14>:null
       }
        {
-        typeof(arraydetaillstory.Content15)!== 'undefined'?
+        typeof(arraydetaillstory.Img15[0])!== 'undefined'?
         <Subitem15  arraydetaillstory={arraydetaillstory}></Subitem15>:null
       }
        {
-        typeof(arraydetaillstory.Content16)!== 'undefined'?
+        typeof(arraydetaillstory.Img16[0])!== 'undefined'?
         <Subitem16  arraydetaillstory={arraydetaillstory}></Subitem16>:null
       }
        {
-        typeof(arraydetaillstory.Content17)!== 'undefined'?
+        typeof(arraydetaillstory.Img17[0])!== 'undefined'?
         <Subitem17  arraydetaillstory={arraydetaillstory}></Subitem17>:null
       }
        {
-        typeof(arraydetaillstory.Content18)!== 'undefined'?
+        typeof(arraydetaillstory.Img18[0])!== 'undefined'?
         <Subitem18  arraydetaillstory={arraydetaillstory}></Subitem18>:null
       }
        {
-        typeof(arraydetaillstory.Content19)!== 'undefined'?
+        typeof(arraydetaillstory.Img19[0])!== 'undefined'?
         <Subitem19  arraydetaillstory={arraydetaillstory}></Subitem19>:null
       }
        {
-        typeof(arraydetaillstory.Content20)!== 'undefined'?
+        typeof(arraydetaillstory.Img20[0])!== 'undefined'?
         <Subitem20  arraydetaillstory={arraydetaillstory}></Subitem20>:null
       }
         {
-        typeof(arraydetaillstory.Content21)!== 'undefined'?
+        typeof(arraydetaillstory.Img21[0])!== 'undefined'?
         <Subitem21  arraydetaillstory={arraydetaillstory}></Subitem21>:null
       }
        {
-        typeof(arraydetaillstory.Content22)!== 'undefined'?
+        typeof(arraydetaillstory.Img22[0])!== 'undefined'?
         <Subitem22  arraydetaillstory={arraydetaillstory}></Subitem22>:null
       }
        {
-        typeof(arraydetaillstory.Content23)!== 'undefined'?
+        typeof(arraydetaillstory.Img23[0])!== 'undefined'?
         <Subitem23  arraydetaillstory={arraydetaillstory}></Subitem23>:null
       }
        {
-        typeof(arraydetaillstory.Content24)!== 'undefined'?
+        typeof(arraydetaillstory.Img24[0])!== 'undefined'?
         <Subitem24  arraydetaillstory={arraydetaillstory}></Subitem24>:null
       }
        {
-        typeof(arraydetaillstory.Content25)!== 'undefined'?
+        typeof(arraydetaillstory.Img25[0])!== 'undefined'?
         <Subitem25  arraydetaillstory={arraydetaillstory}></Subitem25>:null
       }
       </>

@@ -11,7 +11,10 @@ return(
     <>
       <section className="one" style={{ backgroundImage:`url(${link})`,backgroundRepeat:'no-repeat',backgroundAttachment: 'fixed',backgroundSize: 'cover'}}>
              <div className="container">
-                <h1>{arraydetaillstory.Content4}</h1>
+               {
+                  typeof(arraydetaillstory.Content4)!== 'undefined'?
+                  <h1>{arraydetaillstory.Content4}</h1>:null
+                }
                 </div>
         </section>
     </>
