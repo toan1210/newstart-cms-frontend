@@ -13,7 +13,9 @@ function Subitem1({arraydetaillstory}) {
              <div className="container">
                {
                   typeof(arraydetaillstory.Content1)!== 'undefined'?
-                  <h1 >{arraydetaillstory.Content1}</h1>:null
+                  <div className="boder">
+                    <h1 >{arraydetaillstory.Content1}</h1>
+                  </div>:null
                }
                </div>
           </section>

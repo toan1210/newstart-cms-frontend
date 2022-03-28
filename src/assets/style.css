@@ -2,6 +2,10 @@
 {
   height: 50px;
 }
+.page-detail .detail-content .detail-content__left 
+{
+  text-align: justify;
+}
 .page-detail .detail-care .detail-care__left .detail-care__content .care-content__text a h3
 {
   text-align: justify;
@@ -251,10 +255,10 @@ main .page__home .page__home-listnew .right__right .new__middo p
   text-align: justify;
     overflow: hidden;
     text-overflow: ellipsis;
-    -webkit-line-clamp: 6;
+    -webkit-line-clamp: 5;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    height: 152px;
+    height: 125px;
     line-height: 25px;
     font-size: 15px;
 }
@@ -296,6 +300,7 @@ main .page__home .page__home-content .left .left__header>a
 }
 .detail-involve__content > .involve-content > .involve-content__img > a {
   width: 100%;
+  height: 100%;
 }
 .detail-involve__content > .involve-content > .involve-content__img > a > img {
   width: 100%;
@@ -646,17 +651,20 @@ header.detailstory-header.activemenu
   transform: translateY(0%);
   transition: 0.5s;
 }
-.one::before
+.one h1::before
 {
   content: "";
-  position: absolute;
-  top: 0%;
-  bottom: 0%;
-  width: 100%;
-  background-image: linear-gradient(to bottom, rgba(216,216,216,0) 40%, #0d0d1f);
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    width: 100%;
+    background: #272727;
+    opacity: 0.8;
+    z-index: -1;
 }
 .page_detaillogform .page-detaillogform .detaillogform-content .detaillogform-content__content blockquote
 {
+  text-align: justify;
   width: 80%;
   margin: auto;
   margin-bottom: 10px;
@@ -665,10 +673,11 @@ header.detailstory-header.activemenu
 }
 .one h1 
 {
+  z-index: 3;
   font-size: 20px;
   line-height: 1.5;
   bottom: 5%;
-  font-size: 16px;
+  font-size: 18px;
   position: absolute;
   text-align: justify;
   margin-right: 20px;
@@ -1137,6 +1146,14 @@ main .page__home .page__home-content .left .left__header .left-title p
   color: #9f9797;
 }
 @media only screen and (max-width: 991px) and (min-width: 768px){
+  .page-detail .detail-title h1
+  {
+    grid-template-columns:100%;
+  }
+  .page-detail .detail-article
+  {
+    grid-template-columns:100%;
+  }
   main .home-multimedia .home-content .home-content-left .sub-text
   {
     -webkit-line-clamp: 8;
@@ -1241,6 +1258,14 @@ main .page__home .page__home-content .left .left__header .left-title p
   }
 }
 @media only screen and (max-width: 767px) and (min-width: 320px){
+  .page-detail .detail-title h1
+  {
+    grid-template-columns:100%;
+  }
+  .page-detail .detail-article
+  {
+    grid-template-columns:100%;
+  }
   .storymobile.active1 img 
   {
     height:auto;

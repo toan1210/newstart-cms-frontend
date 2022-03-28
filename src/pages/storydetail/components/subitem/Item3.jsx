@@ -13,7 +13,9 @@ return(
             <div className="container">
               {
                   typeof(arraydetaillstory.Content3)!== 'undefined'?
-                  <h1>{arraydetaillstory.Content3}</h1>:null
+                  <div className="boder">
+                  <h1>{arraydetaillstory.Content3}</h1>
+                  </div>:null
                }
              </div>
         </section>
