@@ -2,6 +2,17 @@
 {
   height: 50px;
 }
+.page-detail .detail-care .detail-care__left .detail-care__content .care-content__text a h3
+{
+  text-align: justify;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    height: 58px;
+    line-height: 27px;
+}
 .page-detail .detail-article
 {
   display: grid;
@@ -26,6 +37,7 @@
 .page_detaillogform .page-detaillogform .detaillogform-content .detaillogform-content__content
 {
   font-size: 20px;
+  color: white;
 }
 .page-detail .detail-content .detail-content__left .content-left h1 strong
 {
@@ -228,8 +240,15 @@ main .page__home .page__home-listnew .right__right .new__middo p
   grid-template-columns: 34% 64% !important;
   width: 100%;
 }
+.page-detail .detailadvertisement
+{
+  display: grid;
+  grid-template-columns: 75% 25%;
+  height: 200px;
+}
 .page-detail .detail-content .detail-content__left .detail-involve .detail-involve__content .involve-content .involve-content__text span
 {
+  text-align: justify;
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 6;
@@ -249,6 +268,7 @@ main .page__home .page__home-header h1
 }
 .page-detail .detail-care .detail-care__left .detail-care__content .care-content__text span.demo
 {
+  text-align: justify;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 5;
@@ -271,6 +291,7 @@ main .page__home .page__home-header h1
 }
 main .page__home .page__home-content .left .left__header>a
 {
+  overflow: hidden;
   height: 100%;
 }
 .detail-involve__content > .involve-content > .involve-content__img > a {
@@ -311,11 +332,6 @@ main .page__home .page__home-content .left .left__header>a
 .home-multimedia>.home-content>.home-content-left>a>img 
 {
   width: 100%;
-}
-.home-multimedia>.home-content
-{
-  height: 455px;
-  overflow: hidden;
 }
 main .home-multimedia .home-content .home-content-left .title a
 {
@@ -598,7 +614,7 @@ main .page__home
 {
     text-align: center;
     background: #c2c2c2;
-    height: 100vh;
+    height: 100%;
     display: flex;
     color: white;
     scroll-snap-align:start ;
@@ -661,6 +677,15 @@ section .Advertisement
 {
   height: 170px;
   overflow: hidden;
+}
+section .aadvertisement 
+{
+  height: 170px;
+  overflow: hidden;
+}
+section .aadvertisement img 
+{
+  width: 100%;
 }
 section .Advertisement img 
 {
@@ -849,7 +874,7 @@ main .home-multimedia .home-content .home-content-left .title a
   text-align: justify;
   overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   height: 60px;
@@ -872,55 +897,93 @@ main .home-multimedia .home-content .home-content-left .title
 }
 main .home-multimedia .home-content .home-content-right .content-right-item1 .right-item1-left .item1-left-title
 {
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 main .home-multimedia .home-content .home-content-right .content-right-item1 .right-item1-left .item1-left-title a
 {
+  width: 100%;
+  text-indent: 0px;
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: bold;
-  display: inline-block;
-  text-indent: 0px;
-  width: 100%;
+  text-align: justify;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  height: 60px;
+  line-height: 18px;
+  line-height: 1.2;
 }
 main .home-multimedia .home-content .home-content-right .content-right-item1 .right-item1-right .item1-right-title 
 {
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 main .home-multimedia .home-content .home-content-right .content-right-item1 .right-item1-right .item1-right-title a
 {
+  width: 100%;
+  text-indent: 0px;
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: bold;
-  display: inline-block;
-  text-indent: 0px;
-  width: 100%;
+  text-align: justify;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  height: 60px;
+  line-height: 18px;
+  line-height: 1.2;
 }
 main .home-multimedia .home-content .home-content-right .content-right-item2 .right-item2-left .item2-left-title a
 {
+  width: 100%;
+  text-indent: 0px;
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: bold;
-  display: inline-block;
-  text-indent: 0px;
-  width: 100%;
+  text-align: justify;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  height: 60px;
+  line-height: 18px;
+  line-height: 1.2;
 }
 main .home-multimedia .home-content .home-content-right .content-right-item2 .right-item2-left .item2-left-title 
 {
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 main .home-multimedia .home-content .home-content-right .content-right-item2 .right-item2-right .item2-right-title a
 {
-  overflow: hidden;
+  /* overflow: hidden;
   text-overflow: ellipsis;
   font-weight: bold;
   display: inline-block;
   text-indent: 0px;
+  width: 100%; */
   width: 100%;
+  text-indent: 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  text-align: justify;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  height: 60px;
+  line-height: 18px;
+  line-height: 1.2;
 }
 main .home-multimedia .home-content .home-content-right .content-right-item2 .right-item2-right .item2-right-title 
 {
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 main .home-multimedia .home-content .home-content-right .content-right-item2 .right-item2-right .item2-right-title a img
 {
@@ -1024,6 +1087,16 @@ main .home-multimedia .home-content .home-content-left .sub-text
 {
   width: 100%;
 }
+.new .new-content .new-content-left .new-content-news .content-news .content-news-text .news-text-title h3
+{
+  text-align: justify;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  height: 47px;
+}
 .page-detaillogform .detaillogform-content .detaillogform-content__content h4 img
 {
   width: 100%;
@@ -1040,16 +1113,21 @@ main .page__home .page__home-content .left .left__header .left-title p
   line-height: 18px;
   font-size: 11px;
 }
+.new .new-content .new-content-left .new-content-news .content-news .content-news-img img
+{
+  height: 100%;
+}
 .new .new-content .new-content-left .new-content-news .content-news .content-news-text .news-text-content p 
 {
+  text-align: justify;
   overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 4;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    height: 107px;
-    line-height: 25px;
-    font-size: 14px;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  height: 80px;
+  line-height: 25px;
+  font-size: 14px;
 }
 .page-detail .detail-content .detail-content__left .content-left p code 
 {

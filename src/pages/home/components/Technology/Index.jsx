@@ -49,6 +49,7 @@ function Sprot({story,arrayadvertisement}) {
     });
   }
   filter(story);
+  arraysport = arraysport.reverse();
   return(
       <>
       <section>

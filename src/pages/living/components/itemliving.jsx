@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../core/useAuth';
 
@@ -32,9 +33,7 @@ function Itemnew({NoiDung,Time,TieuDe,Avata,TomTat,id,TacGia}){
                 <span className="time" style={{marginLeft:5}}>{TacGia}</span>
               </div>
               <div className="news-text-content">
-                <p> {
-                      TomTat
-                    }
+                <p> <ReactMarkdown>{TomTat}</ReactMarkdown>
                   </p>
               </div>
             </div>

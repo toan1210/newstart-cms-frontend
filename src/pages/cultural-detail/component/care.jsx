@@ -1,10 +1,12 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import useAuth from '../../../core/useAuth';
 
 // import { Container } from './styles';
 
 function Index({id,TieuDe,Time,TacGia,Avata,TomTat,DanhMuc}) {
   let {ipapi,iplink} =useAuth();
+  console.log(Avata[0].url);
     var link =Avata[0].url;
       //---------------Time--------
         var date = Time.slice(0,10);
@@ -94,9 +96,7 @@ function Index({id,TieuDe,Time,TacGia,Avata,TomTat,DanhMuc}) {
               </span>
             </p>
             <span className="demo">
-                {
-                    TomTat
-                }
+            <span><ReactMarkdown>{TomTat}</ReactMarkdown></span>
             </span>
           </div>
         </div>

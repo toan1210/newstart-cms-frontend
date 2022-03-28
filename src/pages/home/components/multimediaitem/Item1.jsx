@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../../core/useAuth';
 
@@ -20,7 +21,7 @@ function Index({arraylogform}) {
               </Link>
             </p>
             <p className="sub-text">
-              {arraylogform.TomTat}
+            <ReactMarkdown>{arraylogform.TomTat}</ReactMarkdown>
             </p>
           </div>
           </>

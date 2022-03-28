@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import useAuth from '../../../core/useAuth';
 
 // import { Container } from './styles';
@@ -93,9 +94,7 @@ function Index({id,TieuDe,Time,TacGia,Avata,TomTat,DanhMuc}) {
               </span>
             </p>
             <span className="demo">
-                {
-                    TomTat
-                }
+            <span><ReactMarkdown>{TomTat}</ReactMarkdown></span>
             </span>
           </div>
         </div>

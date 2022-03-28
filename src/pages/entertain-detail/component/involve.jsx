@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../../core/useAuth';
 
@@ -20,7 +21,7 @@ function Invole({id,TieuDe,Avata,TacGia,TomTat}) {
               <a href={`/entertain/${id}`}>
                   <h3>{TieuDe}</h3>
                 </a>
-                <span>{TomTat}</span>
+                <span><ReactMarkdown>{TomTat}</ReactMarkdown></span>
               </div>
             </div>
       </>

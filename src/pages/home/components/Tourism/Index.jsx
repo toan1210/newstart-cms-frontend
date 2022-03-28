@@ -18,6 +18,7 @@ function Index({story,arrayadvertisement}) {
     });
   }
   filter(story);
+  arrayeconomy = arrayeconomy.reverse();
   return(
       <>
       <section>

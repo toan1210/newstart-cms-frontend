@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../core/useAuth';
 
@@ -73,11 +74,11 @@ function Item1({home,arrayadvertisement}) {
               </Link>
               <div className="left-title">
               <Link to={`/${url}/${home.id}`}>{home.TieuDe}</Link>
+
                 <p>
-                  {
-                    home.TomTat
-                  }
+                <ReactMarkdown>{home.TomTat}</ReactMarkdown>
                 </p>
+
               </div>
               <div className="left-quangcao">
               <a href={arrayadvertisement[0].HomeAdvertisementRight}>

@@ -4,6 +4,8 @@ import Care from './component/care';
 import Invole from './component/involve';
 import ReactMarkdown from 'react-markdown';
 import useAuth from '../../core/useAuth';
+import Slider from './component/Slider';
+let $ = window.$;
 // import { Container } from './styles';
 function Index() {
   let {ipapi,iplink} =useAuth();
@@ -11,21 +13,33 @@ function Index() {
   const [state,setState] = useState({
       listnew:null,
       allnew:null,
+      arrayadvertisements:null,
   })
+
   useEffect(() =>{
       Promise.all([
           fetch(`${ipapi}/homes/${slug}`).then(res =>res.json()),
           fetch(`${ipapi}/homes/`).then(res =>res.json()),
+          fetch(`${ipapi}/advertisements/`).then(res =>res.json()),
       ])
-          .then(([res1,res2]) =>{
+          .then(([res1,res2,res3]) =>{
               setState({
                   listnew:res1,
                   allnew:res2,
+                  arrayadvertisements:res3,
               })
           })
+          $(".aadvertisement").slick({
+            slidesToShow: 1,
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 2000,
+          infinite: true,
+          });
   },[slug])
-  let {listnew,allnew} = state;
-  if(!listnew && !allnew ) return 'loading...';
+  let {listnew,allnew,arrayadvertisements} = state;
+  if(!listnew && !allnew && !arrayadvertisements) return 'loading...';
+
   setTimeout(images, 100);
   function images()
   {
@@ -115,6 +129,15 @@ function Index() {
         </div>
       </div>
       <div className="detail-content__right">
+      <div className="left-quangcao">
+      {/*  */}
+                 {
+                   typeof(arrayadvertisements[0].DetailAdvertisementBrandstuffRight[0]) !== 'undefined'?
+                   <a href="">
+                       <img className="left-quangcao-img" src={iplink + arrayadvertisements[0].DetailAdvertisementBrandstuffRight[0].url} alt="" />
+                    </a>:null
+                 }
+              </div> 
       </div>
     </div>
     <div className="detail-care">

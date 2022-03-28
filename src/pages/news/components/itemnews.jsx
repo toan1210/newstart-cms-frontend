@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 import useAuth from '../../../core/useAuth';
 
 // import { Container } from './styles';
@@ -31,9 +32,7 @@ function Itemnew({NoiDung,Time,TieuDe,Avata,TomTat,id,TacGia}) {
               </div>
               <div className="news-text-content">
                 <p>
-                    {
-                      TomTat
-                    }
+                <ReactMarkdown>{TomTat}</ReactMarkdown>
                 </p>
               </div>
             </div>

@@ -12,21 +12,24 @@ function Index() {
   const [state,setState] = useState({
       listnew:null,
       allnew:null,
+      arrayadvertisements:null,
   })
   useEffect(() =>{
       Promise.all([
           fetch(`${ipapi}/homes/${slug}`).then(res =>res.json()),
           fetch(`${ipapi}/homes/`).then(res =>res.json()),
-      ])
-          .then(([res1,res2]) =>{
+          fetch(`${ipapi}/advertisements/`).then(res =>res.json()),
+        ])
+          .then(([res1,res2,res3]) =>{
               setState({
                   listnew:res1,
                   allnew:res2,
+                  arrayadvertisements:res3,
               })
           })
   },[slug])
-  let {listnew,allnew} = state;
-  if(!listnew && !allnew ) return 'loading...';
+  let {listnew,allnew,arrayadvertisements} = state;
+  if(!listnew && !allnew && !arrayadvertisements ) return 'loading...';
   setTimeout(images, 100);
   function images()
   {
@@ -115,6 +118,14 @@ filter2(state.allnew);
         </div>
       </div>
       <div className="detail-content__right">
+      <div className="left-quangcao">
+                  {
+                   typeof(arrayadvertisements[0].DetailAdvertisementTourismRight[0]) !== 'undefined'?
+                   <a href="">
+                       <img className="left-quangcao-img" src={iplink + arrayadvertisements[0].DetailAdvertisementTourismRight[0].url} alt="" />
+                    </a>:null
+                 }
+              </div> 
       </div>
     </div>
     <div className="detail-care">
