@@ -133,7 +133,7 @@ function Index() {
       {/*  */}
                  {
                    typeof(arrayadvertisements[0].DetailAdvertisementBrandstuffRight[0]) !== 'undefined'?
-                   <a href="">
+                   <a href={arrayadvertisements.DetailAdvertisementBrandstuffRightContent}>
                        <img className="left-quangcao-img" src={iplink + arrayadvertisements[0].DetailAdvertisementBrandstuffRight[0].url} alt="" />
                     </a>:null
                  }

@@ -9,13 +9,12 @@ function Subitem6({arraydetaillstory}) {
   var link = iplink + car;
 return(
     <>
-      <section className="one" style={{ backgroundImage:`url(${link})`,backgroundRepeat:'no-repeat',backgroundAttachment: 'fixed',backgroundSize: 'cover'}}>
-             <div className="container">
+      <section className="one" >
+          <img src={`${link}`} alt="" srcset="" />
                 {
                   typeof(arraydetaillstory.Content6)!== 'undefined'?
                   <h1>{arraydetaillstory.Content6}</h1>:null
                 }
-             </div>
         </section>
     </>
 )

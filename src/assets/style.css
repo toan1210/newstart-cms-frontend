@@ -6,6 +6,11 @@
 {
   text-align: justify;
 }
+.containera .one img 
+{
+  height: 100%;
+  width: 100%;
+}
 .page-detail .detail-care .detail-care__left .detail-care__content .care-content__text a h3
 {
   text-align: justify;
@@ -552,7 +557,7 @@ main .page__home
 }
 .page-detaillogform .detaillogform-content .detaillogform-content__content p 
 {
-  color: white;
+  color: black;
   text-align: justify;
 }
 .page-detaillogform .detaillogform-content .detaillogform-content__content p img
@@ -1145,6 +1150,17 @@ main .page__home .page__home-content .left .left__header .left-title p
   font-size: 13px;
   color: #9f9797;
 }
+.page_detaillogform .page-detaillogform
+{
+  background: white;
+}
+@media only screen and (max-width: 1920px) and (min-width: 992px){
+  .page-detaillogform .detaillogform-content .detaillogform-content__content p img
+  {
+    
+  }
+
+}
 @media only screen and (max-width: 991px) and (min-width: 768px){
   .page-detail .detail-title h1
   {
@@ -1344,7 +1360,6 @@ main .page__home .page__home-content .left .left__header .left-title p
   }
   .page-detaillogform .detaillogform-img
   {
-    height: 330px;
   }
   main .page__home .page__home-content .left .left__header>a 
   {

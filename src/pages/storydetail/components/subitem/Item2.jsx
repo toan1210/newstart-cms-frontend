@@ -10,7 +10,7 @@ function Subitem2({arraydetaillstory}) {
   var link = iplink + car;
 return(
     <>
-      <section className="one" style={{backgroundRepeat:'no-repeat',backgroundAttachment: 'fixed',backgroundSize: 'cover'}}>
+      <section className="one" >
             <img src={`${link}`} alt="" srcset="" />
             {  
                   typeof(arraydetaillstory.Content2)!== 'undefined'?

@@ -127,7 +127,7 @@ filter2(state.allnew);
          <div className="left-quangcao">
                   {
                    typeof(arrayadvertisements[0].DetailAdvertisementTechnologyRight[0]) !== 'undefined'?
-                   <a href="">
+                   <a href={arrayadvertisements.DetailAdvertisementTechnologyRightContent}>
                        <img className="left-quangcao-img" src={iplink + arrayadvertisements[0].DetailAdvertisementTechnologyRight[0].url} alt="" />
                     </a>:null
                  }
