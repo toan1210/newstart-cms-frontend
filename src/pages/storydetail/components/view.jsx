@@ -48,6 +48,30 @@ function View({id,TieuDe,Time,TacGia,Avata,TomTat,DanhMuc}) {
   {
     url='news';
   }
+  else if(DanhMuc === 'KinhTes')
+  {
+    url='economy';
+  }
+  else if(DanhMuc === 'KinhTes')
+  {
+    url='economy';
+  }
+  else if(DanhMuc === 'VHXHs')
+  {
+    url='cultural';
+  }
+  else if(DanhMuc === 'GiaiTris')
+  {
+    url='entertain';
+  }
+  else if(DanhMuc === 'TheThaos')
+  {
+    url='sport';
+  }
+  else if(DanhMuc === 'AmThucs')
+  {
+    url='cuisine';
+  }
   return(
       <>
       <div className="section-seemore__content">
