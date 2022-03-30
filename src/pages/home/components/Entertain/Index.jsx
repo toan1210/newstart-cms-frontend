@@ -5,7 +5,7 @@ import Item from './Item';
 let $ = window.$;
 // import { Container } from './styles';
 
-function Index({story,arrayadvertisement}) {
+function Index({story,arrayadvertisement,arrayhome}) {
   let {ipapi,iplink} =useAuth();
   var arrayeconomy =[];
   function filter(x)
@@ -19,6 +19,26 @@ function Index({story,arrayadvertisement}) {
   }
   filter(story);
   arrayeconomy = arrayeconomy.reverse();
+
+  var arrayall =[];
+  function filter1(x)
+  {
+    x.forEach((a,b) => {
+        if(a.DanhMuc === "GiaiTris")
+        {
+          arrayall.push(a);
+        }
+    });
+  }
+  filter1(arrayhome)
+  arrayall = arrayall.reverse();
+  var arrrrray = [...arrayall,...arrayeconomy]
+
+  var homestory = arrrrray.sort(function(a,b)
+  {
+    return(new Date(a.Time).getTime()) - (new Date(b.Time).getTime())
+  })
+  homestory = homestory.reverse();
   return(
       <>
       <section>
@@ -32,7 +52,7 @@ function Index({story,arrayadvertisement}) {
       </div>
       <div className="slider-content">
         {
-            arrayeconomy.map(x =>
+            homestory.map(x =>
                 <Item key={x.id} {...x}></Item>
             )
         }

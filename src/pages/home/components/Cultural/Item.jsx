@@ -4,15 +4,24 @@ import useAuth from '../../../../core/useAuth';
 
 // import { Container } from './styles';
 
-function Item({Avata,TieuDe,id}) {
+function Item({Avata,TieuDe,id,Img1}) {
   let {ipapi,iplink} =useAuth();
+  var url ='';
+  if(typeof(Img1) === 'object')
+  {
+    url ="/layoutstory/story";
+  }
+  else if(typeof(Img1)==='undefined')
+  {
+    url ="/technology"
+  }
   return(
       <>
       <div className="card padding">
           <div className="slider-content-img">
             <img className="slider-img-img" src={iplink + Avata[0].url} alt="" />
             <div className="slider-content-ovelay">
-            <Link to={`/layoutstory/story/${id}`} className="content-slider">
+            <Link to={`${url}/${id}`} className="content-slider">
                 <div className="content-ovelay">
                 </div>
               </Link>

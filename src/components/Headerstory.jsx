@@ -35,9 +35,9 @@ function Headerstory() {
   <div className="container">
     <div className="header-show">
       <div className="header-logo">
-      <Link to="/">
+      <a href="/">
           <img src="/img/40.png" alt="" srcSet />
-        </Link>
+        </a>
       </div>
       <div className="header-logotext">
       <Link to={`/story`}>

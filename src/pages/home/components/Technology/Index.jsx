@@ -5,7 +5,7 @@ import Item from './Item';
 let $ = window.$;
 // import { Container } from './styles';
 
-function Sprot({story,arrayadvertisement}) {
+function Sprot({story,arrayadvertisement,arrayhome,}) {
   let {ipapi,iplink} =useAuth();
   useEffect(() =>{
     let slidershow = 4;
@@ -50,6 +50,29 @@ function Sprot({story,arrayadvertisement}) {
   }
   filter(story);
   arraysport = arraysport.reverse();
+  
+  var arrayall =[];
+  function filter1(x)
+  {
+    x.forEach((a,b) => {
+        if(a.DanhMuc === "CongNghes")
+        {
+          arrayall.push(a);
+        }
+    });
+  }
+  filter1(arrayhome)
+  arrayall = arrayall.reverse();
+  var arrrrray = [...arrayall,...arraysport]
+
+  var homestory = arrrrray.sort(function(a,b)
+  {
+    return(new Date(a.Time).getTime()) - (new Date(b.Time).getTime())
+  })
+  homestory = homestory.reverse();
+
+console.log(homestory);
+
   return(
       <>
       <section>
@@ -63,7 +86,7 @@ function Sprot({story,arrayadvertisement}) {
       </div>
       <div className="slider-content">
         {
-            arraysport.map(x =>
+            homestory.map(x =>
                 <Item key={x.id} {...x}></Item>
             )
         }

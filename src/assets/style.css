@@ -297,7 +297,6 @@ main .page__home .page__home-header h1
   -webkit-line-clamp: 5;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  height: 135px;
   line-height: 25px;
   font-size: 15px;
 }
@@ -336,7 +335,6 @@ main .page__home .page__home-content .left .left__header>a
 }
 .detail-care > .detail-care__left > .detail-care__content {
   grid-template-columns: 34% 64% !important;
-  height: 210px;
   overflow: hidden;
   width: 100%;
 }
@@ -1784,12 +1782,10 @@ main .page__home .page__home-content .left .left__header .left-title p
   .detail-care > .detail-care__left > .detail-care__content
   {
     grid-template-columns: 100% !important;
-    height: 363px;
   }
   .page-detail .detail-content .detail-content__left .detail-involve .detail-involve__content .involve-content
   {
     grid-template-columns: 100% !important;
-    height: 363px;
   }
   main .page__home .page__home-listnew .right__left
   {

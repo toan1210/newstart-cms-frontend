@@ -92,17 +92,17 @@ console.log(arrayhomehotnews[0]);
      <Multimedia home={arrayhome} ></Multimedia>
     </div>
   </main>
-  <News story={state.story} arrayadvertisement={arrayadvertisement}></News>
-  <Technology story={state.story} arrayadvertisement={arrayadvertisement}></Technology>
-  <Economy story={state.story} arrayadvertisement={arrayadvertisement}></Economy>
-  <Cultural story={state.story} arrayadvertisement={arrayadvertisement}></Cultural>
-  <Entertain story={state.story} arrayadvertisement={arrayadvertisement}></Entertain>
-  <Living story={state.story} arrayadvertisement={arrayadvertisement}></Living>
-  <Tourism story={state.story} arrayadvertisement={arrayadvertisement}></Tourism>
-  <Brandstuff story={state.story} arrayadvertisement={arrayadvertisement}></Brandstuff>
-  <Fashion story={state.story} arrayadvertisement={arrayadvertisement}></Fashion>
-   <Sports story={state.story} arrayadvertisement={arrayadvertisement}></Sports> 
-  <Cuisine story={state.story} arrayadvertisement={arrayadvertisement}></Cuisine>
+  <News  arrayadvertisement={arrayadvertisement}></News>
+  <Technology story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Technology>
+  <Economy story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Economy>
+  <Cultural story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Cultural>
+  <Entertain story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Entertain>
+  <Living story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Living>
+  <Tourism story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Tourism>
+  <Brandstuff story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Brandstuff>
+  <Fashion story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Fashion>
+   <Sports story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Sports> 
+  <Cuisine story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Cuisine>
       </>
   );
 }

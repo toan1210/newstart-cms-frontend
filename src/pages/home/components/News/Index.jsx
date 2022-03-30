@@ -5,40 +5,12 @@ import Item from './Item';
 let $ = window.$;
 // import { Container } from './styles';
 
-function Index({story,arrayadvertisement}) {
+function Index({arrayadvertisement}) {
   let {ipapi,iplink} =useAuth();
-  var arrayeconomy =[];
-  function filter(x)
-  {
-    x.forEach((a,b) => {
-        if(a.DanhMuc === "TinMois")
-        {
-          arrayeconomy.push(a);
-        }
-    });
-  }
-  filter(story);
-  arrayeconomy = arrayeconomy.reverse();
+
   return(
       <>
       <section>
-  <div className="slider tablet">
-    <div className="container">
-      <div className="slider-title">
-        <h3>Tin Mới</h3>
-        <div className="slider-title-xemthem">
-        <Link to={'/story'}>Xem Thêm...</Link>
-        </div>
-      </div>
-      <div className="slider-content">
-        {
-            arrayeconomy.map(x =>
-                <Item key={x.id} {...x}></Item>
-            )
-        }
-      </div>
-    </div>
-  </div>
   <div className="advertisement">
   {
       typeof(arrayadvertisement[0].HomeAdvertisementNews1IMG[0]) !== 'undefined'?
