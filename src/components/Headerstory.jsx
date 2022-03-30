@@ -13,7 +13,11 @@ function Headerstory() {
     let vitri = 0;
      window.onscroll = function(){
      var windowscroll = window.pageYOffset;
-      if(windowscroll > vitri)
+     if(windowscroll == 0)
+     {
+      menu.addClass("activemenu1");
+     }
+     else if(windowscroll > vitri)
       {
            menu.addClass("activemenu");
           vitri=windowscroll;
@@ -27,7 +31,7 @@ function Headerstory() {
 },[])
   return(
       <>
-        <header className="detailstory-header">
+        <header className="detailstory-header detailstory-header-activemenu1">
   <div className="container">
     <div className="header-show">
       <div className="header-logo">

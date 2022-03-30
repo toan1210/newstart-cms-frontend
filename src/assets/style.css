@@ -6,6 +6,7 @@
 {
   text-align: justify;
 }
+
 .page_detaillogform .page-detaillogform
 {
   background: #333333;
@@ -655,7 +656,7 @@ main .page__home .page__home-content .left .left__header .left-title a
 }
 header.detailstory-header.activemenu 
 {
-  transform: translateY(-100%);
+  transform: translateY(-0%);
 }
 .page_detailstory .detailstory-header
 {
@@ -1165,6 +1166,10 @@ main .page__home .page__home-content .left .left__header .left-title p
 .page_detaillogform .page-detaillogform
 {
 
+}
+.page_detailstory .detailstory-header-activemenu1
+{
+  transform: translateY(-100%);
 }
 @media only screen and (max-width: 1920px) and (min-width: 992px){
   .page-detaillogform .detaillogform-content .detaillogform-content__content p img
