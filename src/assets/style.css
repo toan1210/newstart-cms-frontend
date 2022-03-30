@@ -6,10 +6,18 @@
 {
   text-align: justify;
 }
+.page_detaillogform .page-detaillogform
+{
+  background: #333333;
+}
 .containera .one img 
 {
-  height: 100%;
   width: 100%;
+}
+.page-detail .detail-content .detail-content__left .content-left ul li
+{
+  width: 100%;
+  height: 10px;
 }
 .page-detail .detail-care .detail-care__left .detail-care__content .care-content__text a h3
 {
@@ -21,6 +29,11 @@
     -webkit-box-orient: vertical;
     height: 58px;
     line-height: 27px;
+}
+.page_detaillogform .page-detaillogform .detaillogform-content .detaillogform-content__content ul li 
+{
+ width: 100%;
+ height: 5px;
 }
 .page-detail .detail-article
 {
@@ -557,7 +570,6 @@ main .page__home
 }
 .page-detaillogform .detaillogform-content .detaillogform-content__content p 
 {
-  color: black;
   text-align: justify;
 }
 .page-detaillogform .detaillogform-content .detaillogform-content__content p img
@@ -1152,7 +1164,7 @@ main .page__home .page__home-content .left .left__header .left-title p
 }
 .page_detaillogform .page-detaillogform
 {
-  background: white;
+
 }
 @media only screen and (max-width: 1920px) and (min-width: 992px){
   .page-detaillogform .detaillogform-content .detaillogform-content__content p img
