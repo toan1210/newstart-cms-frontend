@@ -6,7 +6,10 @@
 {
   text-align: justify;
 }
-
+main .home-multimedia
+{
+  margin-bottom: 15px;
+}
 .page_detaillogform .page-detaillogform
 {
   background: #333333;

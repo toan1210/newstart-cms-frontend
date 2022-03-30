@@ -24,7 +24,7 @@ function Sprot({story,arrayadvertisement,arrayhome,}) {
     $(".slider-content").slick({
         slidesToShow: slidershow,
         slidesToScroll: 1,
-        centerMode: true,
+        centerMode: false,
         infinite: true,
         // appendArrows: $(".slick-slider-nav"),
         // prevArrow: "<button className='slick-prev btn btn-white rounded-circle'><i className='mdi mdi-chevron-left' /></button>",

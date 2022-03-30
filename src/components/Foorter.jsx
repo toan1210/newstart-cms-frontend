@@ -37,8 +37,8 @@ function Foorter() {
             <span>Theo dõi Newstar trên</span>
           </div>
           <div className="footer-right-follow-icon">
-            <NavLink to="https://www.facebook.com/nstartv.vn"><img src="/img/facebook-logo-3.png" alt="" /></NavLink>
-            <NavLink to="https://www.youtube.com/channel/UCOslMXB2hFLKCaLLSo65KWQ"> <img src="/img/youtube-dark-icon-16.png" alt="" srcSet /></NavLink>
+            <a href="https://www.facebook.com/nstartv.vn"><img src="/img/facebook.png" alt="" /></a>
+            <a to="https://www.youtube.com/channel/UCOslMXB2hFLKCaLLSo65KWQ"> <img src="/img/youtube.png" alt="" srcSet /></a>
           </div>
         </div>
       </div>

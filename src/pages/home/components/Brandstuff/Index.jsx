@@ -38,6 +38,7 @@ function Index({story,arrayadvertisement,arrayhome}) {
     return(new Date(a.Time).getTime()) - (new Date(b.Time).getTime())
   })
   homestory = homestory.reverse();
+  console.log("Hàng Hiệu",homestory);
   return(
       <>
       <section>
