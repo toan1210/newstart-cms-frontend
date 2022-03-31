@@ -162,11 +162,11 @@ p.time > span.time-day {
   margin-right: 5px;
 }
 .left__header {
-  height: 250px;
+  /* height: 250px; */
   overflow: hidden;
 }
 .left__header > a {
-  height: 360px;
+  /* height: 360px; */
   position: relative;
 }
 main .page__home .page__home-content .left .left__header a img
@@ -535,7 +535,7 @@ main .page__home
 }
 .page-logform .topic-news .list-news .list-news__itme>a
 {
-  height: 210px;
+  /* height: 210px; */
   overflow: hidden;
 }
 .page-logform .topic-news .list-news .list-news__itme>a>img
@@ -580,7 +580,7 @@ main .page__home
 }
 .section-care .section-care__content .care-content__item .content-item__img
 {
-  height: 230px;
+  /* height: 230px; */
   overflow: hidden;
 }
 .section-care .section-care__content .care-content__item .content-item__img a img 
@@ -1292,6 +1292,15 @@ main .page__home .page__home-content .left .left__header .left-title p
   }
 }
 @media only screen and (max-width: 767px) and (min-width: 320px){
+  .slider .slider-title
+  {
+    padding-top: 10px;
+  }
+  .slider .slider-title h3
+  {
+    margin:initial;
+    font-size: 16px;
+  }
   .page-detail .detail-title h1
   {
     grid-template-columns:100%;
@@ -1346,7 +1355,7 @@ main .page__home .page__home-content .left .left__header .left-title p
   }
   .slider .slider-content .slick-next
   {
-    display: none !important;
+    right: -10px;
   }
   .slider .slider-content .slick-prev
   {
@@ -1411,6 +1420,7 @@ main .page__home .page__home-content .left .left__header .left-title p
   }
 }
 @media only screen and (max-width: 767px) and (min-width: 667px){
+
   main .page__home .page__home-content .left .left__header .left-title p
   {
     -webkit-line-clamp: 4;
@@ -1746,13 +1756,22 @@ main .page__home .page__home-content .left .left__header .left-title p
     grid-template-columns: 100%;
     
   }
+  main .home-multimedia .home-content .home-content-right .content-right-item1 .right-item1-right
+  {
+    margin-top: 10px;
+  }
   main .home-multimedia .home-content .home-content-right .content-right-item1
   {
+    margin-top: 10px;
     grid-template-columns:100%;
   }
   main .home-multimedia .home-content .home-content-right .content-right-item2
   {
     grid-template-columns:100%;
+  }
+  main .home-multimedia .home-content .home-content-right .content-right-item2 .right-item2-right
+  {
+    margin-top: 10px;
   }
   .home-multimedia>.home-content
   {
