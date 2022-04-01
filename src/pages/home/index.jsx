@@ -63,7 +63,7 @@ function filter(x)
   });
 }
 filter(state.home);
-console.log(arrayhomehotnews[0]);
+
   return (
       <>
   <main>
