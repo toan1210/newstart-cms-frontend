@@ -1301,6 +1301,8 @@ main .page__home .page__home-content .left .left__header .left-title p
   {
     position: absolute;
     right: 0%;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 @media only screen and (max-width: 767px) and (min-width: 320px){
@@ -1438,6 +1440,8 @@ main .page__home .page__home-content .left .left__header .left-title p
   {
     position: absolute;
     right: 0%;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 @media only screen and (max-width: 767px) and (min-width: 667px){
