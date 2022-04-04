@@ -6,6 +6,10 @@
 {
   text-align: justify;
 }
+main .page__home
+{
+  
+}
 main .home-multimedia
 {
   margin-bottom: 15px;
@@ -372,6 +376,7 @@ main .home-multimedia .home-content .home-content-left .title a
 main .page__home
 {
   margin-top: 60px;
+  padding-left: 0px;
 }
 .home-headerr .headerr .header
 {
@@ -981,7 +986,7 @@ main .home-multimedia .home-content .home-content-right .content-right-item2 .ri
   -webkit-line-clamp: 3;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  height: 60px;
+  height: 58px;
   line-height: 18px;
   line-height: 1.2;
 }
@@ -1174,6 +1179,12 @@ main .page__home .page__home-content .left .left__header .left-title p
 .page_detailstory .detailstory-header-activemenu1
 {
   transform: translateY(-100%);
+}
+main .page__home .page__home-listnew .right__right
+{
+  display: grid;
+  grid-template-columns: 47% 46.5%;
+  grid-column-gap: 16px;
 }
 @media only screen and (max-width: 1920px) and (min-width: 992px){
   .page-detaillogform .detaillogform-content .detaillogform-content__content p img
