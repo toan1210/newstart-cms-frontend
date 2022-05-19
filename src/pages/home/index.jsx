@@ -20,90 +20,79 @@ import useAuth from '../../core/useAuth';
 import Cuisine from './components/Cuisine/Index';
 // import { Container } from './styles';
 function Home() {
-  let {ipapi,iplink} =useAuth();
-  let [state,setState] = useState({
-    home:[],
-    story:[],
-    advertisement:[],
-    loanding:true
+  let { ipapi, iplink, ipapii } = useAuth();
+  let [state, setState] = useState({
+    home: [],
+    story: [],
+    advertisement: [],
+    loanding: true
   }
-)
-useEffect(() =>{
-  Promise.all([
-      fetch(`${ipapi}/homes/`).then(res =>res.json()),
-      fetch(`${ipapi}/stories/`).then(res =>res.json()),
-      fetch(`${ipapi}/advertisements/`).then(res =>res.json()),
-  ])
-      .then(([res1,res2,res3]) =>{
-          setState({
-              home:res1,
-              story:res2,
-              advertisement:res3,
-              loanding:false,
-          })
+  )
+  useEffect(() => {
+    Promise.all([
+      fetch(`http://localhost:4000/traditional/traditionalapi`).then(res => res.json()),
+     
+    ])
+      .then(([res1, res2, res3, res4,]) => {
+        setState({
+          home: res1,
+          story: res2,
+          advertisement: res3,
+          loanding: false,
+        })
       })
-},[])
+  }, [])
 
-if(state.loanding)
-{
-  return 'Loangding';
-}
-var arrayadvertisement = state.advertisement;
-var arrayhomehotnews =[];
-var arrayhome =[];
-var array = state.home;
-arrayhome = array.reverse();
-function filter(x)
-{
-  x.forEach((a,b) => {
-      if(a.NoiBat === true)
-      {
-        arrayhomehotnews.push(a);
-      }
-  });
-}
-filter(state.home);
-
+  if (state.loanding) {
+    return 'Loangding';
+  }
+  console.log(state.home);
+  var arrayadvertisement = state.advertisement;
+  var arrayhomehotnews = [];
+  var arrayhome = [];
+  var array = state.home;
+  arrayhome = array.reverse();
+  arrayhomehotnews = arrayhomehotnews.reverse()
   return (
-      <>
-  <main>
-    <div className="container">
-    <div className="page__home">
-      <div className="page__home-header">
-        <h1><a href>Tin Nổi Bật</a></h1>
-        <ul>
-          <li><a href>TIN TỨC XUẤT BẢN</a></li>
-          <li><a href>SÁCH HAY </a></li>
-          <li><a href>TÁC GIẢ</a></li>
-        </ul>
-      </div>
-      <Item1 home={arrayhomehotnews[0]} arrayadvertisement={arrayadvertisement}> </Item1>
-      <div className="page__home-listnew">
-        <div className="right__left">
-          <Item2 home={arrayhomehotnews[1]} ></Item2>
-          <Item3 home={arrayhomehotnews[2]} ></Item3> 
+    <>
+      <main>
+        <div className="container">
+          <div className="page__home">
+            <div className="page__home-header">
+              <h1><a href>Tin Nổi Bật</a></h1>
+              <ul>
+                <li><a href>TIN TỨC XUẤT BẢN</a></li>
+                <li><a href>SÁCH HAY </a></li>
+                <li><a href>TÁC GIẢ</a></li>
+              </ul>
+            </div>
+            <Item1 home={arrayhomehotnews[0]} arrayadvertisement={arrayadvertisement}> </Item1>
+            <div className="page__home-listnew">
+              <div className="right__left">
+                <Item2 home={arrayhomehotnews[1]} ></Item2>
+                <Item3 home={arrayhomehotnews[2]} ></Item3>
+              </div>
+              <div className="right__right">
+                <Item4 home={arrayhomehotnews[3]} ></Item4>
+                <Item5 home={arrayhomehotnews[4]} ></Item5>
+              </div>
+            </div>
+          </div>
+          <Multimedia home={arrayhome} ></Multimedia>
         </div>
-        <div className="right__right">
-          <Item4  home={arrayhomehotnews[3]} ></Item4>
-          <Item5 home={arrayhomehotnews[4]} ></Item5>
-        </div>
-      </div>
-    </div>
-     <Multimedia home={arrayhome} ></Multimedia>
-    </div>
-  </main>
-  <News  arrayadvertisement={arrayadvertisement}></News>
-  <Technology story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Technology>
-  <Economy story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Economy>
-  <Cultural story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Cultural>
-  <Entertain story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Entertain>
-  <Living story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Living>
-  <Tourism story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Tourism>
-  <Brandstuff story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Brandstuff>
-  <Fashion story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Fashion>
-   <Sports story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Sports> 
-  <Cuisine story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Cuisine>
-      </>
+      </main>
+      <News arrayadvertisement={arrayadvertisement}></News>
+      <Technology story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Technology>
+      <Economy story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Economy>
+      <Cultural story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Cultural>
+      <Entertain story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Entertain>
+      <Living story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Living>
+      <Tourism story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Tourism>
+      <Brandstuff story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Brandstuff>
+      <Fashion story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Fashion>
+      <Sports story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Sports>
+      <Cuisine story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Cuisine>
+    </>
   );
 }
 

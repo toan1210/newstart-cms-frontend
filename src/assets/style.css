@@ -382,6 +382,11 @@ main .page__home
 {
   grid-template-columns: 12% 88%;
 }
+.page-detail .detail-content
+{
+  grid-template-columns: 72% 25%;
+  grid-column-gap: 3%;
+}
 .home-headerr .headerr .header .header__menu ul li.dots
 {
   display: none;
@@ -1185,6 +1190,12 @@ main .page__home .page__home-listnew .right__right
   display: grid;
   grid-template-columns: 47% 46.5%;
   grid-column-gap: 16px;
+}
+.page-detail .detail-content .detail-content__right .left-quangcao.active3
+{
+  position: fixed;
+  width: 266px;
+  top: 7%;
 }
 @media only screen and (max-width: 1920px) and (min-width: 992px){
   .page-detaillogform .detaillogform-content .detaillogform-content__content p img

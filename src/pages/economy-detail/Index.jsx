@@ -4,7 +4,7 @@ import Care from './component/care';
 import Invole from './component/involve';
 import ReactMarkdown from 'react-markdown';
 import useAuth from '../../core/useAuth';
-
+let $ =window.$;
 // import { Container } from './styles';
 
 function Index() {

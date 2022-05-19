@@ -7,20 +7,21 @@ import useAuth from '../../../core/useAuth';
 function Item2({technology}) {
   let {ipapi,iplink} = useAuth();
   return(
-      <>
-        <div className="new__left">
-        <Link to={`/layout/logform/${technology.id}`}>
-                <img src={iplink+technology.Avata[0].url} alt="" srcSet />
-              </Link>
-              <p>
-              <Link to={`/layout/logform/${technology.id}`}>
-                  {
-                    technology.TieuDe
-                  }
-                </Link>
-              </p>
-            </div>
-      </>
+      // <>
+      //   <div className="new__left">
+      //   <Link to={`/layout/logform/${technology.id}`}>
+      //           <img src={iplink+technology.Avata[0].url} alt="" srcSet />
+      //         </Link>
+      //         <p>
+      //         <Link to={`/layout/logform/${technology.id}`}>
+      //             {
+      //               technology.TieuDe
+      //             }
+      //           </Link>
+      //         </p>
+      //       </div>
+      // </>
+      <h2>Minh Toàn</h2>
   );
 }
 

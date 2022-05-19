@@ -8,12 +8,13 @@ import Slider from './component/Slider';
 let $ = window.$;
 // import { Container } from './styles';
 function Index() {
-  let {ipapi,iplink} =useAuth();
+  let {ipapi,iplink,ipapii} =useAuth();
   let {slug} = useRouteMatch().params;
   const [state,setState] = useState({
       listnew:null,
       allnew:null,
       arrayadvertisements:null,
+      aaa:null,
   })
 
   useEffect(() =>{
@@ -21,12 +22,15 @@ function Index() {
           fetch(`${ipapi}/homes/${slug}`).then(res =>res.json()),
           fetch(`${ipapi}/homes/`).then(res =>res.json()),
           fetch(`${ipapi}/advertisements/`).then(res =>res.json()),
+          fetch(`http://localhost:4000/`).then(res =>res.json()),
       ])
-          .then(([res1,res2,res3]) =>{
+          .then(([res1,res2,res3,res4]) =>{
               setState({
                   listnew:res1,
                   allnew:res2,
                   arrayadvertisements:res3,
+                  aaa:res4,
+
               })
           })
           $(".aadvertisement").slick({
@@ -36,10 +40,29 @@ function Index() {
           autoplaySpeed: 2000,
           infinite: true,
           });
+          window.onscroll = function(){
+            var detail = $(".detail-content");
+            var detailsrcoll = Math.round(detail.offset().top);
+            var windowscroll = window.pageYOffset;
+            console.log(detailsrcoll,windowscroll)
+            if(detailsrcoll < Math.round(windowscroll))
+            {
+              $(".left-quangcao").addClass("active3");
+            }
+           else if(detailsrcoll > Math.round(windowscroll))
+            {
+              $(".left-quangcao").removeClass("active3");
+            }
+       }
+       a()
   },[slug])
-  let {listnew,allnew,arrayadvertisements} = state;
-  if(!listnew && !allnew && !arrayadvertisements) return 'loading...';
-
+  function a()
+  {
+    console.log("asdasdas")
+  }
+  let {listnew,allnew,arrayadvertisements,aaa} = state;
+  if(!listnew && !allnew && !arrayadvertisements && !aaa ) return 'loading...';
+  console.log(state.aaa);
   setTimeout(images, 100);
   function images()
   {
@@ -122,7 +145,7 @@ function Index() {
           <div className="detail-involve__content">
               {
                 arraybrandstuff.map((x,y)=>
-                    y<=2?<Invole key={x.id} {...x}></Invole>:null
+                  y<=2?<Invole key={x.id} {...x}></Invole>:null
                 )
               }
           </div>

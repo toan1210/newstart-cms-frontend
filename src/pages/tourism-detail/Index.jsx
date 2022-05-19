@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import Care from './component/care';
 import { useRouteMatch } from 'react-router-dom';
 import useAuth from '../../core/useAuth';
+let $ =window.$;
 // import { Container } from './styles';
 
 function Index() {
@@ -27,6 +28,20 @@ function Index() {
                   arrayadvertisements:res3,
               })
           })
+          window.onscroll = function(){
+            var detail = $(".detail-content");
+            var detailsrcoll = Math.round(detail.offset().top);
+            var windowscroll = window.pageYOffset;
+            console.log(detailsrcoll,windowscroll)
+            if(detailsrcoll < Math.round(windowscroll))
+            {
+              $(".left-quangcao").addClass("active3");
+            }
+           else if(detailsrcoll > Math.round(windowscroll))
+            {
+              $(".left-quangcao").removeClass("active3");
+            }
+          }
   },[slug])
   let {listnew,allnew,arrayadvertisements} = state;
   if(!listnew && !allnew && !arrayadvertisements ) return 'loading...';

@@ -8,13 +8,10 @@ import useAuth from '../../../core/useAuth';
 function Item1({home,arrayadvertisement}) {
   let {ipapi,iplink} =useAuth();
   let url ='';
+  console.log(home);
   if(home.DanhMuc === 'CongNghes')
   {
     url='technology';
-  }
-  else if(home.DanhMuc === 'DuLichs')
-  {
-    url='tourism';
   }
   else if(home.DanhMuc === 'HangHieus')
   {
@@ -39,10 +36,6 @@ function Item1({home,arrayadvertisement}) {
   else if(home.DanhMuc === 'TinMois')
   {
     url='news';
-  }
-  else if(home.DanhMuc === 'KinhTes')
-  {
-    url='economy';
   }
   else if(home.DanhMuc === 'KinhTes')
   {

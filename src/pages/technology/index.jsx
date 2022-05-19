@@ -8,7 +8,6 @@ import Itemtechnology from './components/itemtechnology';
 import ReactMarkdown from 'react-markdown';
 import useAuth from '../../core/useAuth';
 // import { Container } from './styles';
-
 function Technology() {
   let {ipapi,iplink} = useAuth();
   let [state,setState] = useState({
@@ -20,17 +19,15 @@ function Technology() {
 )
 useEffect(() =>{
   Promise.all([
-      fetch(`${ipapi}/homes/`).then(res =>res.json()),
-      fetch(`${ipapi}/log-forms/`).then(res =>res.json()),
-      fetch(`${ipapi}/stories/`).then(res =>res.json()),
-      fetch(`${ipapi}/advertisements/`).then(res =>res.json()),
+      fetch(`http://localhost:4000/traditional/traditionalapi`).then(res =>res.json()),
+      fetch(`http://localhost:4000/longform/longformapi`).then(res =>res.json()),
+      fetch(`http://localhost:4000/story/storyapi`).then(res =>res.json()),
     ])
-      .then(([res1,res2,res3,res4]) =>{
+      .then(([res1,res2,res3]) =>{
           setState({
             technology:res1,
               logform:res2,
               story:res3,
-              arrayadvertisements:res4,
               loanding:false,
           })
       })
@@ -43,7 +40,7 @@ var arraystory =[];
 function filter(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "CongNghes")
+      if(a.category === "CongNghes")
       {
         arraytechnology.push(a);
       }
@@ -52,6 +49,7 @@ function filter(x)
 filter(state.technology);
 var array = arraytechnology;
 arraytechnology = array.reverse();
+console.log(arraytechnology);
 
 function filterlogform(x)
 {
@@ -89,7 +87,7 @@ var arrraystory = arraystory.reverse();
           <li><a href>TÁC GIẢ</a></li>
         </ul>
       </div>
-      <Item1 technology={arraytechnology[0]} arrayadvertisements={arrayadvertisements}> </Item1>
+      <Item1 technology={arraytechnology[0]}> </Item1>
       <div className="page__home-listnew">
         <div className="right__left">
           <Item2 technology={arrraylogform[0]} ></Item2>
