@@ -7,7 +7,7 @@ import ReactMarkdown from 'react-markdown';
 
 function Item1({technology}) {
   let {apihome,apidetailhome,ip} = useAuth();
-  console.log("technology",technology,ip);
+  console.log(ip);
   return(
       <>
       <div className="page__home-content">
