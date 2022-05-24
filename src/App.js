@@ -13,13 +13,13 @@ function App() {
   let ipapi="http://34.87.31.207/api";
   let ipapii="http://34.87.31.207";
   let iplink="http://34.87.31.207";
-  let domain = "http://newstartv.com.vn";
+  let ip = "http://localhost:4001/";
 
-  let apihome="http://localhost:4000/traditional/traditionalapi";
-  let apidetailhome="http://localhost:4000/traditional/"
+  let apihome="http://localhost:4001/traditional/traditionalapi";
+  let apidetailhome="http://localhost:4001/traditional/"
   return (
  <BrowserRouter>
-     <Context.Provider  value={{ipapi,iplink,domain,ipapii,apihome,apidetailhome}}>
+     <Context.Provider  value={{ipapi,iplink,ipapii,apihome,apidetailhome,ip}}>
          {renderRouters(routers)}
      </Context.Provider>
  </BrowserRouter>

@@ -6,15 +6,15 @@ import ReactMarkdown from 'react-markdown';
 // import { Container } from './styles';
 
 function Item1({technology}) {
-  let {apihome,apidetailhome} = useAuth();
-  console.log("technology",technology);
+  let {apihome,apidetailhome,ip} = useAuth();
+  console.log("technology",technology,ip);
   return(
       <>
       <div className="page__home-content">
           <div className="left">
             <div className="left__header">
-            <Link to={`/${apidetailhome}/${technology._id}`}>
-                {/* <img src={technology.Avata[0].url} alt="" srcSet /> */}
+            <Link to={`/technology/${technology._id}`}>
+                <img src={ip+"images/"+technology.images} alt="" srcSet />
             </Link>
               <div className="left-title">
               {/* <Link to={`/technology/${technology.id}`}>{technology.TieuDe}</Link> */}

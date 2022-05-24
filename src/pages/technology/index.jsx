@@ -19,9 +19,9 @@ function Technology() {
 )
 useEffect(() =>{
   Promise.all([
-      fetch(`http://localhost:4000/traditional/traditionalapi`).then(res =>res.json()),
-      fetch(`http://localhost:4000/longform/longformapi`).then(res =>res.json()),
-      fetch(`http://localhost:4000/story/storyapi`).then(res =>res.json()),
+      fetch(`http://localhost:4001/traditional/traditionalapi`).then(res =>res.json()),
+      fetch(`http://localhost:4001/longform/longformapi`).then(res =>res.json()),
+      fetch(`http://localhost:4001/story/storyapi`).then(res =>res.json()),
     ])
       .then(([res1,res2,res3]) =>{
           setState({
@@ -32,6 +32,7 @@ useEffect(() =>{
           })
       })
 },[])
+
 let {allnew,logform,story,arrayadvertisements} = state;
 if(!allnew && !logform && !story  && !arrayadvertisements ) return 'loading...';
 var arraytechnology =[];
