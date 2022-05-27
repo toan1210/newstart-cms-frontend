@@ -5,27 +5,23 @@ import useAuth from '../../../core/useAuth';
 // import { Container } from './styles';
 
 function Item1({tourism,arrayadvertisements}) {
-  let {ipapi,iplink} = useAuth();
+  let {ip} = useAuth();
   return(
       <>
       <div className="page__home-content">
           <div className="left">
             <div className="left__header">
-            <Link to={`/tourism/${tourism.id}`}>
-                <img src={iplink+tourism.Avata[0].url} alt="" srcSet />
+            <Link to={`/tourism/${tourism._id}`}>
+                <img src={ip+"images/"+tourism.images} alt="" srcSet />
               </Link>
               <div className="left-title">
-              <Link to={`/tourism/${tourism.id}`}>{tourism.TieuDe}</Link>
-                <p>
-                {
-                    tourism.TomTat
-                }
-                </p>
+              <Link to={`/tourism/${tourism._id}`}>{tourism.title}</Link>
+              <div dangerouslySetInnerHTML={{__html:tourism.sumary}}></div>
               </div>
               <div className="left-quangcao">
-                <a href={arrayadvertisements[0].TourismAdvertisementRightContent}>
+                {/* <a href={arrayadvertisements[0].TourismAdvertisementRightContent}>
                 <img className="left-quangcao-img" src={iplink+arrayadvertisements[0].TourismAdvertisementRight[0].url} alt="" />
-                </a>
+                </a> */}
               </div>
             </div>
             <div className="left-content">

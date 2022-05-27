@@ -9,7 +9,7 @@ import Itemtourism from './components/itemtourism';
 // import { Container } from './styles';
 
 function Tourism() {
-  let {ipapi,iplink} = useAuth();
+  let {ip,ipapi} = useAuth();
   let [state,setState] = useState({
     tourism:[],
     logform:null,
@@ -20,14 +20,14 @@ function Tourism() {
 
 useEffect(() =>{
   Promise.all([
-      fetch(`${ipapi}/homes/`).then(res =>res.json()),
-      fetch(`${ipapi}/log-forms/`).then(res =>res.json()),
-      fetch(`${ipapi}/stories/`).then(res =>res.json()),
-      fetch(`${ipapi}/advertisements/`).then(res =>res.json()),
+      fetch(`${ip}traditional/traditionalapi`).then(res =>res.json()),
+      fetch(`${ip}longform/longformapi`).then(res =>res.json()),
+      fetch(`${ip}story/storyapi`).then(res =>res.json()),
+      fetch(`${ip}advertisements/`).then(res =>res.json()),
   ])
       .then(([res1,res2,res3,res4]) =>{
           setState({
-            tourism:res1,
+              tourism:res1,
               logform:res2,
               story:res3,
               arrayadvertisements:res4,
@@ -44,7 +44,7 @@ var arraystory =[];
 function filter(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "DuLichs")
+      if(a.category === "DuLichs")
       {
         arraytourism.push(a);
       }
@@ -57,7 +57,7 @@ var arraytourism = array.reverse();
 function filterlogform(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "DuLichs")
+      if(a.category === "DuLichs")
       {
         arraylogform.push(a);
       }
@@ -69,7 +69,7 @@ var arrraylogform = arraylogform.reverse();
 function filterstory(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "DuLichs")
+      if(a.category === "DuLichs")
       {
         arraystory.push(a);
       }

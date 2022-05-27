@@ -9,7 +9,7 @@ import ReactMarkdown from 'react-markdown';
 import useAuth from '../../core/useAuth';
 // import { Container } from './styles';
 function Technology() {
-  let {ipapi,iplink} = useAuth();
+  let {ip} = useAuth();
   let [state,setState] = useState({
     technology:null,
     logform:null,
@@ -19,9 +19,10 @@ function Technology() {
 )
 useEffect(() =>{
   Promise.all([
-      fetch(`http://localhost:4001/traditional/traditionalapi`).then(res =>res.json()),
-      fetch(`http://localhost:4001/longform/longformapi`).then(res =>res.json()),
-      fetch(`http://localhost:4001/story/storyapi`).then(res =>res.json()),
+      fetch(`${ip}traditional/traditionalapi`).then(res =>res.json()),
+      fetch(`${ip}longform/longformapi`).then(res =>res.json()),
+      fetch(`${ip}story/storyapi`).then(res =>res.json()),
+      fetch(`${ip}arrayadvertisements/arrayadvertisementsapi`).then(res =>res.json()),
     ])
       .then(([res1,res2,res3]) =>{
           setState({
