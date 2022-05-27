@@ -35,7 +35,6 @@ main .home-multimedia
     -webkit-line-clamp: 2;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    height: 58px;
     line-height: 27px;
 }
 .page_detaillogform .page-detaillogform .detaillogform-content .detaillogform-content__content ul li 

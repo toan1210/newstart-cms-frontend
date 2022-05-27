@@ -25,7 +25,7 @@ useEffect(() =>{
     ])
       .then(([res1,res2,res3]) =>{
           setState({
-            technology:res1,
+              technology:res1,
               logform:res2,
               story:res3,
               loanding:false,
@@ -55,7 +55,7 @@ console.log(arraytechnology);
 function filterlogform(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "CongNghes")
+      if(a.category === "CongNghes")
       {
         arraylogform.push(a);
       }
@@ -63,11 +63,12 @@ function filterlogform(x)
 }
 filterlogform(state.logform);
 var arrraylogform = arraylogform.reverse();
+console.log("arrraylogform",arrraylogform);
 
 function filterstory(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "CongNghes")
+      if(a.category === "CongNghes")
       {
         arraystory.push(a);
       }

@@ -5,23 +5,22 @@ import useAuth from '../../../core/useAuth';
 // import { Container } from './styles';
 
 function Item5({technology}) {
-  let {ipapi,iplink} = useAuth();
+  let {ip} = useAuth();
   return(
-      // <>
-      // <div className="new__middo">
-      // <Link to={`/layoutstory/story/${technology.id}`}>
-      //           <img src={iplink+technology.Avata[0].url} alt="" srcSet />
-      //         </Link>
-      //         <p>
-      //         <Link to={`/layoutstory/story/${technology.id}`}>
-      //           {
-      //               technology.TieuDe
-      //           }
-      //           </Link>
-      //         </p>
-      //       </div>
-      // </>
-      <h2>Minh Toàn</h2>
+      <>
+      <div className="new__middo">
+      <Link to={`/layoutstory/story/${technology._id}`}>
+                <img src={ip+"images/"+technology.images} alt="" srcSet />
+              </Link>
+              <p>
+              <Link to={`/layoutstory/story/${technology._id}`}>
+                {
+                    technology.title
+                }
+                </Link>
+              </p>
+            </div>
+      </>
   );
 }
 

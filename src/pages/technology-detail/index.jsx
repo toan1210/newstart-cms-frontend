@@ -19,7 +19,7 @@ function Index() {
     useEffect(() =>{
         Promise.all([
             fetch(`${ip}traditional/${slug}`).then(res =>res.json()),
-            // fetch(`${ipapi}/homes/`).then(res =>res.json()),
+            fetch(`${ip}traditional/traditionalapi`).then(res =>res.json()),
             // fetch(`${ipapi}/advertisements/`).then(res =>res.json()),
           ])
             .then(([res1,res2,res3]) =>{
@@ -47,6 +47,8 @@ function Index() {
     let {listnew,allnew,arrayadvertisements} = state;
     if(!listnew && !allnew && !arrayadvertisements ) return 'loading...';
     var timedate = 0;
+    var arraytechnology =[];
+    var arraykhac = state.allnew.reverse();
     function time(datetime)
     {
       var time = new Date(datetime);
@@ -64,6 +66,16 @@ function Index() {
     time(state.listnew.date)
     console.log(timedate)
 
+    function filter(x)
+    {
+      x.forEach((a,b) => {
+          if(a.category === "CongNghes")
+          {
+            arraytechnology.push(a);
+          }
+      });
+    }
+    filter(state.allnew)
   return(
       <>
       <main className="page-detail">
@@ -99,10 +111,9 @@ function Index() {
           <h2>Bài Liên Quan</h2>
           <div className="detail-involve__content">
               {
-                // arraytechnology.map((x,y)=>
-                // y< 5?<Invole key={x.id} {...x}></Invole>:null
-                //     // y<=2?<Invole key={x.id} {...x}></Invole>:null
-                // )
+                arraytechnology.map((x,y)=>
+                y< 5?<Invole key={x.id} {...x}></Invole>:null
+                )
               }
           </div>
         </div>
@@ -124,9 +135,9 @@ function Index() {
           <h2>BẠN CÓ THỂ QUAN TÂM</h2>
         </div>
              {
-                // arraykhac.map((x,y)=>
-                // y<=30?<Care key={x.id} {...x}></Care>:null
-                // )
+                arraykhac.map((x,y)=>
+                y<=30?<Care key={x.id} {...x}></Care>:null
+                )
               }
       </div>
       <div className="detail-care__right" />

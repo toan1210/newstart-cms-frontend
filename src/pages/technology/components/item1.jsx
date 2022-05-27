@@ -7,7 +7,7 @@ import ReactMarkdown from 'react-markdown';
 
 function Item1({technology}) {
   let {apihome,apidetailhome,ip} = useAuth();
-  console.log(ip);
+  console.log(technology);
   return(
       <>
       <div className="page__home-content">
@@ -17,7 +17,7 @@ function Item1({technology}) {
                 <img src={ip+"images/"+technology.images} alt="" srcSet />
             </Link>
               <div className="left-title">
-              {/* <Link to={`/technology/${technology.id}`}>{technology.TieuDe}</Link> */}
+              <Link to={`/technology/${technology._id}`}>{technology.title}</Link>
                   <div dangerouslySetInnerHTML={{__html:technology.sumary}}></div>
               </div>
               <div className="left-quangcao">
