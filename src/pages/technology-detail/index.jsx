@@ -20,7 +20,7 @@ function Index() {
         Promise.all([
             fetch(`${ip}traditional/${slug}`).then(res =>res.json()),
             fetch(`${ip}traditional/traditionalapi`).then(res =>res.json()),
-            // fetch(`${ipapi}/advertisements/`).then(res =>res.json()),
+            fetch(`${ip}arrayadvertisements/arrayadvertisementsapi`).then(res =>res.json()),
           ])
             .then(([res1,res2,res3]) =>{
                 setState({

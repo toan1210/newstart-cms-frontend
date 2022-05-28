@@ -9,7 +9,7 @@ import Itemcultural from './components/itemcultural';
 // import { Container } from './styles';
 
 function Index() {
-    let {ipapi,iplink} =useAuth();
+    let {ip} =useAuth();
   let [state,setState] = useState({
     allnew:null,
     logform:null,
@@ -19,10 +19,10 @@ function Index() {
 )
 useEffect(() =>{
     Promise.all([
-        fetch(`${ipapi}/homes/`).then(res =>res.json()),
-        fetch(`${ipapi}/log-forms/`).then(res =>res.json()),
-        fetch(`${ipapi}/stories/`).then(res =>res.json()),
-        fetch(`${ipapi}/advertisements/`).then(res =>res.json()),
+      fetch(`${ip}traditional/traditionalapi`).then(res =>res.json()),
+      fetch(`${ip}longform/longformapi`).then(res =>res.json()),
+      fetch(`${ip}story/storyapi`).then(res =>res.json()),
+      fetch(`${ip}arrayadvertisements/arrayadvertisementsapi`).then(res =>res.json()),
     ])
         .then(([res1,res2,res3,res4]) =>{
             setState({
@@ -39,10 +39,11 @@ if(!allnew && !logform && !story && !arrayadvertisements ) return 'loading...';
 var arraycultural =[];
 var arraylogform =[];
 var arraystory =[];
+var arrayadvertisementss = state.arrayadvertisements;
 function filter(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "VHXHs")
+      if(a.category === "VHXHs")
       {
         arraycultural.push(a);
       }
@@ -56,7 +57,7 @@ console.log(arraycultural);
 function filterlogform(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "VHXHs")
+      if(a.category === "VHXHs")
       {
         arraylogform.push(a);
       }
@@ -69,7 +70,7 @@ console.log(arrraylogform);
 function filterstory(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "VHXHs")
+      if(a.category === "VHXHs")
       {
         arraystory.push(a);
       }
@@ -91,7 +92,7 @@ console.log(arrraystory);
           <li><a href>TÁC GIẢ</a></li>
         </ul>
       </div>
-      <Item1 cultural={arraycultural[0]} arrayadvertisements={arrayadvertisements}></Item1>
+      <Item1 cultural={arraycultural[0]} arrayadvertisements={arrayadvertisementss}></Item1>
       <div className="page__home-listnew">
         <div className="right__left">
           <Item2 cultural={arrraylogform[0]}></Item2>
@@ -114,7 +115,7 @@ console.log(arrraystory);
       <div className="new-content-left">
       {
           arraycultural.map((x,y)=>
-            <Itemcultural key={x._id} {...x}></Itemcultural>
+          y<=30?<Itemcultural key={x._id} {...x}></Itemcultural>:null
           )
         }
       </div>

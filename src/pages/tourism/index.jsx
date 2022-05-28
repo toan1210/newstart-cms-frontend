@@ -9,7 +9,7 @@ import Itemtourism from './components/itemtourism';
 // import { Container } from './styles';
 
 function Tourism() {
-  let {ip,ipapi} = useAuth();
+  let {ip} = useAuth();
   let [state,setState] = useState({
     tourism:[],
     logform:null,
@@ -23,7 +23,7 @@ useEffect(() =>{
       fetch(`${ip}traditional/traditionalapi`).then(res =>res.json()),
       fetch(`${ip}longform/longformapi`).then(res =>res.json()),
       fetch(`${ip}story/storyapi`).then(res =>res.json()),
-      fetch(`${ip}advertisements/`).then(res =>res.json()),
+      fetch(`${ip}arrayadvertisements/arrayadvertisementsapi`).then(res =>res.json()),
   ])
       .then(([res1,res2,res3,res4]) =>{
           setState({
@@ -35,12 +35,12 @@ useEffect(() =>{
           })
       })
 },[])
-let {allnew,logform,story,arrayadvertisements} = state;
-if(!allnew && !logform && !story && !arrayadvertisements ) return 'loading...';
-
+let {tourism,logform,story,arrayadvertisements} = state;
+if(!tourism && !logform && !story && !arrayadvertisements ) return 'loading...';
 var arraytourism =[];
 var arraylogform =[];
 var arraystory =[];
+var arrayadvertisementss = state.arrayadvertisements;
 function filter(x)
 {
   x.forEach((a,b) => {
@@ -78,7 +78,6 @@ function filterstory(x)
 filterstory(state.story);
 var arrraystory = arraystory.reverse();
 
-
   return(
       <>
              <main>
@@ -92,7 +91,7 @@ var arrraystory = arraystory.reverse();
           <li><a href>TÁC GIẢ</a></li>
         </ul>
       </div>
-      <Item1 tourism={arraytourism[0]} arrayadvertisements={arrayadvertisements} ></Item1>
+      <Item1 tourism={arraytourism[0]} arrayadvertisements={arrayadvertisementss} ></Item1>
       <div className="page__home-listnew">
         <div className="right__left">
           <Item2 tourism={arrraylogform[0]} ></Item2>
@@ -115,7 +114,7 @@ var arrraystory = arraystory.reverse();
       <div className="new-content-left">
       {
           arraytourism.map((x,y)=>
-            <Itemtourism key={x._id} {...x}></Itemtourism>
+           y<=30?<Itemtourism key={x._id} {...x}></Itemtourism>:null
           )
         }
       </div>

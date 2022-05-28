@@ -9,7 +9,7 @@ import Itemcuisine from './components/itemcuisine';
 // import { Container } from './styles';
 
 function Index() {
-    let {ipapi,iplink} =useAuth();
+    let {ip} =useAuth();
     let [state,setState] = useState({
       allnew:null,
       logform:null,
@@ -19,10 +19,10 @@ function Index() {
   )
   useEffect(() =>{
     Promise.all([
-        fetch(`${ipapi}/homes/`).then(res =>res.json()),
-        fetch(`${ipapi}/log-forms/`).then(res =>res.json()),
-        fetch(`${ipapi}/stories/`).then(res =>res.json()),
-        fetch(`${ipapi}/advertisements/`).then(res =>res.json()),
+      fetch(`${ip}traditional/traditionalapi`).then(res =>res.json()),
+      fetch(`${ip}longform/longformapi`).then(res =>res.json()),
+      fetch(`${ip}story/storyapi`).then(res =>res.json()),
+      fetch(`${ip}arrayadvertisements/arrayadvertisementsapi`).then(res =>res.json()),
     ])
         .then(([res1,res2,res3,res4]) =>{
             setState({
@@ -39,10 +39,11 @@ if(!allnew && !logform && !story && !arrayadvertisements ) return 'loading...';
 var arraycuisine =[];
 var arraylogform =[];
 var arraystory =[];
+var arrayadvertisementss = state.arrayadvertisements;
 function filter(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "AmThucs")
+      if(a.category === "AmThucs")
       {
         arraycuisine.push(a);
       }
@@ -55,7 +56,7 @@ arraycuisine = array.reverse();
 function filterlogform(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "AmThucs")
+      if(a.category === "AmThucs")
       {
         arraylogform.push(a);
       }
@@ -67,7 +68,7 @@ var arrraylogform = arraylogform.reverse();
 function filterstory(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "AmThucs")
+      if(a.category === "AmThucs")
       {
         arraystory.push(a);
       }
@@ -88,7 +89,7 @@ var arrraystory = arraystory.reverse();
           <li><a href>TÁC GIẢ</a></li>
         </ul>
       </div>
-      <Item1 cuisine={arraycuisine[0]} arrayadvertisements={arrayadvertisements}></Item1>
+      <Item1 cuisine={arraycuisine[0]}arrayadvertisements={arrayadvertisementss}></Item1>
       <div className="page__home-listnew">
         <div className="right__left">
           <Item2 cuisine={arrraylogform[0]}></Item2>
@@ -111,7 +112,7 @@ var arrraystory = arraystory.reverse();
       <div className="new-content-left">
       {
           arraycuisine.map((x,y)=>
-            <Itemcuisine key={x._id} {...x}></Itemcuisine>
+          y<=30?<Itemcuisine key={x._id} {...x}></Itemcuisine>:null
           )
         }
       </div>

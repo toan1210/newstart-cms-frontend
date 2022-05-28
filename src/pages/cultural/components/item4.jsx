@@ -5,17 +5,17 @@ import useAuth from '../../../core/useAuth';
 // import { Container } from './styles';
 
 function Item4({cultural}) {
-  let {ipapi,iplink} =useAuth();
+  let {ip} =useAuth();
   return(
       <>
        <div className="new__left">
-       <Link to={`/layout/logform/${cultural.id}`}>
-                <img src={iplink+cultural.Avata[0].url} alt="" srcSet />
+       <Link to={`/layout/logform/${cultural._id}`}>
+                <img src={ip+"images/"+cultural.images} alt="" srcSet />
               </Link>
               <p>
-              <Link to={`/layout/logform/${cultural.id}`}>
+              <Link to={`/layout/logform/${cultural._id}`}>
                   {
-                    cultural.TieuDe
+                    cultural.title
                   }
                 </Link>
               </p>

@@ -84,12 +84,12 @@ function Index({_id,title,author,status,category,date,images,sumary,content}) {
       <>
        <div className="detail-care__content">
           <div className="care-content__img">
-            <a href={`/${url}/$_id}`}>
+            <a href={`/${url}/${_id}`}>
               <img src={ip+"images/"+images} alt="" srcSet />
             </a>
           </div>
           <div className="care-content__text">
-          <a href={`/${url}/$_id}`}>
+          <a href={`/${url}/${_id}`}>
               <h3>{title}</h3>
             </a>
             <p className="time">

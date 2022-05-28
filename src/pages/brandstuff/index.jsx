@@ -8,98 +8,53 @@ import Item5 from './components/item5';
 import Itembrandstuff from './components/itembrandstuff';
 // import { Container } from './styles';
 function Brandstuff() {
-  let {ipapi,iplink,ipapii} =useAuth();
+  let {ip} =useAuth();
   let [state,setState] = useState({
-    allnew:null,
+    brandstuff:null,
     logform:null,
     story:null,
     arrayadvertisements:null,
-    home1s:null,
-    home2s:null,
-    home3s:null,
-    home4s:null,
-    home5s:null,
-    home6s:null,
-    home7s:null,
-    home8s:null,
-    home9s:null,
-    home10s:null,
-    home11s:null,
-    home12s:null,
-    home13s:null,
-    home14s:null,
-    home15s:null,
   }
 )
 useEffect(() =>{
   Promise.all([
-      fetch(`${ipapi}/homes/`).then(res =>res.json()),
-      fetch(`${ipapi}/log-forms/`).then(res =>res.json()),
-      fetch(`${ipapi}/stories/`).then(res =>res.json()),
-      fetch(`${ipapi}/advertisements/`).then(res =>res.json()),
-      fetch(`${ipapii}/home-1-s/`).then(res =>res.json()),
-      fetch(`${ipapii}/home-2-s/`).then(res =>res.json()),
-      fetch(`${ipapii}/home-3-s/`).then(res =>res.json()),
-      fetch(`${ipapii}/home-4-s/`).then(res =>res.json()),
-      fetch(`${ipapii}/home-5-s/`).then(res =>res.json()),
-      fetch(`${ipapii}/home-6-s/`).then(res =>res.json()),
-      fetch(`${ipapii}/home-7-s/`).then(res =>res.json()),
-      fetch(`${ipapii}/home-8-s/`).then(res =>res.json()),
-      fetch(`${ipapii}/home-9-s/`).then(res =>res.json()),
-      fetch(`${ipapii}/home-10-s/`).then(res =>res.json()),
-      fetch(`${ipapii}/home-11-s/`).then(res =>res.json()),
-      fetch(`${ipapii}/home-12-s/`).then(res =>res.json()),
-      fetch(`${ipapii}/home-13-s/`).then(res =>res.json()),
-      fetch(`${ipapii}/home-14-s/`).then(res =>res.json()),
-      fetch(`${ipapii}/home-15-s/`).then(res =>res.json()),
+    fetch(`${ip}traditional/traditionalapi`).then(res =>res.json()),
+    fetch(`${ip}longform/longformapi`).then(res =>res.json()),
+    fetch(`${ip}story/storyapi`).then(res =>res.json()),
+    fetch(`${ip}arrayadvertisements/arrayadvertisementsapi`).then(res =>res.json()),
   ])
-      .then(([res1,res2,res3,res4,res5,res6,res7,res8,res9,res10,res11,res12,res13,res14,res15,res16,res17,res18,res19]) =>{
+      .then(([res1,res2,res3,res4]) =>{
           setState({
-              allnew:res1,
-              logform:res2,
+            brandstuff:res1,
+            logform:res2,
               story:res3,
               arrayadvertisements:res4,
-              home1s:res5,
-              home2s:res6,
-              home3s:res7,
-              home4s:res8,
-              home5s:res9,
-              home6s:res10,
-              home7s:res11,
-              home8s:res12,
-              home9s:res13,
-              home10s:res14,
-              home11s:res15,
-              home12s:res16,
-              home13s:res17,
-              home14s:res18,
-              home15s:res19,
           })
       })
 },[])
-let {allnew,logform,story,arrayadvertisements,home1s,home2s,home3s,home4s,home5s,home6s,home7s,home8s,home9s,home10s,home11s,home12s,home13s,home14s,home15s} = state;
-if(!allnew && !logform && !story && !arrayadvertisements && !home1s && !home2s && !home3s && !home4s && !home5s && !home6s && !home7s && !home8s && !home9s && !home10s && !home11s && !home12s && !home13s && !home14s && !home15s) return 'loading...';
-var allhome =[...state.allnew,...state.home1s,...state.home2s,...state.home3s,...state.home4s,...state.home5s,...state.home6s,...state.home7s,...state.home8s,...state.home9s,...state.home10s,...state.home11s,...state.home12s,...state.home13s,...state.home14s,...state.home15s];
+let {brandstuff,logform,story,arrayadvertisements} = state;
+if(!brandstuff && !logform && !story && !arrayadvertisements) return 'loading...';
 var arraybrandstuff =[];
 var arraylogform =[];
 var arraystory =[];
+var arrayadvertisementss = state.arrayadvertisements;
 function filter(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "HangHieus")
+      if(a.category === "HangHieus")
       {
         arraybrandstuff.push(a);
       }
   });
 }
-filter(allhome);
+filter(state.brandstuff);
 var array = arraybrandstuff;
 arraybrandstuff = array.reverse();
 console.log(array);
 function filterlogform(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "HangHieus")
+      if(a.category === "HangHieus")
       {
         arraylogform.push(a);
       }
@@ -111,7 +66,7 @@ var arrraylogform = arraylogform.reverse();
 function filterstory(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "HangHieus")
+      if(a.category === "HangHieus")
       {
         arraystory.push(a);
       }
@@ -132,7 +87,7 @@ var arrraystory = arraystory.reverse();
           <li><a href>TÁC GIẢ</a></li>
         </ul>
       </div>
-      <Item1 brandstuff={arraybrandstuff[0]} arrayadvertisements={arrayadvertisements}></Item1>
+      <Item1 brandstuff={arraybrandstuff[0]} arrayadvertisements={arrayadvertisementss}></Item1>
       <div className="page__home-listnew">
         <div className="right__left">
           <Item2 brandstuff={arrraylogform[0]}></Item2>
@@ -155,7 +110,7 @@ var arrraystory = arraystory.reverse();
       <div className="new-content-left">
       {
           arraybrandstuff.map((x,y)=>
-            <Itembrandstuff key={x._id} {...x}></Itembrandstuff>
+          y<=30?<Itembrandstuff key={x._id} {...x}></Itembrandstuff>:null
           )
         }
       </div>

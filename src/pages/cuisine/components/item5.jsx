@@ -5,17 +5,17 @@ import useAuth from '../../../core/useAuth';
 // import { Container } from './styles';
 
 function Item5({cuisine}) {
-  let {ipapi,iplink} =useAuth();
+  let {ip} =useAuth();
   return(
       <>
       <div className="new__middo">
              <Link to={`/layoutstory/story/${cuisine.id}`}>
-                <img src={iplink+cuisine.Avata[0].url} alt="" srcSet />
+                <img src={ip+"images/"+cuisine.images} alt="" srcSet />
               </Link>
               <p>
-              <Link to={`/layoutstory/story/${cuisine.id}`}>
+              <Link to={`/layoutstory/story/${cuisine._id}`}>
                   {
-                    cuisine.TieuDe
+                    cuisine.title
                   }
                 </Link>
               </p>
