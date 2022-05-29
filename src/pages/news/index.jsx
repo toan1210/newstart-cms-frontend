@@ -9,7 +9,7 @@ import Itemnews from './components/itemnews';
 // import { Container } from './styles';
 
 function News() {
-  let {ipapi,iplink} = useAuth();
+  let {ip} = useAuth();
   let [state,setState] = useState({
     news:null,
     logform:null,
@@ -19,14 +19,14 @@ function News() {
 )
 useEffect(() =>{
   Promise.all([
-      fetch(`${ipapi}/homes/`).then(res =>res.json()),
-      fetch(`${ipapi}/log-forms/`).then(res =>res.json()),
-      fetch(`${ipapi}/stories/`).then(res =>res.json()),
-      fetch(`${ipapi}/advertisements/`).then(res =>res.json()),
+      fetch(`${ip}traditional/traditionalapi`).then(res =>res.json()),
+      fetch(`${ip}longform/longformapi`).then(res =>res.json()),
+      fetch(`${ip}story/storyapi`).then(res =>res.json()),
+      fetch(`${ip}arrayadvertisements/arrayadvertisementsapi`).then(res =>res.json()),
   ])
       .then(([res1,res2,res3,res4]) =>{
           setState({
-               news:res1,
+              news:res1,
               logform:res2,
               story:res3,
               arrayadvertisements:res4,
@@ -38,10 +38,11 @@ if(!news && !logform && !story && !arrayadvertisements ) return 'loading...';
 var arraynews =[];
 var arraylogform =[];
 var arraystory =[];
+var arrray = state.news.reverse()
 function filter(x)
 {
   x.forEach((a,b) => {
-      if(a.NoiBat === false )
+      if(a.status === "false" )
       {
         arraynews.push(a);
       }
@@ -62,7 +63,7 @@ var array = arraynews.reverse();
           <li><a href>TÁC GIẢ</a></li>
         </ul>
       </div>
-      <Item1 news={array[0]} arrayadvertisements={arrayadvertisements}></Item1>
+      <Item1 news={array[0]} arrayadvertisements={state.arrayadvertisements}></Item1>
       <div className="page__home-listnew">
         <div className="right__left">
           <Item2 news={array[1]} ></Item2>
@@ -84,8 +85,8 @@ var array = arraynews.reverse();
     <div className="new-content">
       <div className="new-content-left">
       {
-          arraynews.map((x,y)=>
-            <Itemnews key={x._id} {...x}></Itemnews>
+          arrray.map((x,y)=>
+           y<=30?<Itemnews key={x._id} {...x}></Itemnews>:null
           )
         }
       </div>

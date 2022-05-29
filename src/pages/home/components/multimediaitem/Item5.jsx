@@ -1,23 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../../core/useAuth';
-
 // import { Container } from './styles';
-
 function Item5({arraylogform}) {
-  let {ipapi,iplink} =useAuth();
-  var img =arraylogform.Avata[0].url ;
-
+  let {ip} =useAuth();
   return(
       <>
       <div className="right-item2-right">
-         <Link to={`/layout/logform/${arraylogform.id}`}>
-                <img src={iplink + img } alt="" srcSet />
+         <Link to={`/layout/logform/${arraylogform._id}`}>
+                <img src={ip+"images/"+arraylogform.images} alt="" srcSet />
             </Link>
                 <p className="item2-right-title">
-                <Link to={`/layout/logform/${arraylogform.id}`}> 
+                <Link to={`/layout/logform/${arraylogform._id}`}> 
                  <img src="img/10.png" alt="" srcSet />
-                   {arraylogform.TieuDe}
+                   {arraylogform.title}
                   </Link>
                 </p>
               </div>

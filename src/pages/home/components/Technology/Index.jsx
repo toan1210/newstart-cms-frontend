@@ -6,7 +6,7 @@ let $ = window.$;
 // import { Container } from './styles';
 
 function Sprot({story,arrayadvertisement,arrayhome,}) {
-  let {ipapi,iplink} =useAuth();
+  let {ip} =useAuth();
   useEffect(() =>{
     let slidershow = 4;
     let auto = false;
@@ -38,11 +38,12 @@ function Sprot({story,arrayadvertisement,arrayhome,}) {
       infinite: true,
       });
   },[])
+  console.log("arrayhome",arrayhome);
   var arraysport =[];
   function filter(x)
   {
     x.forEach((a,b) => {
-        if(a.DanhMuc === "CongNghes")
+        if(a.category === "CongNghes")
         {
           arraysport.push(a);
         }
@@ -50,12 +51,12 @@ function Sprot({story,arrayadvertisement,arrayhome,}) {
   }
   filter(story);
   arraysport = arraysport.reverse();
-  
+
   var arrayall =[];
   function filter1(x)
   {
     x.forEach((a,b) => {
-        if(a.DanhMuc === "CongNghes")
+        if(a.category === "CongNghes")
         {
           arrayall.push(a);
         }
@@ -67,15 +68,13 @@ function Sprot({story,arrayadvertisement,arrayhome,}) {
 
   var homestory = arrrrray.sort(function(a,b)
   {
-    return(new Date(a.Time).getTime()) - (new Date(b.Time).getTime())
+    console.log(new Date(a.createdAt).getTime());
+    return(new Date(a.createdAt).getTime()) - (new Date(b.createdAt).getTime())
   })
   homestory = homestory.reverse();
-
-console.log(homestory);
-
   return(
       <>
-      <section>
+<section>
   <div className="slider tablet">
     <div className="container ">
       <div className="slider-title">
@@ -96,7 +95,7 @@ console.log(homestory);
     </div>
   </div>
   <div className="advertisement">
-  {
+  {/* {
       typeof(arrayadvertisement[0].HomeAdvertisementTechnology1IMG[0]) !== 'undefined'?
       <a href={arrayadvertisement[0].HomeAdvertisementTechnology1}>
       <img className="advertisementimg" src={iplink+arrayadvertisement[0].HomeAdvertisementTechnology1IMG[0].url} alt="" />
@@ -125,7 +124,7 @@ console.log(homestory);
       <a href={arrayadvertisement[0].HomeAdvertisementTechnology5}>
       <img className="advertisementimg" src={iplink+arrayadvertisement[0].HomeAdvertisementTechnology5IMG[0].url} alt="" />
       </a>:null
-    }
+    } */}
 </div>
 </section>
 

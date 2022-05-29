@@ -8,7 +8,7 @@ function Item4({tourism}) {
   let {ip} = useAuth();
   return(
       <>
-       <div className="new__left">
+       {/* <div className="new__left">
                <Link to={`/layout/logform/${tourism._id}`}>
                 <img src={ip+"images/"+tourism.images} alt="" srcSet />
               </Link>
@@ -19,7 +19,7 @@ function Item4({tourism}) {
                   }
                 </Link>
               </p>
-            </div>
+            </div> */}
       </>
   );
 }

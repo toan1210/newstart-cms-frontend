@@ -6,22 +6,22 @@ import useAuth from '../../../../core/useAuth';
 // import { Container } from './styles';
 
 function Index({arraylogform}) {
-  let {ipapi,iplink} =useAuth();
-  var img =arraylogform.Avata[0].url ;
+  console.log("arraylogform",arraylogform)
+  let {ip} =useAuth();
   return (
       <>
       <div className="home-content-left">
-          <Link to={`/layout/logform/${arraylogform.id}`}>
-            <img src={iplink + img } alt="" srcSet />
+          <Link to={`/layout/logform/${arraylogform._id}`}>
+            <img src={ip+"images/"+arraylogform.images} alt="" srcSet />
             </Link>
             <p className="title">
-            <Link to={`/layout/logform/${arraylogform.id}`}> 
+            <Link to={`/layout/logform/${arraylogform._id}`}> 
             <img src="img/10.png" alt="" srcSet />
-               {arraylogform.TieuDe}
+               {arraylogform.title}
               </Link>
             </p>
             <p className="sub-text">
-            <ReactMarkdown>{arraylogform.TomTat}</ReactMarkdown>
+            <div dangerouslySetInnerHTML={{__html:arraylogform.sumary}}></div>
             </p>
           </div>
           </>

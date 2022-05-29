@@ -3,24 +3,24 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../../../core/useAuth'
 // import { Container } from './styles';
 
-function Item({Avata,TieuDe,id,Img1}) {
-  let {ipapi,iplink} = useAuth();
+function Item({_id,author,longform,story,images,title,category}) {
+  let {ip} = useAuth();
   var url ='';
-  if(typeof(Img1) === 'object')
+  if(story === 'story')
   {
     url ="/layoutstory/story";
   }
-  else if(typeof(Img1)==='undefined')
+  else if(longform==='longform')
   {
-    url ="/technology"
+    url ="/layout/logform";
   }
   return(
       <>
       <div className="card padding">
           <div className="slider-content-img">
-            <img className="slider-img-img" src={iplink + Avata[0].url} alt="" />
+            <img className="slider-img-img" src={ip+"images/"+images} alt="" />
             <div className="slider-content-ovelay">
-            <Link to={`${url}/${id}`} className="content-slider">
+            <Link to={`${url}/${_id}`} className="content-slider">
                 <div className="content-ovelay">
                 </div>
               </Link>
@@ -30,7 +30,7 @@ function Item({Avata,TieuDe,id,Img1}) {
             </div>
             <div className="content-img-title">
               <div className="content-title-img">
-                <p>{TieuDe}</p>
+                <p>{title}</p>
               </div>
             </div>
             <div className="content-img-camera">

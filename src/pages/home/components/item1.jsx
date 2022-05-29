@@ -6,54 +6,54 @@ import useAuth from '../../../core/useAuth';
 // import { Container } from './styles';
 
 function Item1({home,arrayadvertisement}) {
-  let {ipapi,iplink} =useAuth();
+  let {ip} =useAuth();
   let url ='';
-  console.log(home);
-  if(home.DanhMuc === 'CongNghes')
+  console.log("home",home);
+  if(home.category === 'CongNghes')
   {
     url='technology';
   }
-  else if(home.DanhMuc === 'HangHieus')
+  else if(home.category === 'HangHieus')
   {
     url='brandstuff';
   }
-  else if(home.DanhMuc === 'SucKhoes')
+  else if(home.category === 'SucKhoes')
   {
     url='living';
   }
-  else if(home.DanhMuc === 'ThoiTrangs')
+  else if(home.category === 'ThoiTrangs')
   {
     url='fashion';
   }
-  else if(home.DanhMuc === 'DuLichs')
+  else if(home.category === 'DuLichs')
   {
     url='tourism';
   }
-  else if(home.DanhMuc === 'Videos')
+  else if(home.category === 'Videos')
   {
     url='Video';
   }
-  else if(home.DanhMuc === 'TinMois')
+  else if(home.category === 'TinMois')
   {
     url='news';
   }
-  else if(home.DanhMuc === 'KinhTes')
+  else if(home.category === 'KinhTes')
   {
     url='economy';
   }
-  else if(home.DanhMuc === 'VHXHs')
+  else if(home.category === 'VHXHs')
   {
     url='cultural';
   }
-  else if(home.DanhMuc === 'GiaiTris')
+  else if(home.category === 'GiaiTris')
   {
     url='entertain';
   }
-  else if(home.DanhMuc === 'TheThaos')
+  else if(home.category === 'TheThaos')
   {
     url='sport';
   }
-  else if(home.DanhMuc === 'AmThucs')
+  else if(home.category === 'AmThucs')
   {
     url='cuisine';
   }
@@ -62,20 +62,18 @@ function Item1({home,arrayadvertisement}) {
       <div className="page__home-content">
           <div className="left">
             <div className="left__header">
-            <Link to={`/${url}/${home.id}`}>
-                <img src={iplink+home.Avata[0].url} alt=""  />
+            <Link to={`/${url}/${home._id}`}>
+                <img src={ip+"images/"+home.images} alt=""  />
               </Link>
               <div className="left-title">
-              <Link to={`/${url}/${home.id}`}>{home.TieuDe}</Link>
-
-                <p>
-                <ReactMarkdown>{home.TomTat}</ReactMarkdown>
-                </p>
-
+              <Link to={`/${url}/${home._id}`}>{home.title}</Link>
+              <div dangerouslySetInnerHTML={{__html:home.sumary}}>
+               
+               </div>
               </div>
               <div className="left-quangcao">
-              <a href={arrayadvertisement[0].HomeAdvertisementRight}>
-                <img className="left-quangcao-img" src={iplink+arrayadvertisement[0].HomeAdvertisementRightIMG[0].url} alt="" />
+              <a href="">
+                <img className="left-quangcao-img" src={ip+"images/"+arrayadvertisement[0].tourism} alt="" />
                 </a>
               </div>
             </div>

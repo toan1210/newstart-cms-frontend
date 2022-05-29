@@ -9,30 +9,28 @@ import Item5 from './multimediaitem/Item5';
 // import { Container } from './styles';
 
 function Multimedia({home}) {
-  let {ipapi,iplink} =useAuth();
+  let {ip} =useAuth();
   let url ='';
   let [state,setState] = useState({
     logform:[],
     loanding:true
   }
 )
-useEffect(() =>{
-fetch(`${ipapi}/log-forms/`)
-.then(res=>res.json())
-.then((res) => {
-  setState({
-    logform:[...res], 
-    loanding:false
-  })
-})
-},[])
-if(state.loanding)
-{
-  return 'Loangding';
-}
-var arraylogform =[];
-var array = state.logform;
-arraylogform = array.reverse();
+// useEffect(() =>{
+// fetch(`${ip}/log-forms/`)
+// .then(res=>res.json())
+// .then((res) => {
+//   setState({
+//     logform:[...res], 
+//     loanding:false
+//   })
+// })
+// },[])
+// if(state.loanding)
+// {
+//   return 'Loangding';
+// }
+console.log("asdas",home)
 
   return(
       <>
@@ -46,15 +44,15 @@ arraylogform = array.reverse();
         </div>
         </div>
         <div className="home-content">
-          <Item1 arraylogform={arraylogform[0]}></Item1>
+          <Item1 arraylogform={home[0]}></Item1>
           <div className="home-content-right">
             <div className="content-right-item1">
-              <Item2 arraylogform={arraylogform[1]}></Item2>
-              <Item3 arraylogform={arraylogform[2]}></Item3>
+              <Item2 arraylogform={home[1]}></Item2>
+              <Item3 arraylogform={home[2]}></Item3>
             </div>
             <div className="content-right-item2">
-              <Item4 arraylogform={arraylogform[3]}> </Item4>
-              <Item5 arraylogform={arraylogform[4]}></Item5>
+              <Item4 arraylogform={home[3]}> </Item4>
+              <Item5 arraylogform={home[4]}></Item5>
             </div>
           </div>
         </div>

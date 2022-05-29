@@ -4,13 +4,13 @@ import useAuth from '../../../../core/useAuth';
 import Item from './Item';
 // import { Container } from './styles';
 
-function Index({story,arrayadvertisement,arrayhome}) {
+function Index({story,arrayadvertisement,arrayhome,}) {
   let {ipapi,iplink} =useAuth();
   var arrayeconomy =[];
   function filter(x)
   {
     x.forEach((a,b) => {
-        if(a.DanhMuc === "AmThucs")
+        if(a.category === "AmThucs")
         {
           arrayeconomy.push(a);
         }
@@ -18,12 +18,11 @@ function Index({story,arrayadvertisement,arrayhome}) {
   }
   filter(story);
   arrayeconomy = arrayeconomy.reverse();
-
   var arrayall =[];
   function filter1(x)
   {
     x.forEach((a,b) => {
-        if(a.DanhMuc === "AmThucs")
+        if(a.category === "AmThucs")
         {
           arrayall.push(a);
         }
@@ -35,7 +34,7 @@ function Index({story,arrayadvertisement,arrayhome}) {
 
   var homestory = arrrrray.sort(function(a,b)
   {
-    return(new Date(a.Time).getTime()) - (new Date(b.Time).getTime())
+    return(new Date(a.createdAt).getTime()) - (new Date(b.createdAt).getTime())
   })
   homestory = homestory.reverse();
   return(
@@ -59,7 +58,7 @@ function Index({story,arrayadvertisement,arrayhome}) {
     </div>
   </div>
   <div className="advertisement">
-    {
+    {/* {
       typeof(arrayadvertisement[0].HomeAdvertisementCultural1IMG[0]) !== 'undefined'?
       <a href={arrayadvertisement[0].HomeAdvertisementCultural1}>
       <img className="advertisementimg" src={iplink+arrayadvertisement[0].HomeAdvertisementCultural1IMG[0].url} alt="" />
@@ -88,7 +87,7 @@ function Index({story,arrayadvertisement,arrayhome}) {
       <a href={arrayadvertisement[0].HomeAdvertisementCultural5}>
       <img className="advertisementimg" src={iplink+arrayadvertisement[0].HomeAdvertisementCultural5IMG[0].url} alt="" />
       </a>:null
-    }
+    } */}
 </div>
 </section>
 

@@ -4,13 +4,13 @@ import useAuth from '../../../../core/useAuth';
 import Item from './Item';
 // import { Container } from './styles';
 
-function Index({story,arrayadvertisement,arrayhome}) {
-  let {ipapi,iplink} =useAuth();
+function Index({story,arrayadvertisement,arrayhome,}) {
+  let {ip} =useAuth();
   var arrayeconomy =[];
   function filter(x)
   {
     x.forEach((a,b) => {
-        if(a.DanhMuc === "VHXHs")
+        if(a.category === "VHXHs")
         {
           arrayeconomy.push(a);
         }
@@ -23,7 +23,7 @@ function Index({story,arrayadvertisement,arrayhome}) {
   function filter1(x)
   {
     x.forEach((a,b) => {
-        if(a.DanhMuc === "VHXHs")
+        if(a.category === "VHXHs")
         {
           arrayall.push(a);
         }
@@ -59,7 +59,7 @@ function Index({story,arrayadvertisement,arrayhome}) {
     </div>
   </div>
   <div className="advertisement">
-    {
+    {/* {
       typeof(arrayadvertisement[0].HomeAdvertisementCuisine1IMG[0]) !== 'undefined'?
       <a href={arrayadvertisement[0].HomeAdvertisementCuisine1}>
       <img className="advertisementimg" src={iplink+arrayadvertisement[0].HomeAdvertisementCuisine1IMG[0].url} alt="" />
@@ -88,7 +88,7 @@ function Index({story,arrayadvertisement,arrayhome}) {
       <a href={arrayadvertisement[0].HomeAdvertisementCuisine5}>
       <img className="advertisementimg" src={iplink+arrayadvertisement[0].HomeAdvertisementCuisine5IMG[0].url} alt="" />
       </a>:null
-    }
+    } */}
 </div>
 </section>
 

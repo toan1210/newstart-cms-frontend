@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+ import React, { useContext, useEffect, useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import Item1 from './components/item1';
 import Item2 from './components/item2';
@@ -20,9 +20,10 @@ import useAuth from '../../core/useAuth';
 import Cuisine from './components/Cuisine/Index';
 // import { Container } from './styles';
 function Home() {
-  let { ipapi, iplink, ipapii } = useAuth();
+  let {ip} = useAuth();
   let [state, setState] = useState({
     home: [],
+    logform:[],
     story: [],
     advertisement: [],
     loanding: true
@@ -30,29 +31,41 @@ function Home() {
   )
   useEffect(() => {
     Promise.all([
-      fetch(`http://localhost:4000/traditional/traditionalapi`).then(res => res.json()),
-     
+      fetch(`${ip}traditional/traditionalapi`).then(res =>res.json()),
+      fetch(`${ip}longform/longformapi`).then(res =>res.json()),
+      fetch(`${ip}story/storyapi`).then(res =>res.json()),
+      fetch(`${ip}arrayadvertisements/arrayadvertisementsapi`).then(res =>res.json()),
     ])
       .then(([res1, res2, res3, res4,]) => {
         setState({
           home: res1,
-          story: res2,
-          advertisement: res3,
+          logform:res2,
+          story: res3,
+          advertisement: res4,
           loanding: false,
         })
       })
   }, [])
-
   if (state.loanding) {
     return 'Loangding';
   }
-  console.log(state.home);
   var arrayadvertisement = state.advertisement;
-  var arrayhomehotnews = [];
+  var arrayhomehotnews =[];
   var arrayhome = [];
-  var array = state.home;
+  var array = state.logform;
   arrayhome = array.reverse();
-  arrayhomehotnews = arrayhomehotnews.reverse()
+  function filterhome(x)
+  {
+    x.forEach((a,b) => {
+      if(a.status === "true")
+      {
+        arrayhomehotnews.push(a);
+      }
+  });
+  }
+  filterhome(state.home)
+  arrayhomehotnews = arrayhomehotnews.reverse();
+  console.log("arrayhomehotnews",arrayhomehotnews);
   return (
     <>
       <main>
@@ -81,9 +94,8 @@ function Home() {
           <Multimedia home={arrayhome} ></Multimedia>
         </div>
       </main>
-      <News arrayadvertisement={arrayadvertisement}></News>
       <Technology story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Technology>
-      <Economy story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Economy>
+       <Economy story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Economy>
       <Cultural story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Cultural>
       <Entertain story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Entertain>
       <Living story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Living>
@@ -91,7 +103,7 @@ function Home() {
       <Brandstuff story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Brandstuff>
       <Fashion story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Fashion>
       <Sports story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Sports>
-      <Cuisine story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Cuisine>
+      <Cuisine story={state.story} arrayhome={arrayhome} arrayadvertisement={arrayadvertisement}></Cuisine> 
     </>
   );
 }

@@ -5,74 +5,74 @@ import useAuth from '../../../core/useAuth';
 // import { Container } from './styles';
 
 function Item5({home}) {
-  let {ipapi,iplink} =useAuth();
+  let {ip} =useAuth();
   let url ='';
-  if(home.DanhMuc === 'CongNghes')
+  if(home.category === 'CongNghes')
   {
     url='technology';
   }
-  else if(home.DanhMuc === 'DuLichs')
+  else if(home.category === 'DuLichs')
   {
     url='tourism';
   }
-  else if(home.DanhMuc === 'HangHieus')
+  else if(home.category === 'HangHieus')
   {
     url='brandstuff';
   }
-  else if(home.DanhMuc === 'SucKhoes')
+  else if(home.category === 'SucKhoes')
   {
     url='living';
   }
-  else if(home.DanhMuc === 'ThoiTrangs')
+  else if(home.category === 'ThoiTrangs')
   {
     url='fashion';
   }
-  else if(home.DanhMuc === 'DuLichs')
+  else if(home.category === 'DuLichs')
   {
     url='tourism';
   }
-  else if(home.DanhMuc === 'Videos')
+  else if(home.category === 'Videos')
   {
     url='Video';
   }
-  else if(home.DanhMuc === 'TinMois')
+  else if(home.category === 'TinMois')
   {
     url='news';
   }
-  else if(home.DanhMuc === 'KinhTes')
+  else if(home.category === 'KinhTes')
   {
     url='economy';
   }
-  else if(home.DanhMuc === 'KinhTes')
+  else if(home.category === 'KinhTes')
   {
     url='economy';
   }
-  else if(home.DanhMuc === 'VHXHs')
+  else if(home.category === 'VHXHs')
   {
     url='cultural';
   }
-  else if(home.DanhMuc === 'GiaiTris')
+  else if(home.category === 'GiaiTris')
   {
     url='entertain';
   }
-  else if(home.DanhMuc === 'TheThaos')
+  else if(home.category === 'TheThaos')
   {
     url='sport';
   }
-  else if(home.DanhMuc === 'AmThucs')
+  else if(home.category === 'AmThucs')
   {
     url='cuisine';
   }
   return(
       <>
       <div className="new__middo">
-      <Link to={`/${url}/${home.id}`}>
-                <img src={iplink+home.Avata[0].url} alt=""  />
+      <Link to={`/${url}/${home._id}`}>
+                <img src={ip+"images/"+home.images} alt=""  />
               </Link>
               <p>
-              <Link to={`/${url}/${home.id}`}>
+              <Link to={`/${url}/${home._id}`}>
                   {
-                    home.TieuDe
+                    home.title
                   }
                 </Link>
               </p>

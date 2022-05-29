@@ -11,7 +11,7 @@ function Index({story,arrayadvertisement,arrayhome}) {
   function filter(x)
   {
     x.forEach((a,b) => {
-        if(a.DanhMuc === "DuLichs")
+        if(a.category === "DuLichs")
         {
           arrayeconomy.push(a);
         }
@@ -19,12 +19,11 @@ function Index({story,arrayadvertisement,arrayhome}) {
   }
   filter(story);
   arrayeconomy = arrayeconomy.reverse();
-
   var arrayall =[];
   function filter1(x)
   {
     x.forEach((a,b) => {
-        if(a.DanhMuc === "DuLichs")
+        if(a.category === "DuLichs")
         {
           arrayall.push(a);
         }
@@ -36,7 +35,7 @@ function Index({story,arrayadvertisement,arrayhome}) {
 
   var homestory = arrrrray.sort(function(a,b)
   {
-    return(new Date(a.Time).getTime()) - (new Date(b.Time).getTime())
+    return(new Date(a.createdAt).getTime()) - (new Date(b.createdAt).getTime())
   })
   homestory = homestory.reverse();
   return(
@@ -52,7 +51,7 @@ function Index({story,arrayadvertisement,arrayhome}) {
       </div>
       <div className="slider-content">
         {
-            arrayeconomy.map(x =>
+            homestory.map(x =>
                 <Item key={x.id} {...x}></Item>
             )
         }
@@ -60,7 +59,7 @@ function Index({story,arrayadvertisement,arrayhome}) {
     </div>
   </div>
   <div className="advertisement">
-  {
+  {/* {
       typeof(arrayadvertisement[0].HomeAdvertisementTourism1IMG[0]) !== 'undefined'?
       <a href={arrayadvertisement[0].HomeAdvertisementTourism1}>
       <img className="advertisementimg" src={iplink+arrayadvertisement[0].HomeAdvertisementTourism1IMG[0].url} alt="" />
@@ -89,7 +88,7 @@ function Index({story,arrayadvertisement,arrayhome}) {
       <a href={arrayadvertisement[0].HomeAdvertisementTourism5}>
       <img className="advertisementimg" src={iplink+arrayadvertisement[0].HomeAdvertisementTourism5IMG[0].url} alt="" />
       </a>:null
-    }
+    } */}
 </div>
 </section>
 

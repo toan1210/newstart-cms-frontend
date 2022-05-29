@@ -5,61 +5,61 @@ import useAuth from '../../../core/useAuth';
 // import { Container } from './styles';
 
 function Item2({news}) {
-  let {ipapi,iplink} = useAuth();
+  let {ip} = useAuth();
   let url ='';
-  if(news.DanhMuc === 'CongNghes')
+  if(news.category === 'CongNghes')
   {
     url='technology';
   }
-  else if(news.DanhMuc === 'DuLichs')
+  else if(news.category === 'DuLichs')
   {
     url='tourism';
   }
-  else if(news.DanhMuc === 'HangHieus')
+  else if(news.category === 'HangHieus')
   {
     url='brandstuff';
   }
-  else if(news.DanhMuc === 'SucKhoes')
+  else if(news.category === 'SucKhoes')
   {
     url='living';
   }
-  else if(news.DanhMuc === 'ThoiTrangs')
+  else if(news.category === 'ThoiTrangs')
   {
     url='fashion';
   }
-  else if(news.DanhMuc === 'DuLichs')
+  else if(news.category === 'DuLichs')
   {
     url='tourism';
   }
-  else if(news.DanhMuc === 'Videos')
+  else if(news.category === 'Videos')
   {
     url='Video';
   }
-  else if(news.DanhMuc === 'TinMois')
+  else if(news.category === 'TinMois')
   {
     url='news';
   }
-  else if(news.DanhMuc === 'KinhTes')
+  else if(news.category === 'KinhTes')
   {
     url='economy';
   }
-  else if(news.DanhMuc === 'KinhTes')
+  else if(news.category === 'KinhTes')
   {
     url='economy';
   }
-  else if(news.DanhMuc === 'VHXHs')
+  else if(news.category === 'VHXHs')
   {
     url='cultural';
   }
-  else if(news.DanhMuc === 'GiaiTris')
+  else if(news.category === 'GiaiTris')
   {
     url='entertain';
   }
-  else if(news.DanhMuc === 'TheThaos')
+  else if(news.category === 'TheThaos')
   {
     url='sport';
   }
-  else if(news.DanhMuc === 'AmThucs')
+  else if(news.category === 'AmThucs')
   {
     url='cuisine';
   }
@@ -67,13 +67,13 @@ function Item2({news}) {
   return(
       <>
         <div className="new__left">
-        <Link to={`/${url}/${news.id}`}>
-                <img src={iplink+news.Avata[0].url} alt="" srcSet />
+        <Link to={`/${url}/${news._id}`}>
+                <img src={ip+"images/"+news.images} alt="" srcSet />
               </Link>
               <p>
-              <Link to={`/${url}/${news.id}`}>
-                {
-                    news.TieuDe
+              <Link to={`/${url}/${news._id}`}>
+                  {
+                    news.title
                   }
                 </Link>
               </p>
