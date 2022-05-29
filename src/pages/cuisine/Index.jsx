@@ -8,7 +8,7 @@ import Item5 from './components/item5';
 import Itemcuisine from './components/itemcuisine';
 // import { Container } from './styles';
 
-function Index() {
+function Cuisine() {
     let {ip} =useAuth();
     let [state,setState] = useState({
       allnew:null,
@@ -125,4 +125,4 @@ var arrraystory = arraystory.reverse();
   )
 }
 
-export default Index;
+export default Cuisine;

@@ -1,38 +1,48 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import useAuth from '../../../core/useAuth';
-import ReactMarkdown from 'react-markdown';
-// import ReactMarkdown from 'react-markdown';
+import React from "react";
+import { Link } from "react-router-dom";
+import useAuth from "../../../core/useAuth";
+import ReactMarkdown from "react-markdown";
+
 // import { Container } from './styles';
 
-function Item1({technology}) {
-  let {ip} = useAuth();
-  return(
-      <>
+function Item1({ technology, arrayadvertisements }) {
+  let { ip } = useAuth();
+  return (
+    <>
       <div className="page__home-content">
-          <div className="left">
-            <div className="left__header">
+        <div className="left">
+          <div className="left__header">
             <Link to={`/technology/${technology._id}`}>
-                <img src={ip+"images/"+technology.images} alt="" srcSet />
+              <img src={ip + "images/" + technology.images} alt="" srcSet />
             </Link>
-              <div className="left-title">
-              <Link to={`/technology/${technology._id}`}>{technology.title}</Link>
-                  <div dangerouslySetInnerHTML={{__html:technology.sumary}}></div>
-              </div>
-              <div className="left-quangcao">
-                  {/* <a href={arrayadvertisements[0].TechnologyAdvertisementRightContent}>
-                      <img className="left-quangcao-img" src={`${technology.images}`} alt="" />
-                  </a> */}
-              </div>
+            <div className="left-title">
+              <Link to={`/technology/${technology._id}`}>
+                {technology.title}
+              </Link>
+              <div
+                dangerouslySetInnerHTML={{ __html: technology.sumary }}
+              ></div>
             </div>
-            <div className="left-content">
+            <div className="left-quangcao">
+              <a
+                href={
+                  arrayadvertisements[0].TechnologyAdvertisementRightContent
+                }
+              >
+                <img
+                  className="left-quangcao-img"
+                  src={ip + "images/" + arrayadvertisements[0].technology}
+                  alt=""
+                />
+              </a>
             </div>
           </div>
-          <div className="right">
-          </div>
+          <div className="left-content"></div>
         </div>
-      </>
-      );
+        <div className="right"></div>
+      </div>
+    </>
+  );
 }
 
 export default Item1;

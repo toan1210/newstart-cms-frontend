@@ -1,26 +1,24 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import useAuth from '../../../core/useAuth';
+import React from "react";
+import { Link } from "react-router-dom";
+import useAuth from "../../../core/useAuth";
 
 // import { Container } from './styles';
 
-function Item5({technology}) {
-  let {ip} = useAuth();
-  return(
-      <>
+function Item5({ technology }) {
+  let { ip } = useAuth();
+  return (
+    <>
       <div className="new__middo">
-      <Link to={`/layoutstory/story/${technology._id}`}>
-                <img src={ip+"images/"+technology.images} alt="" srcSet />
-              </Link>
-              <p>
-              <Link to={`/layoutstory/story/${technology._id}`}>
-                {
-                    technology.title
-                }
-                </Link>
-              </p>
-            </div>
-      </>
+        <Link to={`/layoutstory/story/${technology._id}`}>
+          <img src={ip + "images/" + technology.images} alt="" srcSet />
+        </Link>
+        <p>
+          <Link to={`/layoutstory/story/${technology._id}`}>
+            {technology.title}
+          </Link>
+        </p>
+      </div>
+    </>
   );
 }
 
