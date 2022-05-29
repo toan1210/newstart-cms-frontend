@@ -19,9 +19,9 @@ function Item1({tourism,arrayadvertisements}) {
               <div dangerouslySetInnerHTML={{__html:tourism.sumary}}></div>
               </div>
               <div className="left-quangcao">
-                <a href={arrayadvertisements[0].TourismAdvertisementRightContent}>
+                {/* <a href={arrayadvertisements[0].TourismAdvertisementRightContent}>
                 <img className="left-quangcao-img" src={ip+"images/"+arrayadvertisements[0].tourism} alt="" />
-                </a>
+                </a> */}
               </div>
             </div>
             <div className="left-content">

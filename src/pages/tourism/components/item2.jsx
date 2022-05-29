@@ -5,6 +5,7 @@ import useAuth from '../../../core/useAuth';
 // import { Container } from './styles';
 
 function Item2({tourism}) {
+  console.log(tourism);
   let {ip} = useAuth();
   return(
       <>
@@ -20,6 +21,7 @@ function Item2({tourism}) {
                 </Link>
               </p>
             </div>
+
       </>
   );
 }
