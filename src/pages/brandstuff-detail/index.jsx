@@ -55,7 +55,6 @@ function Index() {
   if(!listnew && !allnew && !arrayadvertisements && !aaa ) return 'loading...';
   var timedate = 0;
   var arraybrandstuff =[];
-  var arraykhac = state.allnew.reverse();
   function time(datetime)
   {
     var time = new Date(datetime);
@@ -83,7 +82,20 @@ function Index() {
     });
   }
   filter(state.allnew);
-console.log(arraybrandstuff)
+
+  var arraykhac =[];
+  function filter2(x)
+  {
+    x.forEach((a,b) => {
+        if(a.category !== "HangHieus")
+        {
+          arraykhac.push(a);
+        }
+    });
+  }
+  filter2(state.allnew);
+  arraykhac= arraykhac.reverse();
+  arraybrandstuff = arraybrandstuff.reverse();
   return(
       <>
          <main className="page-detail">
@@ -113,7 +125,7 @@ console.log(arraybrandstuff)
     <div className="detail-content">
       <div className="detail-content__left">
         <div className="content-left detail-left">
-        <div dangerouslySetInnerHTML={{__html:state.listnew.sumary}}></div>
+        <div dangerouslySetInnerHTML={{__html:state.listnew.content}}></div>
         </div>
         <div className="detail-involve">
           <h2>Bài Liên Quan</h2>

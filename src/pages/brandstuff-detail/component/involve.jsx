@@ -17,7 +17,7 @@ function Invole({_id,title,author,status,category,date,images,sumary,content}) {
                 </a>
               </div>
               <div className="involve-content__text">
-              <a href={`/brandstuff/${_id}`}>
+              <a href={`/brandstuff/${_id}`}> 
                   <h3>{title}</h3>
                 </a>
                 <div dangerouslySetInnerHTML={{__html:sumary}}></div>

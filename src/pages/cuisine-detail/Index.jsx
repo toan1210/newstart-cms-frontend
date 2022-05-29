@@ -101,7 +101,7 @@ function Index() {
     <div className="detail-content">
       <div className="detail-content__left">
         <div className="content-left detail-left">
-        <div dangerouslySetInnerHTML={{__html:state.listnew.sumary}}></div>
+        <div dangerouslySetInnerHTML={{__html:state.listnew.content}}></div>
         </div>
         <div className="detail-involve">
           <h2>Bài Liên Quan</h2>

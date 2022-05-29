@@ -5,23 +5,21 @@ import useAuth from '../../../core/useAuth';
 
 // import { Container } from './styles';
 
-function Invole({id,TieuDe,Avata,TacGia,TomTat}) {
-  let {ipapi,iplink} =useAuth();
-    var link =Avata[0].url;
-    
+function Invole({_id,title,author,status,category,date,images,sumary,content}) {
+  let {ip} =useAuth();
   return (
       <>
       <div className="involve-content">
               <div className="involve-content__img">
-                <a href={`/entertain/${id}`}>
-                  <img src={iplink+link} alt="" srcSet />
+                <a href={`/entertain/${_id}`}>
+                  <img src={ip+"images/"+images} alt="" srcSet />
                 </a>
               </div>
               <div className="involve-content__text">
-              <a href={`/entertain/${id}`}>
-                  <h3>{TieuDe}</h3>
+              <a href={`/entertain/${_id}`}>
+                  <h3>{title}</h3>
                 </a>
-                <span><ReactMarkdown>{TomTat}</ReactMarkdown></span>
+                <div dangerouslySetInnerHTML={{__html:sumary}}></div>
               </div>
             </div>
       </>

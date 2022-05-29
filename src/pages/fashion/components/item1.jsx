@@ -5,26 +5,22 @@ import useAuth from '../../../core/useAuth';
 // import { Container } from './styles';
 
 function Item1({fashion,arrayadvertisements}) {
-  let {ipapi,iplink} =useAuth();
+  let {ip} =useAuth();
   return(
       <>
       <div className="page__home-content" >
           <div className="left" >
             <div className="left__header">
-            <Link to={`/fashion/${fashion.id}`}>
-                <img src={iplink+fashion.Avata[0].url} alt="" srcSet />
+            <Link to={`/fashion/${fashion._id}`}>
+                <img src={ip+"images/"+fashion.images} alt="" srcSet />
               </Link>
               <div className="left-title">
-              <Link to={`/fashion/${fashion.id}`}>{fashion.TieuDe}</Link>
-                <p>
-                  {
-                    fashion.TomTat
-                  }
-                </p>
+              <Link to={`/fashion/${fashion._id}`}>{fashion.title}</Link>
+              <div dangerouslySetInnerHTML={{__html:fashion.sumary}}></div>
               </div>
               <div className="left-quangcao">
-                <a href={arrayadvertisements[0].FashionAdvertisementRightContent}>
-                <img className="left-quangcao-img" src={iplink+arrayadvertisements[0].FashionAdvertisementRight[0].url} alt="" />
+              <a href={arrayadvertisements[0].TourismAdvertisementRightContent}>
+                <img className="left-quangcao-img" src={ip+"images/"+arrayadvertisements[0].tourism} alt="" />
                 </a>
               </div>
             </div>

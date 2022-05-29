@@ -9,7 +9,7 @@ import Itemliving from './components/itemliving';
 // import { Container } from './styles';
 
 function Living() {
-  let {ipapi,iplink} = useAuth();
+  let {ip} = useAuth();
   let [state,setState] = useState({
     living:null,
     logform:null,
@@ -19,10 +19,10 @@ function Living() {
 )
 useEffect(() =>{
   Promise.all([
-      fetch(`${ipapi}/homes/`).then(res =>res.json()),
-      fetch(`${ipapi}/log-forms/`).then(res =>res.json()),
-      fetch(`${ipapi}/stories/`).then(res =>res.json()),
-      fetch(`${ipapi}/advertisements/`).then(res =>res.json()),
+    fetch(`${ip}traditional/traditionalapi`).then((res) => res.json()),
+    fetch(`${ip}longform/longformapi`).then((res) => res.json()),
+    fetch(`${ip}story/storyapi`).then((res) => res.json()),
+    fetch(`${ip}arrayadvertisements/arrayadvertisementsapi`).then((res) =>res.json()),
   ])
       .then(([res1,res2,res3,res4]) =>{
           setState({
@@ -42,7 +42,7 @@ var arraystory =[];
 function filter(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "SucKhoes")
+      if(a.category === "SucKhoes")
       {
         arrayliving.push(a);
       }
@@ -55,7 +55,7 @@ var arrayliving = array.reverse();
 function filterlogform(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "SucKhoes")
+      if(a.category === "SucKhoes")
       {
         arraylogform.push(a);
       }
@@ -67,7 +67,7 @@ var arrraylogform = arraylogform.reverse();
 function filterstory(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "SucKhoes")
+      if(a.category === "SucKhoes")
       {
         arraystory.push(a);
       }
@@ -111,7 +111,7 @@ var arrraystory = arraystory.reverse();
       <div className="new-content-left">
         {
           arrayliving.map((x,y)=>
-            <Itemliving key={x._id} {...x}></Itemliving>
+           y<=30?<Itemliving key={x._id} {...x}></Itemliving>:null
           )
         }
       </div>

@@ -9,7 +9,7 @@ import Itemvideo from './components/itemvideo';
 // import { Container } from './styles';
 
 function Video() {
-  let {ipapi,iplink} = useAuth();
+  let {ip} = useAuth();
   let [state,setState] = useState({
     video:null,
     loanding:true,
@@ -18,8 +18,8 @@ function Video() {
 )
 useEffect(() =>{
   Promise.all([
-      fetch(`${ipapi}/homes/`).then(res =>res.json()),
-      fetch(`${ipapi}/advertisements/`).then(res =>res.json()),
+    fetch(`${ip}traditional/traditionalapi`).then((res) => res.json()),
+    fetch(`${ip}arrayadvertisements/arrayadvertisementsapi`).then((res) =>res.json())
   ])
   .then(([res1,res2,res3]) =>{
     setState({
@@ -34,7 +34,7 @@ var arrayvideo =[];
 function filter(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "Videos")
+      if(a.category === "Videos")
       {
         arrayvideo.push(a);
       }
@@ -43,10 +43,9 @@ function filter(x)
 filter(state.video);
 var array = arrayvideo;
 var arrayvideo = array.reverse();
-console.log(arrayvideo);
   return (
       <>
-                   <main>
+    <main>
   <div className="container">
     <div className="page__home">
       <div className="page__home-header">
@@ -80,7 +79,7 @@ console.log(arrayvideo);
       <div className="new-content-left">
       {
           arrayvideo.map((x,y)=>
-            <Itemvideo key={x._id} {...x}></Itemvideo>
+          y<=30?<Itemvideo key={x._id} {...x}></Itemvideo>:null
           )
         }
       </div>

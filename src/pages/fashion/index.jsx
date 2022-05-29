@@ -9,7 +9,7 @@ import Itemfashion from './components/itemnew';
 // import { Container } from './styles';
 
 function Fashion() {
-  let {ipapi,iplink} =useAuth();
+  let {ip} =useAuth();
   let [state,setState] = useState({
     fashion:null,
     logform:null,
@@ -19,14 +19,14 @@ function Fashion() {
 )
 useEffect(() =>{
   Promise.all([
-      fetch(`${ipapi}/homes/`).then(res =>res.json()),
-      fetch(`${ipapi}/log-forms/`).then(res =>res.json()),
-      fetch(`${ipapi}/stories/`).then(res =>res.json()),
-      fetch(`${ipapi}/advertisements/`).then(res =>res.json()),
+    fetch(`${ip}traditional/traditionalapi`).then((res) => res.json()),
+    fetch(`${ip}longform/longformapi`).then((res) => res.json()),
+    fetch(`${ip}story/storyapi`).then((res) => res.json()),
+    fetch(`${ip}arrayadvertisements/arrayadvertisementsapi`).then((res) =>res.json()),
   ])
       .then(([res1,res2,res3,res4]) =>{
           setState({
-                fashion:res1,
+              fashion:res1,
               logform:res2,
               story:res3,
               arrayadvertisements:res4,
@@ -42,7 +42,7 @@ var arraystory =[];
 function filter(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "ThoiTrangs")
+      if(a.category === "ThoiTrangs")
       {
         arrayfashion.push(a);
       }
@@ -55,7 +55,7 @@ arrayfashion = array.reverse();
 function filterlogform(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "ThoiTrangs")
+      if(a.category === "ThoiTrangs")
       {
         arraylogform.push(a);
       }
@@ -66,7 +66,7 @@ var arrraylogform = arraylogform.reverse();
 function filterstory(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "ThoiTrangs")
+      if(a.category === "ThoiTrangs")
       {
         arraystory.push(a);
       }
@@ -74,11 +74,6 @@ function filterstory(x)
 }
 filterstory(state.story);
 var arrraystory = arraystory.reverse();
-
-
-
-
-
 
   return(
       <>

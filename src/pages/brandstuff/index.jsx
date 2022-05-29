@@ -20,8 +20,7 @@ function Brandstuff() {
       fetch(`${ip}traditional/traditionalapi`).then((res) => res.json()),
       fetch(`${ip}longform/longformapi`).then((res) => res.json()),
       fetch(`${ip}story/storyapi`).then((res) => res.json()),
-      fetch(`${ip}arrayadvertisements/arrayadvertisementsapi`).then((res) =>
-        res.json()
+      fetch(`${ip}arrayadvertisements/arrayadvertisementsapi`).then((res) =>res.json()
       ),
     ]).then(([res1, res2, res3, res4]) => {
       setState({

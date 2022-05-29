@@ -9,7 +9,7 @@ import Itementertain from './components/itementertain';
 // import { Container } from './styles';
 
 function Index() {
-    let {ipapi,iplink} =useAuth();
+    let {ip} =useAuth();
     let [state,setState] = useState({
       allnew:null,
       logform:null,
@@ -19,10 +19,10 @@ function Index() {
   )
   useEffect(() =>{
     Promise.all([
-        fetch(`${ipapi}/homes/`).then(res =>res.json()),
-        fetch(`${ipapi}/log-forms/`).then(res =>res.json()),
-        fetch(`${ipapi}/stories/`).then(res =>res.json()),
-        fetch(`${ipapi}/advertisements/`).then(res =>res.json()),
+      fetch(`${ip}traditional/traditionalapi`).then((res) => res.json()),
+      fetch(`${ip}longform/longformapi`).then((res) => res.json()),
+      fetch(`${ip}story/storyapi`).then((res) => res.json()),
+      fetch(`${ip}arrayadvertisements/arrayadvertisementsapi`).then((res) => res.json()),
     ])
         .then(([res1,res2,res3,res4]) =>{
             setState({
@@ -43,7 +43,7 @@ var arraystory =[];
 function filter(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "GiaiTris")
+      if(a.category === "GiaiTris")
       {
         arrayentertain.push(a);
       }
@@ -56,7 +56,7 @@ arrayentertain = array.reverse();
 function filterlogform(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "GiaiTris")
+      if(a.category === "GiaiTris")
       {
         arraylogform.push(a);
       }
@@ -68,7 +68,7 @@ var arrraylogform = arraylogform.reverse();
 function filterstory(x)
 {
   x.forEach((a,b) => {
-      if(a.DanhMuc === "GiaiTris")
+      if(a.category === "GiaiTris")
       {
         arraystory.push(a);
       }

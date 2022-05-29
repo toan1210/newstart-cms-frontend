@@ -5,17 +5,17 @@ import useAuth from '../../../core/useAuth';
 // import { Container } from './styles';
 
 function Item2({video}) {
-  let {ipapi,iplink} = useAuth();
+  let {ip} = useAuth();
   return(
       <>
         <div className="new__left">
-               <Link to={`/video/${video.id}`}>
-                <img src={iplink+video.Avata[0].url} alt="" srcSet />
+               <Link to={`/video/${video._id}`}>
+                <img src={ip+"images/"+video.images} alt="" srcSet />
               </Link>
               <p>
-              <Link to={`/video/${video.id}`}>
+              <Link to={`/video/${video._id}`}>
                   {
-                    video.TieuDe
+                    video.title
                   }
                 </Link>
               </p>
