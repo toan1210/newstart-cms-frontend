@@ -1,106 +1,87 @@
-import React from 'react';
-import ReactMarkdown from 'react-markdown';
-import useAuth from '../../../core/useAuth';
+import React from "react";
+import ReactMarkdown from "react-markdown";
+import useAuth from "../../../core/useAuth";
 
 // import { Container } from './styles';
 
-function Index({id,TieuDe,Time,TacGia,Avata,TomTat,DanhMuc}) {
-  let {ipapi,iplink} =useAuth();
-  console.log(Avata[0].url);
-    var link =Avata[0].url;
-      //---------------Time--------
-        var date = Time.slice(0,10);
-        var arraydate = date.split("-");
-        var datetime =[];
-        arraydate.forEach(function(x, y){
-         datetime.unshift(arraydate[y]);
-  })
-  var Datetime = datetime.join("-");
+function Index({
+  _id,
+  title,
+  author,
+  status,
+  category,
+  date,
+  images,
+  sumary,
+  content,
+}) {
+  let { ip } = useAuth();
   //------------------------------
-  let url ='';
-  if(DanhMuc === 'CongNghes')
-  {
-    url='technology';
+  let url = "";
+  var timedate = "";
+  function time(datetime) {
+    var time = new Date(datetime);
+    let years = time.getFullYear();
+    let month = time.getMonth() + 1;
+    let day = time.getDay();
+    if (month < 10) {
+      month = "0" + month;
+    }
+    if (month < 10) {
+      day = "0" + day;
+    }
+    timedate = years + "-" + month + "-" + day;
   }
-  else if(DanhMuc === 'DuLichs')
-  {
-    url='tourism';
+  time(date);
+  if (category === "VHXHs") {
+    url = "technology";
+  } else if (category === "DuLichs") {
+    url = "tourism";
+  } else if (category === "HangHieus") {
+    url = "brandstuff";
+  } else if (category === "SucKhoes") {
+    url = "living";
+  } else if (category === "ThoiTrangs") {
+    url = "fashion";
+  } else if (category === "DuLichs") {
+    url = "tourism";
+  } else if (category === "Videos") {
+    url = "Video";
+  } else if (category === "TinMois") {
+    url = "news";
+  } else if (category === "KinhTes") {
+    url = "economy";
+  } else if (category === "VHXHs") {
+    url = "cultural";
+  } else if (category === "GiaiTris") {
+    url = "entertain";
+  } else if (category === "TheThaos") {
+    url = "sport";
+  } else if (category === "AmThucs") {
+    url = "cuisine";
   }
-  else if(DanhMuc === 'HangHieus')
-  {
-    url='brandstuff';
-  }
-  else if(DanhMuc === 'SucKhoes')
-  {
-    url='living';
-  }
-  else if(DanhMuc === 'ThoiTrangs')
-  {
-    url='fashion';
-  }
-  else if(DanhMuc === 'DuLichs')
-  {
-    url='tourism';
-  }
-  else if(DanhMuc === 'Videos')
-  {
-    url='Video';
-  }
-  else if(DanhMuc === 'TinMois')
-  {
-    url='news';
-  }
-  else if(DanhMuc === 'KinhTes')
-  {
-    url='economy';
-  }
-  else if(DanhMuc === 'KinhTes')
-  {
-    url='economy';
-  }
-  else if(DanhMuc === 'VHXHs')
-  {
-    url='cultural';
-  }
-  else if(DanhMuc === 'GiaiTris')
-  {
-    url='entertain';
-  }
-  else if(DanhMuc === 'TheThaos')
-  {
-    url='sport';
-  }
-  else if(DanhMuc === 'AmThucs')
-  {
-    url='cuisine';
-  }
-
-  return(
-      <>
-       <div className="detail-care__content">
-          <div className="care-content__img">
-            <a href={`/${url}/${id}`}>
-              <img src={iplink+link} alt="" srcSet />
-            </a>
-          </div>
-          <div className="care-content__text">
-          <a href={`/${url}/${id}`}>
-              <h3>{TieuDe}</h3>
-            </a>
-            <p className="time">
-              <span className="time-day">
-                {Datetime}
-              </span>
-              <span className="DanhMuc">
-               {TacGia}
-              </span>
-            </p>
-            <span className="demo">
-            <span><ReactMarkdown>{TomTat}</ReactMarkdown></span>
-            </span>
-          </div>
+  return (
+    <>
+      <div className="detail-care__content">
+        <div className="care-content__img">
+          <a href={`/${url}/${_id}`}>
+            <img src={ip + "images/" + images} alt="" srcSet />
+          </a>
         </div>
-      </>
+        <div className="care-content__text">
+          <a href={`/${url}/${_id}`}>
+            <h3>{title}</h3>
+          </a>
+          <p className="time">
+            <span className="time-day">{timedate}</span>
+            <span className="DanhMuc">{author}</span>
+          </p>
+          <span className="demo">
+            <div dangerouslySetInnerHTML={{ __html: sumary }}></div>
+          </span>
+        </div>
+      </div>
+    </>
   );
 }
 

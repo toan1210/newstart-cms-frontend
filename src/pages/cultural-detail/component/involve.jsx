@@ -1,30 +1,39 @@
-import React from 'react';
-import ReactMarkdown from 'react-markdown';
-import { Link, NavLink } from 'react-router-dom';
-import useAuth from '../../../core/useAuth';
+import React from "react";
+import ReactMarkdown from "react-markdown";
+import { Link, NavLink } from "react-router-dom";
+import useAuth from "../../../core/useAuth";
 
 // import { Container } from './styles';
 
-function Invole({id,TieuDe,Avata,TacGia,TomTat}) {
-  let {ipapi,iplink} =useAuth();
-    var link =Avata[0].url;
-    
+function Invole({
+  _id,
+  title,
+  author,
+  status,
+  category,
+  date,
+  images,
+  sumary,
+  content,
+}) {
+  let { ip } = useAuth();
+
   return (
-      <>
+    <>
       <div className="involve-content">
-              <div className="involve-content__img">
-                <a href={`/cultural/${id}`}>
-                  <img src={iplink+link} alt="" srcSet />
-                </a>
-              </div>
-              <div className="involve-content__text">
-              <a href={`/cultural/${id}`}>
-                  <h3>{TieuDe}</h3>
-                </a>
-                <span><ReactMarkdown>{TomTat}</ReactMarkdown></span>
-              </div>
-            </div>
-      </>
+        <div className="involve-content__img">
+          <a href={`/cultural/${_id}`}>
+            <img src={ip + "images/" + images} alt="" srcSet />
+          </a>
+        </div>
+        <div className="involve-content__text">
+          <a href>
+            <h3>{title}</h3>
+          </a>
+          <span dangerouslySetInnerHTML={{ __html: sumary }}></span>
+        </div>
+      </div>
+    </>
   );
 }
 
