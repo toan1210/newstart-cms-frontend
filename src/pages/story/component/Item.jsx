@@ -4,19 +4,18 @@ import useAuth from '../../../core/useAuth';
 
 // import { Container } from './styles';
 
-function Item({Avata,id,TieuDe}) {
-  let {ipapi,iplink} = useAuth();
-    var link =Avata[0].url;
+function Item({_id,title,author,status,category,date,images,sumary}) {
+  let {ip} = useAuth();
   return(
       <>
       <div className="list-news__itme">
-      <Link to={`/layoutstory/story/${id}`}>
-                <img src={iplink+link} alt="" srcSet />
+      <Link to={`/layoutstory/story/${_id}`}>
+                <img src={ip+"images/"+images} alt="" srcSet />
           </Link>
           <div className="news-itme__content">
-          <Link to={`/layoutstory/story/${id}`}>
+          <Link to={`/layoutstory/story/${_id}`}>
               <span>
-               {TieuDe}
+               {title}
               </span>
             </Link>
           </div>

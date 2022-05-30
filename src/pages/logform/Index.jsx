@@ -6,14 +6,14 @@ import Item1 from './component/Item1'
 // import { Container } from './styles';
 
 function Index() {
-  let {ipapi,iplink} = useAuth(); 
+  let {ip} = useAuth(); 
   let [state,setState] = useState({
     logform:[],
     loanding:true
   }
 )
   useEffect(() =>{
-    fetch(`${ipapi}/log-forms/`)
+    fetch(`${ip}longform/longformapi`)
     .then(res=>res.json())
     .then((res) => {
       setState({
@@ -42,7 +42,7 @@ var arraylogform =array;
       <div className="list-news">
         {
           arraylogform.map((x,y) => 
-            y>0 ?<Item key={x.id} {...x}></Item>:null
+            <Item key={x.id} {...x}></Item>
           )
         }
       </div>

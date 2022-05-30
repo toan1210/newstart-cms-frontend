@@ -8,7 +8,7 @@ import useAuth from '../../core/useAuth';
 // import { Container } from './styles';
 
 function Index() {
-  let {ipapi,iplink} = useAuth();
+  let {ip} = useAuth();
     let {slug} = useRouteMatch().params;
     const [state,setState] = useState({
         listnew:null,
@@ -17,9 +17,9 @@ function Index() {
     })
     useEffect(() =>{
         Promise.all([
-            fetch(`${ipapi}/log-forms/${slug}`).then(res =>res.json()),
-            fetch(`${ipapi}/log-forms/`).then(res =>res.json()),
-            fetch(`${ipapi}/homes/`).then(res =>res.json()),
+            fetch(`${ip}longform/${slug}`).then(res =>res.json()),
+            fetch(`${ip}longform/longformapi`).then(res =>res.json()),
+            fetch(`${ip}traditional/traditionalapi`).then(res =>res.json()),
         ])
             .then(([res1,res2,res3]) =>{
                 setState({
@@ -31,27 +31,6 @@ function Index() {
     },[slug])
     let {listnew,logform,allnew} = state;
     if(!listnew && !logform && !allnew ) return 'loading...';
-    setTimeout(images, 100);
-    function images()
-    {
-        var detailimg = document.querySelectorAll('img');
-        detailimg.forEach(function (x, y) {
-      if(x.getAttribute("src").lastIndexOf("uploads") > 0)
-      {
-        if(x.getAttribute("src").lastIndexOf(`${iplink}`)<0)
-        {
-            x.setAttribute("src",`${iplink}`+x.getAttribute("src"));
-        }
-      }
-        });
-    }
-    var date = state.listnew.Time.slice(0,10);
-    var arraydate = date.split("-");
-    var datetime =[];
-    arraydate.forEach(function(x, y){
-      datetime.unshift(arraydate[y]);
-    })
-    var Datetime = datetime.join("-");
     let arrayallnew = state.allnew.reverse();
     var arraydetaillogform =state.listnew;
     var arrayogform =state.logform.reverse();
@@ -60,10 +39,10 @@ function Index() {
       <>
       <main className="page-detaillogform">
     <div className="detaillogform-img">
-     {
+     {/* {
        typeof(arraydetaillogform.ImgTitle[0]) !== 'undefined'?
         <img src={iplink + arraydetaillogform.ImgTitle[0].url}  alt="" srcSet />:null
-     }
+     } */}
     </div>
     <div className="detaillogform-content">
         {/* <div className="detaillogform-content__title">
@@ -72,7 +51,7 @@ function Index() {
           </h2>
         </div> */}
         <div className="detaillogform-content__content">
-        <ReactMarkdown>{arraydetaillogform.NoiDung}</ReactMarkdown>
+        <div dangerouslySetInnerHTML={{__html:arraydetaillogform.content}}></div>
         </div>
         {/* <div className="detaillogform-content__img">
           <img src="/img/32.jpg" alt="" srcSet className="detaillogform-img__item1" />

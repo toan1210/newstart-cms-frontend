@@ -592,7 +592,7 @@ main .page__home
 }
 .section-care .section-care__content .care-content__item .content-item__img
 {
-  /* height: 230px; */
+  height: 230px;
   overflow: hidden;
 }
 .section-care .section-care__content .care-content__item .content-item__img a img 

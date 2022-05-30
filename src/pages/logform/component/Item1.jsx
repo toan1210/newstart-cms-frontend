@@ -5,42 +5,47 @@ import useAuth from '../../../core/useAuth';
 // import { Container } from './styles';
 
 function Item1({arraylogform}) {
-  let {ipapi,iplink} = useAuth();
-    var link =arraylogform.Avata[0].url;
-    var date = arraylogform.Time.slice(0,10);
-    var arraydate = date.split("-");
-    var datetime =[];
-    arraydate.forEach(function(x, y){
-      datetime.unshift(arraydate[y]);
-    })
-    var Datetime = datetime.join("-");
-    //------------------------------
+  let {ip} = useAuth();
+  var timedate ="";
+  function time(datetime)
+    {
+      var time = new Date(datetime);
+           let years = time.getFullYear();
+            let month = time.getMonth() + 1;
+            let day = time.getDay();
+            if(month < 10){
+              month = "0" + month;
+          }
+          if(month < 10){
+              day = "0" + day;
+          }
+         timedate = years + "-" + month + "-" + day;
+    }
+    time(arraylogform.date)
   return(
       <>
           <div className="section-content">
         <div className="section-content__img">
-        <Link to={`/layout/logform/${arraylogform.id}`}>
-                <img src={iplink+link} alt="" srcSet />
+        <Link to={`/layout/logform/${arraylogform._id}`}>
+                <img src={ip+"images/"+arraylogform.images} alt="" srcSet />
           </Link>
         </div>
         <div className="section-content__text">
           <div className="content-title">
-          <Link to={`/layout/logform/${arraylogform.id}`}>
+          <Link to={`/layout/logform/${arraylogform._id}`}>
               <span>
-               {arraylogform.TieuDe}
+               {arraylogform.title}
               </span>
             </Link>
           </div>
           <div className="content-time">
-          <span className="date">{Datetime}</span>
-            <span className="time" style={{marginLeft:5}}>{arraylogform.TacGia}</span>
+          <span className="date">{timedate}</span>
+            <span className="time" style={{marginLeft:5}}>{arraylogform.author}</span>
           </div>
           <div className="content-description">
-            <span>
-                {
-                    arraylogform.TomTat
-                }
-            </span>
+          <div dangerouslySetInnerHTML={{__html:arraylogform.sumary}}>
+               
+               </div>
           </div>
         </div>
       </div>

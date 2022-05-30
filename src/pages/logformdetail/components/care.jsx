@@ -3,36 +3,42 @@ import useAuth from '../../../core/useAuth';
 
 // import { Container } from './styles';
 
-function Care({Avata,TacGia,Time,TieuDe,id}) {
-  let {ipapi,iplink} = useAuth();
-    var link =Avata[0].url;
-         //---------------Time--------
-         var date = Time.slice(0,10);
-         var arraydate = date.split("-");
-         var datetime =[];
-         arraydate.forEach(function(x, y){
-          datetime.unshift(arraydate[y]);
-   })
-   var Datetime = datetime.join("-");
-   //------------------------------
+function Care({_id,title,author,status,category,date,images,sumary}) {
+  let {ip} = useAuth();
+  var timedate ="";
+  function time(datetime)
+    {
+      var time = new Date(datetime);
+           let years = time.getFullYear();
+            let month = time.getMonth() + 1;
+            let day = time.getDay();
+            if(month < 10){
+              month = "0" + month;
+          }
+          if(month < 10){
+              day = "0" + day;
+          }
+         timedate = years + "-" + month + "-" + day;
+    }
+    time(date)
   return(
       <>
    <div className="care-content__item">
           <div className="content-item__img">
-          <a href={`/layout/logform/${id}`}>
-                 <img src={iplink+link} alt="" srcSet />
+          <a href={`/layout/logform/${_id}`}>
+                 <img src={ip+"images/"+images} alt="" srcSet />
             </a>
           </div>
           <div className="content-item__content">
             <div className="item-content__title">
-            <a href={`/layout/logform/${id}`}>
-                <h2>{TieuDe}</h2>
+            <a href={`/layout/logform/${_id}`}>
+                <h2>{title}</h2>
               </a>
             </div>
             <div className="item-content__time">
               <span className="article-publish">
-                <span className="time">{TacGia}</span>
-                <span className="upload">{Datetime}</span>
+                <span className="time">{author}</span>
+                <span className="upload">{timedate}</span>
               </span>
             </div>
           </div>

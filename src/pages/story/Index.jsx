@@ -6,14 +6,14 @@ import Item1 from './component/Item1'
 // import { Container } from './styles';
 
 function Index() {
-  let {ipapi,iplink} = useAuth();
+  let {ip} = useAuth();
     let [state,setState] = useState({
         story:[],
         loanding:true
       }
     )
     useEffect(() =>{
-        fetch(`${ipapi}/stories/`)
+        fetch(`${ip}story/storyapi`)
         .then(res=>res.json())
         .then((res) => {
           setState({
@@ -42,7 +42,7 @@ function Index() {
       <div className="list-news">
         {
           arraystory.map((x,y) => 
-            y < 20 ?<Item key={x.id} {...x}></Item>:null
+          <Item key={x.id} {...x}></Item>
           )
         }
       </div>
