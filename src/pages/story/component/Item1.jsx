@@ -44,7 +44,7 @@ function Item1({arraystory}) {
             <span className="time" style={{marginLeft:5}}>{arraystory.TacGia}</span> */}
           </div>
           <div className="content-description">
-          <div dangerouslySetInnerHTML={{__html:arraystory.sumary}}>
+          <div dangerouslySetInnerHTML={{__html:arraystory.summary}}>
                
                </div>
           </div>

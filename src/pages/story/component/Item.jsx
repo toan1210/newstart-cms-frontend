@@ -4,22 +4,13 @@ import useAuth from '../../../core/useAuth';
 
 // import { Container } from './styles';
 
-function Item({_id,title,author,status,category,date,images,sumary}) {
+function Item({_id,title,author,status,category,date,images,summary}) {
   let {ip} = useAuth();
   return(
       <>
       <div className="list-news__itme">
-      <Link to={`/layoutstory/story/${_id}`}>
-                <img src={ip+"images/"+images} alt="" srcSet />
-          </Link>
-          <div className="news-itme__content">
-          <Link to={`/layoutstory/story/${_id}`}>
-              <span>
-               {title}
-              </span>
-            </Link>
-          </div>
-        </div>
+        <div dangerouslySetInnerHTML={{__html:summary}}></div>
+      </div>
       </>
   )
 }

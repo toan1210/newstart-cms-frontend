@@ -4,14 +4,13 @@ import ReactMarkdown from 'react-markdown';
 import Care from './components/care';
 import View from './components/view';
 import Item from './components/Item';
-import Mobile from './components/Mobile';
 import useAuth from '../../core/useAuth';
 // import { Container } from './styles';
  const Loading = () =>(
         <span>Loading.....</span>
   )
 function Index() {
-  let {ipapi,iplink} = useAuth();
+  let {ip} = useAuth();
     let {slug} = useRouteMatch().params;
     const [state,setState] = useState({
         listnew:null,
@@ -21,9 +20,9 @@ function Index() {
     useEffect(() =>{
 
         Promise.all([
-            fetch(`${ipapi}/stories/${slug}`).then(res =>res.json()),
-            fetch(`${ipapi}/stories/`).then(res =>res.json()),
-            fetch(`${ipapi}/homes/`).then(res =>res.json()),
+            fetch(`${ip}story/${slug}`).then(res =>res.json()),
+            fetch(`${ip}story/storyapi`).then(res =>res.json()),
+            fetch(`${ip}traditional/traditionalapi`).then(res =>res.json()),
         ])
             .then(([res1,res2,res3]) =>{
                 setState({
@@ -45,7 +44,7 @@ function Index() {
           <Item arraydetaillstory={arraydetaillstory}></Item>
         </div>
         <div className="storymobile">
-          <Mobile arraydetaillstory={arraydetaillstory}></Mobile>
+          {/* <Mobile arraydetaillstory={arraydetaillstory}></Mobile> */}
         </div>
         <div className="section-care">
              <div className="container">

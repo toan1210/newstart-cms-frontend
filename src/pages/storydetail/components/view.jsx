@@ -3,72 +3,79 @@ import useAuth from '../../../core/useAuth';
 
 // import { Container } from './styles';
 
-function View({id,TieuDe,Time,TacGia,Avata,TomTat,DanhMuc}) {
-  let {ipapi,iplink} = useAuth();
-    var link =Avata[0].url;
-      //---------------Time--------
-        var date = Time.slice(0,10);
-        var arraydate = date.split("-");
-        var datetime =[];
-        arraydate.forEach(function(x, y){
-         datetime.unshift(arraydate[y]);
-  })
-  var Datetime = datetime.join("-");
+function View({_id,title,author,status,category,date,images,summary}) {
+  let {ip} = useAuth();
+  var timedate ="";
+  function time(datetime)
+    {
+      var time = new Date(datetime);
+           let years = time.getFullYear();
+            let month = time.getMonth() + 1;
+            let day = time.getDay();
+            if(month < 10){
+              month = "0" + month;
+          }
+          if(month < 10){
+              day = "0" + day;
+          }
+         timedate = years + "-" + month + "-" + day;
+    }
+    time(date)
   //------------------------------
   let url ='';
-  if(DanhMuc === 'CongNghes')
+  if(category === 'CongNghes')
   {
     url='technology';
   }
-  else if(DanhMuc === 'DuLichs')
+  else if(category === 'DuLichs')
   {
     url='tourism';
   }
-  else if(DanhMuc === 'HangHieus')
+  else if(category === 'HangHieus')
   {
     url='brandstuff';
   }
-  else if(DanhMuc === 'SucKhoes')
+  else if(category === 'SucKhoes')
   {
     url='living';
   }
-  else if(DanhMuc === 'ThoiTrangs')
+  else if(category === 'ThoiTrangs')
   {
     url='fashion';
   }
-  else if(DanhMuc === 'DuLichs')
+  else if(category === 'DuLichs')
   {
     url='tourism';
   }
-  else if(DanhMuc === 'Videos')
+  else if(category === 'Videos')
   {
     url='Video';
   }
-  else if(DanhMuc === 'TinMois')
+  else if(category === 'TinMois')
   {
     url='news';
   }
-  else if(DanhMuc === 'KinhTes')
+  else if(category === 'KinhTes')
   {
     url='economy';
   }
-  else if(DanhMuc === 'KinhTes')
+  else if(category === 'KinhTes')
   {
     url='economy';
   }
-  else if(DanhMuc === 'VHXHs')
+  else if(category === 'VHXHs')
   {
     url='cultural';
   }
-  else if(DanhMuc === 'GiaiTris')
+  else if(category === 'GiaiTris')
   {
     url='entertain';
   }
-  else if(DanhMuc === 'TheThaos')
+  else if(category === 'TheThaos')
   {
     url='sport';
   }
-  else if(DanhMuc === 'AmThucs')
+  else if(category === 'AmThucs')
   {
     url='cuisine';
   }
@@ -76,25 +83,23 @@ function View({id,TieuDe,Time,TacGia,Avata,TomTat,DanhMuc}) {
       <>
       <div className="section-seemore__content">
         <div className="seemore-content__img">
-        <a href={`/${url}/${id}`}>
-              <img src={iplink+link} alt="" srcSet />
+        <a href={`/${url}/${_id}`}>
+              <img src={ip+"images/"+images} alt="" srcSet />
             </a>
         </div>
         <div className="content-text">
           <div className="seemore__content-text">
-          <a href={`/${url}/${id}`}>
-              <h3>{TieuDe}</h3>
+          <a href={`/${url}/${_id}`}>
+              <h3>{title}</h3>
             </a>
           </div>
           <div className="article-meta">
             <span className="article-publish">
-              <span className="time">{TacGia}</span>
-              <span className="date"> {Datetime}</span>
+              <span className="time">{author}</span>
+              <span className="date"> {timedate}</span>
             </span>
-            <span className="article">
-                 {
-                    TomTat
-                }
+            <span className="article"    dangerouslySetInnerHTML={{__html:summary}}>
+        
             </span>
           </div>
         </div>
