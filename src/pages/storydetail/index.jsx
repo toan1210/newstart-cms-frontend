@@ -37,7 +37,24 @@ function Index() {
     let arrayallnew = state.allnew.reverse();
     var arraydetaillstory =state.listnew;
     var arraystory=state.story.reverse();
-    //----------------------------------------
+
+    setTimeout(img, 100);
+   function img()
+   {
+     let imgages =document.querySelectorAll("img");
+     imgages.forEach((a,b) => {
+      //  console.log("asd",a.getAttribute("src").lastIndexOf("/img"));
+       if(a.getAttribute("src").lastIndexOf("/img")!=0)
+       {
+         if(a.getAttribute("src").lastIndexOf("http://localhost:4001")!=0)
+         {
+          a.setAttribute("src","http://localhost:4001"+a.getAttribute("src"));
+         }
+       }
+     })
+   }
+
+
   return (
       <>
         <div className="containera">
