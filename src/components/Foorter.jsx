@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 // import { Container } from './styles';
 
-import { RiAdvertisementLine, RiMailLine, RiPhoneFill } from "react-icons/ri";
+// import { RiAdvertisementLine, RiMailLine, RiPhoneFill } from "react-icons/ri";
 
 function Foorter() {
   return (
@@ -19,15 +19,15 @@ function Foorter() {
           <div className="footer-right">
             <h3>Liên hệ</h3>
             <p>
-              <RiMailLine />
+              {/* <RiMailLine /> */}
               <span>nstartv.vn@gmail.com</span>
             </p>
             <p>
-              <RiAdvertisementLine />
+              {/* <RiAdvertisementLine /> */}
               <span>Quảng cáo</span>
             </p>
             <p>
-              <RiPhoneFill />
+              {/* <RiPhoneFill /> */}
               <span>0909430791</span>
             </p>
             <h3>Theo dõi newstar trên</h3>
