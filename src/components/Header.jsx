@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 // import { Container } from './styles';
-
+import JSONDATA from './traditionals.json'
 function Header() {
+  const [searchTerm,setSearchTerm]=useState('')
+  const [filter,setFilter]=useState('');
+  const [searchValue,setSearchValue]=useState('');
+
+  function eventFillter(value) {
+    const fillter = JSONDATA.filter(item => item.title.includes(value));
+    setFilter(fillter);
+    setSearchValue(value);
+  }
+
+  const handleChooseOption = (value)=>{
+    setSearchValue(value);
+  }
+  const closeSearch = ()=>{
+    setSearchValue('');
+  }
+
   return (
     <>
       <header className="home-headerr">
@@ -57,10 +74,28 @@ function Header() {
                   </li>
                 </ul>
               </div>
-              <div className="header__search">
-                <input type="text" className="input-search" placeholder="Tìm kiếm"/>
-                <i className="fa-solid fa-magnifying-glass"></i>
+              {/* key search data */}
+              {searchValue && 
+               <div className="research">
+                  {filter.map((val,key)=>(
+                      <div className="user" key={key} onMouseEnter={()=>handleChooseOption(val.title)}>
+                        {/* <p style={{fontSize: 12}}>{val.title}</p> */}
+                        <a href="">{val.title}</a>
+                    </div>
+                  ))}
               </div>
+              }
+              <div className="header__search" onBlur={closeSearch}>
+                <input type="text" className="input-search" 
+                placeholder="Tìm kiếm" 
+                onChange={(e) => eventFillter(e.target.value) }
+                value={searchValue}
+                />
+                <i className="fa-solid fa-magnifying-glass"></i>
+                  
+              </div>
+              {/* kết thúc làm search input */}
+             
               <div className="header__login">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -171,6 +206,7 @@ function Header() {
           </div>
         </div>
       </header>
+      
     </>
   );
 }
