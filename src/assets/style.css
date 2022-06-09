@@ -863,6 +863,7 @@ section .Advertisement img {
   p {
   padding: inherit;
   text-align: center;
+  width: 268px;
 }
 main .home-multimedia .home-content .home-content-left .title a img {
   display: none;
@@ -1209,6 +1210,7 @@ main .home-multimedia .home-content .home-content-left .sub-text {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   height: 47px;
+  font-size: 24px ;
 }
 .page-detaillogform
   .detaillogform-content
@@ -1237,6 +1239,9 @@ main .page__home .page__home-content .left .left__header .left-title p {
   .content-news-img
   img {
   height: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #444444;
 }
 .new
   .new-content
@@ -1254,7 +1259,8 @@ main .page__home .page__home-content .left .left__header .left-title p {
   -webkit-box-orient: vertical;
   height: 80px;
   line-height: 25px;
-  font-size: 14px;
+  font-size: 16px;
+  color: #444444;
 }
 .page-detail .detail-content .detail-content__left .content-left p code {
   display: block;

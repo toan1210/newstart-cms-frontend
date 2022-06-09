@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import useAuth from '../../../../core/useAuth';
-import Item from './Item';
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import useAuth from "../../../../core/useAuth";
+import Item from "./Item";
 let $ = window.$;
 // import { Container } from './styles';
 
-function Sprot({story,arrayadvertisement,arrayhome,}) {
-  let {ip} =useAuth();
-  useEffect(() =>{
+function Sprot({ story, arrayadvertisement, arrayhome }) {
+  let { ip } = useAuth();
+  useEffect(() => {
     let slidershow = 4;
     let auto = false;
     let header = $(".headerr").height();
@@ -22,80 +22,76 @@ function Sprot({story,arrayadvertisement,arrayhome,}) {
       auto = true;
     }
     $(".slider-content").slick({
-        slidesToShow: slidershow,
-        slidesToScroll: 1,
-        centerMode: false,
-        infinite: true,
-        // appendArrows: $(".slick-slider-nav"),
-        // prevArrow: "<button className='slick-prev btn btn-white rounded-circle'><i className='mdi mdi-chevron-left' /></button>",
-        // nextArrow: "<button className='slick-next btn btn-white rounded-circle'><i className='mdi mdi-chevron-right'></i></button>",
-      });
-      $(".advertisement").slick({
-        slidesToShow: 1,
+      slidesToShow: slidershow,
+      slidesToScroll: 1,
+      centerMode: false,
+      infinite: true,
+      // appendArrows: $(".slick-slider-nav"),
+      // prevArrow: "<button className='slick-prev btn btn-white rounded-circle'><i className='mdi mdi-chevron-left' /></button>",
+      // nextArrow: "<button className='slick-next btn btn-white rounded-circle'><i className='mdi mdi-chevron-right'></i></button>",
+    });
+    $(".advertisement").slick({
+      slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 2000,
       infinite: true,
-      });
-  },[])
-  console.log("arrayhome",arrayhome);
-  var arraysport =[];
-  function filter(x)
-  {
-    x.forEach((a,b) => {
-        if(a.category === "CongNghes")
-        {
-          arraysport.push(a);
-        }
+    });
+  }, []);
+  console.log("arrayhome", arrayhome);
+  var arraysport = [];
+  function filter(x) {
+    x.forEach((a, b) => {
+      if (a.category === "CongNghes") {
+        arraysport.push(a);
+      }
     });
   }
   filter(story);
   arraysport = arraysport.reverse();
 
-  var arrayall =[];
-  function filter1(x)
-  {
-    x.forEach((a,b) => {
-        if(a.category === "CongNghes")
-        {
-          arrayall.push(a);
-        }
+  var arrayall = [];
+  function filter1(x) {
+    x.forEach((a, b) => {
+      if (a.category === "CongNghes") {
+        arrayall.push(a);
+      }
     });
   }
-  filter1(arrayhome)
+  filter1(arrayhome);
   arrayall = arrayall.reverse();
-  var arrrrray = [...arrayall,...arraysport]
+  var arrrrray = [...arrayall, ...arraysport];
 
-  var homestory = arrrrray.sort(function(a,b)
-  {
+  var homestory = arrrrray.sort(function (a, b) {
     console.log(new Date(a.createdAt).getTime());
-    return(new Date(a.createdAt).getTime()) - (new Date(b.createdAt).getTime())
-  })
+    return new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime();
+  });
   homestory = homestory.reverse();
-  return(
-      <>
-<section>
-  <div className="slider tablet">
-    <div className="container ">
-      <div className="slider-title">
-        <h3>Công Nghệ</h3>
-        <div className="slider-title-xemthem">
-        <Link to={'/story'}>Xem Thêm...</Link>
-        </div>
-      </div>
-      <div className="slider-content">
-        {
-            homestory.map(x =>
+  return (
+    <>
+      <section>
+        <div className="slider tablet">
+          <div className="container ">
+            <div className="slider-title">
+              <h3> 
+                <img src="/img/3color.png" alt="3 color" />
+                Công Nghệ
+              </h3>
+              <div className="slider-title-xemthem">
+                <Link to={"/story"}>Xem Thêm...</Link>
+              </div>
+            </div>
+            <div className="slider-content">
+              {homestory.map((x) => (
                 <Item key={x.id} {...x}></Item>
-            )
-        }
-      </div>
-      <div className="slick-slider-nav" />
-       <div className="slick-slider-dots" />
-    </div>
-  </div>
-  <div className="advertisement">
-  {/* {
+              ))}
+            </div>
+            <div className="slick-slider-nav" />
+            <div className="slick-slider-dots" />
+          </div>
+        </div>
+        <div className="advertisement">
+          {/* {
       typeof(arrayadvertisement[0].HomeAdvertisementTechnology1IMG[0]) !== 'undefined'?
       <a href={arrayadvertisement[0].HomeAdvertisementTechnology1}>
       <img className="advertisementimg" src={iplink+arrayadvertisement[0].HomeAdvertisementTechnology1IMG[0].url} alt="" />
@@ -125,11 +121,10 @@ function Sprot({story,arrayadvertisement,arrayhome,}) {
       <img className="advertisementimg" src={iplink+arrayadvertisement[0].HomeAdvertisementTechnology5IMG[0].url} alt="" />
       </a>:null
     } */}
-</div>
-</section>
-
-      </>
-  )
+        </div>
+      </section>
+    </>
+  );
 }
 
 export default Sprot;
