@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import {ShareSocial} from 'react-share-social' 
+
 let $ = window.$;
 // import { Container } from './styles';
 
@@ -116,6 +118,12 @@ function Headerstory() {
                   onClick={linkloangding}
                 />
               </div>
+              <ShareSocial 
+    //  style={style}
+     url ="https://zingnews.vn/series/zingstory.html"
+     socialTypes={['facebook','twitter','reddit','linkedin']}
+    //  onSocialButtonClicked={ data=> console.log(data)}
+   ></ShareSocial>
             </div>
           </div>
         </div>
