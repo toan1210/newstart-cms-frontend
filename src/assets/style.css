@@ -1210,7 +1210,7 @@ main .home-multimedia .home-content .home-content-left .sub-text {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   height: 47px;
-  font-size: 24px ;
+  font-size: 24px;
 }
 .page-detaillogform
   .detaillogform-content
@@ -1964,4 +1964,60 @@ main .page__home .page__home-listnew .right__right {
   main .page__home .page__home-content .left .left__header .left-title p {
     font-size: 13px;
   }
+}
+
+/* CSS comment */
+.comment {
+}
+
+.info-user {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.avatar-user {
+  color: blue;
+  border: 2px solid;
+  font-size: 25px;
+  padding: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.name-user {
+  font-weight: 500;
+  font-size: 17px;
+}
+
+.form-comment {
+  display: flex;
+  align-items: center;
+}
+
+.input-comment {
+  margin-left: 60px;
+  padding: 10px;
+  width: 70%;
+  height: 100px;
+  resize: none;
+  outline-color: blue;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.btn-send-comment {
+  margin: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: blue;
+  color: #fff;
+  border: 1px solid;
+  border-radius: 5px;
 }
