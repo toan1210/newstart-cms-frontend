@@ -144,11 +144,18 @@ main .home-multimedia {
 .page-detail {
   margin-top: 72px;
 }
+
+.page-detail .detail-article .detail-article-author{
+  flex: 1;
+}
+
 .page-detail .detail-article .detail-article-author span {
-  font-size: 11px;
+  font-size: 13px;
+  float: right;
+  margin-right: 35px;
 }
 .page-detail .detail-article .detail-article-time span {
-  font-size: 11px;
+  font-size: 13px;
 }
 p.time > span.time-day {
   margin-right: 5px;
@@ -1968,6 +1975,7 @@ main .page__home .page__home-listnew .right__right {
 
 /* CSS comment */
 .comment {
+  margin-top: 30px;
 }
 
 .info-user {
@@ -1989,7 +1997,7 @@ main .page__home .page__home-listnew .right__right {
   align-items: center;
   margin-right: 20px;
 }
-
+  
 .name-user {
   font-weight: 500;
   font-size: 17px;
