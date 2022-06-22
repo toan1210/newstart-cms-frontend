@@ -5,6 +5,9 @@ import Invole from "./component/involve";
 import ReactMarkdown from "react-markdown";
 import useAuth from "../../core/useAuth";
 import Comment from "../../components/Comment";
+import { AiOutlineClockCircle } from "react-icons/ai";
+import { SiZalo } from "react-icons/si";
+import { FaFacebookF } from "react-icons/fa";
 
 let $ = window.$;
 // import { Container } from './styles';
@@ -96,11 +99,27 @@ function Index() {
           </div>
           <div className="detail-article">
             <div className="detail-article-wappe">
-              <div className="detail-article-author">
-                <span>{state.listnew.author}</span>
+              <div className="detail-article-share">
+                <FaFacebookF className="icon-share" />
+                <SiZalo className="icon-share" />
               </div>
               <div className="detail-article-time">
+                <AiOutlineClockCircle />
                 <span>{timedate}</span>
+              </div>
+              <div className="detail-article-author">
+                <span>
+                  <p
+                    style={{
+                      fontWeight: "500",
+                      display: "inline",
+                      marginRight: "5px",
+                    }}
+                  >
+                    Người viết:
+                  </p>
+                  {state.listnew.author}
+                </span>
               </div>
             </div>
           </div>
@@ -108,12 +127,15 @@ function Index() {
             <div className="detail-content__left">
               <div className="content-left detail-left">
                 <div
-                  dangerouslySetInnerHTML={{ __html: state.listnew.content }}
+                  dangerouslySetInnerHTML={{ __html: listnew.content }}
                 ></div>
               </div>
               <Comment />
               <div className="detail-involve">
-                <h2>Bài Liên Quan</h2>
+                <h2>
+                  <img src="/img/3color.png" alt="ảnh 3 màu" />
+                  Bài Liên Quan
+                </h2>
                 <div className="detail-involve__content">
                   {arrayliving.map((x, y) =>
                     y < 5 ? <Invole key={x.id} {...x}></Invole> : null
@@ -123,6 +145,7 @@ function Index() {
             </div>
             <div className="detail-content__right">
               <div className="left-quangcao">
+                <h1>Content right Advertisement</h1>
                 {
                   //  typeof(arrayadvertisements[0].DetailAdvertisementLivingRight[0]) !== 'undefined'?
                   //  <a href={arrayadvertisements.DetailAdvertisementLivingRightContent}>
@@ -135,7 +158,10 @@ function Index() {
           <div className="detail-care">
             <div className="detail-care__left">
               <div className="detail-care__title">
-                <h2>BẠN CÓ THỂ QUAN TÂM</h2>
+                <h2>
+                  <img src="/img/3color.png" alt="ảnh 3 màu" />
+                  BẠN CÓ THỂ QUAN TÂM
+                </h2>
               </div>
               {arraykhac.map((x, y) =>
                 y < 30 ? <Care key={x.id} {...x}></Care> : null
