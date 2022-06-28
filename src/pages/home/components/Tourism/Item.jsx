@@ -32,8 +32,8 @@ function Item({ _id, author, longform, story, images, title, category }) {
             <div className="content-title-img">
               <p>{title}</p>
             </div>
-            <p className="content-title-img-subtitle">Xem thêm...</p>
           </div>
+          <p className="content-title-img-subtitle">Xem thêm...</p>
           <div className="content-img-camera">
             <div className="img-camera">
               <img className="camera" src="img/11.png" alt="" srcSet />

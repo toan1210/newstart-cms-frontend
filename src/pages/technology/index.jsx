@@ -44,7 +44,6 @@ function Technology() {
   var arraystory = [];
   var arrayadvertisementss = state.arrayadvertisements;
 
-  
   function filter(x) {
     x.forEach((a, b) => {
       if (a.category === "CongNghes") {
@@ -99,9 +98,12 @@ function Technology() {
                 </li>
               </ul>
             </div>
-            <Item1 technology={arraytechnology[0]}
-                  arrayadvertisements={arrayadvertisementss}
-            > </Item1>
+            <Item1
+              technology={arraytechnology[0]}
+              arrayadvertisements={arrayadvertisementss}
+            >
+              {" "}
+            </Item1>
             <div className="page__home-listnew">
               <div className="right__left">
                 <Item2 technology={arrraylogform[0]}></Item2>
@@ -117,8 +119,14 @@ function Technology() {
       </main>
       <div className="new">
         <div className="container">
-          <div className="new-title">
+          {/* <div className="new-title">
             <h3>Tin Mới</h3>
+          </div> */}
+          <div className="new__title">
+            <h2>
+              <img src="/img/3color.png" alt="ảnh 3 màu" />
+              Tin mới
+            </h2>
           </div>
           <div className="new-content">
             <div className="new-content-left">

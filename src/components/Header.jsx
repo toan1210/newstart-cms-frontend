@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 // import { Container } from './styles';
 import JSONDATA from "./traditionals.json";
 function Header() {
@@ -94,7 +94,7 @@ function Header() {
                         onMouseEnter={() => handleChooseOption(val.title)}
                       >
                         {/* <p style={{fontSize: 12}}>{val.title}</p> */}
-                        <a href="">{val.title}</a>
+                        <Link to={searchValue}>{val.title}</Link>
                       </div>
                     ))}
                   </div>
