@@ -4955,6 +4955,7 @@ main .page__video .page__home-listnew .right__right .new__middo p a:hover {
   border-bottom: 1px solid #ededed;
   border-left: 1px solid #ededed;
   border-right: 1px solid #ededed;
+  box-shadow: 5px 5px 5px #444444;
 }
 .page_story .topic-news .list-news .list-news__itme .news-itme__content {
   padding: 15px 20px 20px;
@@ -5300,6 +5301,7 @@ main .page__video .page__home-listnew .right__right .new__middo p a:hover {
   border-bottom: 1px solid #ededed;
   border-left: 1px solid #ededed;
   border-right: 1px solid #ededed;
+  box-shadow: 5px 5px 5px #444444;
 }
 .page-logform .topic-news .list-news .list-news__itme .news-itme__content {
   padding: 15px 20px 20px;

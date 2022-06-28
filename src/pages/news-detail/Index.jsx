@@ -4,6 +4,10 @@ import ReactMarkdown from 'react-markdown';
 import Care from './component/care';
 import { useRouteMatch } from 'react-router-dom';
 import useAuth from '../../core/useAuth';
+import { AiOutlineClockCircle } from "react-icons/ai";
+import { SiZalo } from "react-icons/si";
+import { FaFacebookF } from "react-icons/fa";
+import Comment from "../../components/Comment";
 let $ =window.$;
 // import { Container } from './styles';
 

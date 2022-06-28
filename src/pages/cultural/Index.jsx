@@ -76,7 +76,7 @@ function Cultural() {
   filterstory(state.story);
   var arrraystory = arraystory.reverse();
   console.log(arrraystory);
-  
+
   return (
     <>
       <main>
@@ -117,8 +117,11 @@ function Cultural() {
       </main>
       <div className="new">
         <div className="container">
-          <div className="new-title">
-            <h3>Tin Mới</h3>
+          <div className="new__title">
+            <h2>
+              <img src="/img/3color.png" alt="ảnh 3 màu" />
+              Tin mới
+            </h2>
           </div>
           <div className="new-content">
             <div className="new-content-left">
