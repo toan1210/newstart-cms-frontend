@@ -14,6 +14,7 @@ let $ = window.$;
 function Index() {
   let { ip } = useAuth();
   let { slug } = useRouteMatch().params;
+  console.log("thong",slug);
   // console.log(ip+"traditional/"+slug);
   const [state, setState] = useState({
     listnew: null,
@@ -126,7 +127,7 @@ function Index() {
                   dangerouslySetInnerHTML={{ __html: listnew.content }}
                 ></div>
               </div>
-              <Comment />
+              <Comment idPost={slug}/>
               <div className="detail-involve">
                 <h2>
                   <img src="/img/3color.png" alt="ảnh 3 màu" />
