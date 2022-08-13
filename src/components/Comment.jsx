@@ -22,9 +22,11 @@ function Comment({idPost}) {
       })
   }
   const postComment = (msg) => {
+    let today=new Date();
     axios.post("http://localhost:4001/traditional/comments", {
       idPost: idPost,
       content: msg,
+      createdAt:today.getHours() + ":" + today.getMinutes()+" "+ today.getDate()+ '/'+(today.getMonth()+1)+'/'+today.getFullYear()
     })
   }
   const enterSubmit = (e) => {
